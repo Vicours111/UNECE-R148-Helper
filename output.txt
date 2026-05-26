@@ -1,0 +1,3 @@
+Total IDs found in JS: 41
+Total IDs found in HTML: 48
+SUCCESS: All JS DOM element IDs exist in HTML!

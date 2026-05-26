@@ -1,0 +1,661 @@
+/* Dynamic Direction Indicator Special Interactive Stylesheet */
+@import url('styles.css');
+
+:root {
+    --led-off-color: #1e1b18;
+    --led-off-stroke: #2e2a24;
+    --led-on-color: #f59e0b;
+    --led-on-glow: rgba(245, 158, 11, 0.65);
+    
+    --card-accent-border: rgba(245, 158, 11, 0.25);
+    --card-accent-glow: rgba(245, 158, 11, 0.15);
+}
+
+/* Back navigation button */
+.back-btn-container {
+    margin-bottom: 8px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'Outfit', sans-serif;
+    transition: var(--transition-smooth);
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    color: var(--color-amber);
+    background: rgba(245, 158, 11, 0.1);
+    border-color: var(--color-amber-glow);
+    transform: translateX(-4px);
+}
+
+/* Two Column Dashboard for Blinker */
+.d-lamp-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 1024px) {
+    .d-lamp-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Visualizer Glass Card */
+.visualizer-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: rgba(10, 15, 30, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    min-height: 520px;
+    overflow: hidden;
+}
+
+.visualizer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-amber), var(--danger));
+}
+
+.visualizer-title {
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Inboard/Outboard Direction Labels */
+.blinker-direction-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 540px;
+    margin-top: 36px;
+    margin-bottom: 6px;
+    padding: 0 4px;
+}
+
+.lbl-dir {
+    font-size: 0.76rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.lbl-inboard {
+    color: var(--text-secondary);
+}
+
+.lbl-outboard {
+    color: var(--color-amber);
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+}
+
+/* Sleek Blinker SVGs */
+.svg-blinker-container {
+    width: 100%;
+    max-width: 540px;
+    aspect-ratio: 4.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.svg-blinker-container svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.5));
+}
+
+.led-block {
+    fill: var(--led-off-color);
+    stroke: var(--led-off-stroke);
+    stroke-width: 1;
+    transition: fill 0.08s ease, stroke 0.08s ease, filter 0.08s ease;
+}
+
+.led-block.lit {
+    fill: var(--led-on-color);
+    stroke: #fef08a;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 0 6px var(--led-on-color)) drop-shadow(0 0 12px var(--led-on-glow));
+}
+
+/* Preset buttons styling */
+.presets-grid-container {
+    width: 100%;
+    max-width: 540px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.preset-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.preset-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.preset-btn {
+    flex: 1 1 calc(33.3% - 8px);
+    min-width: 120px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+}
+
+.preset-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    transform: translateY(-1px);
+}
+
+.preset-btn.active {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: var(--color-amber);
+    color: #fef08a;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+}
+
+.indicator-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.indicator-dot.green { background-color: var(--success); box-shadow: 0 0 6px var(--success); }
+.indicator-dot.red { background-color: var(--danger); box-shadow: 0 0 6px var(--danger); }
+
+/* Timeline Oscilloscope styling */
+.timeline-canvas-container {
+    width: 100%;
+    max-width: 540px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 12px 16px;
+    margin-top: 20px;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.timeline-title-bar {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+canvas#canvasTimeline {
+    width: 100%;
+    height: 120px;
+    display: block;
+    background-color: #05080f;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.timeline-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* Action Controls Inside Visualizer */
+.visualizer-action-bar {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    max-width: 540px;
+    margin-top: 14px;
+    justify-content: center;
+}
+
+.action-btn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 14px;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.action-btn.active {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: var(--color-amber);
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.15);
+    color: #fde047;
+}
+
+/* Legal Explanation Panel Styles */
+.explain-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    height: 100%;
+}
+
+.explain-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.explain-header h2 {
+    font-size: 1.3rem;
+    color: var(--color-amber);
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.15);
+}
+
+.explain-header p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+/* Compliance Summary Box */
+.compliance-summary-box {
+    border-radius: var(--border-radius-md);
+    padding: 16px;
+    margin-bottom: 20px;
+    transition: var(--transition-smooth);
+}
+
+.compliance-summary-box.compliant {
+    background: rgba(16, 185, 129, 0.04);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    box-shadow: inset 0 0 15px rgba(16, 185, 129, 0.05);
+}
+
+.compliance-summary-box.non-compliant {
+    background: rgba(239, 68, 68, 0.04);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    box-shadow: inset 0 0 15px rgba(239, 68, 68, 0.05);
+}
+
+.summary-status-header {
+    margin-bottom: 8px;
+}
+
+.status-badge {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+}
+
+.status-badge.status-compliant {
+    color: var(--success);
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+}
+
+.status-badge.status-non-compliant {
+    color: var(--danger);
+    text-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
+}
+
+.summary-explain-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Interactive Checklist Items */
+.interactive-checklist h3 {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.checklist-items-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.01);
+    transition: var(--transition-smooth);
+}
+
+.checklist-item .check-icon {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 1px;
+}
+
+.checklist-item .check-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.checklist-item .check-title {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.checklist-item .check-desc {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    margin-top: 2px;
+}
+
+/* Checklist Item compliant state */
+.checklist-item.compliant {
+    border-color: rgba(16, 185, 129, 0.15);
+    background: rgba(16, 185, 129, 0.01);
+}
+
+.checklist-item.compliant .check-icon {
+    color: var(--success);
+}
+
+/* Checklist Item non-compliant state */
+.checklist-item.non-compliant {
+    border-color: rgba(239, 68, 68, 0.15);
+    background: rgba(239, 68, 68, 0.015);
+}
+
+.checklist-item.non-compliant .check-icon {
+    color: var(--danger);
+}
+
+.checklist-item.non-compliant .check-title {
+    color: #fca5a5;
+}
+
+/* Mathematical Playgrounds Section */
+.playgrounds-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+    .playgrounds-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.playground-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.playground-section h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.playground-layout-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .playground-layout-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.playground-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.playground-intro {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+/* Sliding Result Cards inside Playgrounds */
+.playground-controls .judge-result-box {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 10px 14px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 70px;
+}
+
+.judge-explain-sub {
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    margin-top: 4px;
+}
+
+/* Styled bounds for range input */
+.range-bound {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+/* Dynamic Spacing SVG overlay elements */
+.svg-playground-container {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.svg-playground-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+.dimension-line {
+    stroke: var(--secondary);
+    stroke-width: 1.5;
+    marker-start: url(#arrow-start);
+    marker-end: url(#arrow-end);
+}
+
+.dimension-text {
+    fill: var(--secondary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.dimension-extension {
+    stroke: rgba(255, 255, 255, 0.25);
+    stroke-width: 1;
+    stroke-dasharray: 2 2;
+}
+
+/* Spacing and ratio dimensions */
+#lineGapDimension {
+    stroke: var(--secondary);
+    stroke-width: 1.5;
+    marker-start: url(#arrow-start);
+    marker-end: url(#arrow-end);
+}
+
+#lblGapDimensionText {
+    fill: var(--secondary);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+#grpMovableSegment {
+    transition: transform 0.25s cubic-bezier(0.1, 0.8, 0.2, 1);
+}
+
+/* Regulatory Details Grid bottom */
+.regulatory-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .regulatory-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.regulatory-details-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 16px;
+    transition: var(--transition-smooth);
+}
+
+.regulatory-details-card:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.regulatory-details-card h4 {
+    font-size: 0.9rem;
+    color: #fca5a5;
+    margin-bottom: 8px;
+    border-left: 3px solid var(--color-amber);
+    padding-left: 8px;
+}
+
+.regulatory-details-card p {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* R48 Mid-cycle Switch Warning Banner Alert */
+.r48-warning-banner {
+    position: absolute;
+    top: 75px;
+    left: 24px;
+    right: 24px;
+    background: rgba(220, 38, 38, 0.95);
+    border: 1px solid #fca5a5;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: var(--border-radius-md);
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+    animation: slideDownFade 0.3s cubic-bezier(0.1, 0.8, 0.2, 1);
+}
+
+@keyframes slideDownFade {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+

@@ -1,0 +1,622 @@
+
+========================================
+FILE: UN Regulation No. 148 - Amend.1.docx
+========================================
+Found 0 matches for 'apparent surface':
+Found 0 matches for '12.5':
+Found 0 matches for '25':
+
+========================================
+FILE: UN Regulation No. 148 - Amend.2.docx
+========================================
+Found 0 matches for 'apparent surface':
+Found 0 matches for '12.5':
+Found 3 matches for '25':
+--- MATCH 25 AT 593 ---
+17) _________ Addendum 147 – UN Regulation No. 148 Amendment  2 Supplement  2  to the original version of the Regulation – Date of entry into force:  25 September 2020 Uniform provisions concerning the approval of light-signalling devices (lamps) for power-driven vehicles and their trailers This  document is meant purely as documentation tool. The authentic and legal binding text is: ECE/TRANS/WP.
+--- MATCH 25 AT 4143 ---
+  amend to read: " 3.2. Category 1b - wide plate (520 x 120 mm) Figure A3-X Measuring points for plate size 520 x 120 mm a e a a e c c a  = c  = e  = 25 mm 100 mm 70 mm a c c a e a a e c c a  = c  = e  = 25 mm 100 mm 70 mm a c c "
+--- MATCH 25 AT 4197 ---
+x 120 mm) Figure A3-X Measuring points for plate size 520 x 120 mm a e a a e c c a  = c  = e  = 25 mm 100 mm 70 mm a c c a e a a e c c a  = c  = e  = 25 mm 100 mm 70 mm a c c "
+
+========================================
+FILE: UN Regulation No. 148 - Amend.3.docx
+========================================
+Found 0 matches for 'apparent surface':
+Found 0 matches for '12.5':
+Found 0 matches for '25':
+
+========================================
+FILE: UN Regulation No. 148 - Amend.4.docx
+========================================
+Found 0 matches for 'apparent surface':
+Found 0 matches for '12.5':
+Found 2 matches for '25':
+--- MATCH 25 AT 41 ---
+E /ECE/TRANS/505/Rev.3/Add.147 /Amend. 4 25 November  2022 Agreement Concerning the   Adoption of Harmonized Technical United Nations Regulations for Wheeled Vehicles, Equipment and Parts which can be Fitted and/or be Used on Wheeled Vehicles and the Conditions for Reciprocal Recognition of
+--- MATCH 25 AT 2627 ---
+at least 340 x 240 mm (Figure A3-IX). Category 1b: illuminated area of at least 520 x 120 mm (Figure A3-X). Category 1c: illuminated area of at least 255 x 165 mm, for use on agricultural or forestry tractors, (Figure A3-XI). Category 2a: illuminated area of at least 330 x 165 mm (Figure A3-XII). Category 2b: illuminated area of at least 440 x 220 mm (Figure A3-XIII). Category 1: illuminated area 
+
+========================================
+FILE: UN Regulation No. 148 - Amend.5.docx
+========================================
+Found 17 matches for 'apparent surface':
+--- MATCH AT 6360 ---
+ tests (horizontal angle H = 0°, vertical angle V = 0°); and the point to be taken as the centre of reference during the  tests; (c) The limit of the apparent surface of the function(s ); (d) The space reserved and the arrangement intended for the approval marking or the “Unique Identifier ”; (e) In case of replaceable source module(s), the module(s) and the space reserved for the specific identif
+--- MATCH AT 28077 ---
+generator(s). 4.5.5. On request of the applicant, the internal structure of the optical components and/or the texture of the outer lens inside of the apparent surface of a lamp (function) may incorporate only one manufacturer logo build by transparent or non-transparent components provided that all requirements for the specific function of this Regulation are fulfilled and in addition the followin
+--- MATCH AT 38135 ---
+at requirement is met in a direction deviating by not more than one-quarter of a degree from the direction of observation. 4.8.1.9. The limits of the apparent surface in the direction of the reference axis of a light-signalling lamp shall be determined. However, in the case of category 5 and 6 direction indicators, the limits of the light emitting surface shall be determined. This requirement shal
+--- MATCH AT 47424 ---
+A3-I Table A2-1 5∙10 -2 5. 1.2. Minimum luminous intensity within the angles of geometric visibility: See  Table 3. 5.1.3. Minimum or maximum area of apparent surface : No requirements. 5.1.4. Measurement: For end-outline marker lamps (AM) the standard light distribution may be considered at the request of the applicant from VV line to the outboard only. 5.1.5. Additional specific requirements: No
+--- MATCH AT 49045 ---
+re A3-I Table A2-1 5∙10 -2 5.2.2. Minimum luminous intensity within the angles of geometric visibility: See Table 4 5.2.3. Minimum or maximum area of apparent surface: No requirements. 5.2.4. Measurement: For end-outline marker lamps (RM1, RM2) the standard light distribution may be considered at the request of the applicant from VV line to the outboard only. 5.2.5. Additional specific requirement
+--- MATCH AT 50377 ---
+re A3-I Table A2-1 5∙10 -2 5.3.2. Minimum luminous intensity within the angles of geometric visibility See Table 5. 5.3.3. Minimum or maximum area of apparent surface: No requirements. 5.3.4. Measurement: For front and rear parking lamps the standard light distribution may be considered at the request of the applicant from VV line to the outboard only. 5.3.5. Additional specific requirements: No. 
+--- MATCH AT 51581 ---
+ A3-II Table A2-1 1.0∙10 0 5.4.2. Minimum luminous intensity within the angles of geometric visibility See Table 6. 5.4.3. Minimum or maximum area of apparent surface: The area of the apparent surface in the direction of the axis of reference of the daytime running lamp shall be not less than 25 cm 2  and not more than 200 cm 2 . When a daytime running lamp is to be type approved as a lamp marked 
+--- MATCH AT 51615 ---
+Minimum luminous intensity within the angles of geometric visibility See Table 6. 5.4.3. Minimum or maximum area of apparent surface: The area of the apparent surface in the direction of the axis of reference of the daytime running lamp shall be not less than 25 cm 2  and not more than 200 cm 2 . When a daytime running lamp is to be type approved as a lamp marked “D”, the apparent surface of such 
+--- MATCH AT 51840 ---
+unning lamp shall be not less than 25 cm 2  and not more than 200 cm 2 . When a daytime running lamp is to be type approved as a lamp marked “D”, the apparent surface of such a lamp shall not be more than 100 cm 2 . 5.4.4. Measurement: No additional requirements. 5.4.5. Additional specific requirements: The daytime running lamp shall be subjected to the heat resistance test specified in Annex 6. 5
+--- MATCH AT 53335 ---
+e A3-I Table A2-1 3 ∙10 -1 5.5.2. Minimum luminous intensity within the angles of geometric visibility See Table 7. 5.5.3. Minimum or maximum area of apparent surface: No requirements. 5.5. 4. Measurement: 5.5.4.1. In the case of a category S3 or S4 stop lamp, which is intended to be mounted inside the vehicle, the colorimetric characteristics shall be verified with the worst-case combination(s) o
+--- MATCH AT 55809 ---
+e A3-I Table A2-1 3 ∙10 -1 5.6.2. Minimum luminous intensity within the angles of geometric visibility See Table 8. 5.6.3. Minimum or maximum area of apparent surface: No requirements. 5.6.4. Measurement: In general, the intensities shall be measured with the light source(s) continuously alight. However, depending on the construction of the lamp, for example, the use of light-emitting diodes (LED)
+--- MATCH AT 59632 ---
+A3-VIII Table A2-3 6∙10 -1 5.7.2. Minimum luminous intensity within the angles of geometric visibility See Table 9. 5.7.3. Minimum or maximum area of apparent surface: No requirements. 5.7.4. Measurement: For SM1 and SM2 category of side marker lamps it may be sufficient to check only five points selected by the Type Approval Authority. 5.7.5. Additional specific requirements: No. 5.7.6. Failure p
+--- MATCH AT 61365 ---
+ Figure A3-V N.A. N.A. 5.8.2. Minimum luminous intensity within the angles of geometric visibility No requirements. 5.8.3. Minimum or maximum area of apparent surface: No requirements. 5.8.4. Measurement: No additional requirements. 5.8.5. Additional specific requirements: No. 5.8.6. Failure provisions: See paragraph 4.6. 5.8.7. Colour: The colour of light emitted shall be white. 5.9. Rear fog lam
+--- MATCH AT 62367 ---
+Figure A3-VI N.A. N.A. 5.9.2. Minimum luminous intensity within the angles of geometric visibility No requirements. 5.9.3. Minimum or maximum area of apparent surface: The area of the apparent surface in the direction of the reference axis shall not  exceed 140 cm 2 . 5.9.4. Measurement: No additional requirements. 5.9.5. Additional specific requirements: The rear fog lamp shall be subjected to th
+--- MATCH AT 62401 ---
+mum luminous intensity within the angles of geometric visibility No requirements. 5.9.3. Minimum or maximum area of apparent surface: The area of the apparent surface in the direction of the reference axis shall not  exceed 140 cm 2 . 5.9.4. Measurement: No additional requirements. 5.9.5. Additional specific requirements: The rear fog lamp shall be subjected to the  heat resistance  test specified
+--- MATCH AT 63789 ---
+ne of the vehicle. 5.10.2. Minimum luminous intensity within the angles of geometric visibility No  requirements . 5.10.3. Minimum or maximum area of apparent surface: No  requirements . 5.10.4. Measurement: The  measurement  distance shall be 3.0 m minimum. 5.10.5. Additional specific requirements: No. 5.10.6. Failure provisions: See paragraph 4.6. 5.10.7. Colour: The  colour  of light emitted sh
+--- MATCH AT 65526 ---
+ mentioned above, shall not exceed 2 x Bo/cm, Bo being the minimum luminance measured at the various points, i.e.: 5.11.3. Minimum or maximum area of apparent surface: Not applicable. 5.11.4. Measurement: The luminance measurements shall be made on a diffuse colourless surface with known diffuse reflection factor. The diffuse colourless surface shall have the dimensions of the registration plate o
+Found 0 matches for '12.5':
+Found 7 matches for '25':
+--- MATCH 25 AT 51725 ---
+ea of apparent surface: The area of the apparent surface in the direction of the axis of reference of the daytime running lamp shall be not less than 25 cm 2  and not more than 200 cm 2 . When a daytime running lamp is to be type approved as a lamp marked “D”, the apparent surface of such a lamp shall not be more than 100 cm 2 . 5.4.4. Measurement: No additional requirements. 5.4.5. Additional spe
+--- MATCH 25 AT 64543 ---
+east 340 x 240 mm (Figure A3-IX). - Category 1b: illuminated area of at least 520 x 120 mm (Figure A3-X). - Category 1c: illuminated area of at least 255 x 165 mm, for use on agricultural or forestry tractors, (Figure A3-XI). - Category 2a: illuminated area of at least 330 x 165 mm (Figure A3-XII). - Category 2b:  illuminated area of at least 440 x 220 mm (Figure A3-XIII). - Category 1: illuminate
+--- MATCH 25 AT 66295 ---
+urless surface with the tolerance of 5° in each direction at the points shown in paragraph 3. of Annex 3, each point representing a circular area of  25 mm in diameter. The measured luminance shall be corrected for the diffuse reflection factor 1.0. 5.11.5. Additional specific requirements: 5.11.5.1. The devices for the illumination of rear-registration plates of categories 1a, 1b, 1c, 2a and 2b s
+--- MATCH 25 AT 87254 ---
+-  wide plate (520 x 120 mm) Figure A3-X Measuring points for plate size 520 x 120 mm 3.3. Category 1c - plate for agricultural or forestry tractors (255 x 165 mm) Figure A3-XI Measuring points for plate size 255 x 165 mm 3.4. Category 2a – small plate (330 x 165 mm) Figure A3-XII Measuring points for plate size 330 x 165 mm 3.5. Category 2b – wide plate (440 x 220 mm) Figure A3-XIII Measuring poi
+--- MATCH 25 AT 87313 ---
+or plate size 520 x 120 mm 3.3. Category 1c - plate for agricultural or forestry tractors (255 x 165 mm) Figure A3-XI Measuring points for plate size 255 x 165 mm 3.4. Category 2a – small plate (330 x 165 mm) Figure A3-XII Measuring points for plate size 330 x 165 mm 3.5. Category 2b – wide plate (440 x 220 mm) Figure A3-XIII Measuring points for plate size 440 x 220 mm Note :  In the case of devi
+--- MATCH 25 AT 101205 ---
+ll listed different functions. 4. Identification  code of light source modules Figure A7-V  -  Marking example 5 Light source module marking MD E3 17325 The light source module bearing the identification code shown above has been approved together with a lamp approved in Italy (E3) under approval number 17325. Annex  8 Testing  procedures with respect to light sources 1. General test requirements 
+--- MATCH 25 AT 101363 ---
+ight source module bearing the identification code shown above has been approved together with a lamp approved in Italy (E3) under approval number 17325. Annex  8 Testing  procedures with respect to light sources 1. General test requirements 1.1. For lamps (functions) using  incandescent   technology only, the luminous intensities measured after photometric stability shall comply with the minimum 
+
+========================================
+FILE: UN Regulation No. 148 - Amend.6.docx
+========================================
+Found 0 matches for 'apparent surface':
+Found 0 matches for '12.5':
+Found 0 matches for '25':
+
+========================================
+FILE: UN Regulation No. 148 - Light Signalling Devices (LSD).docx
+========================================
+Found 4 matches for 'apparent surface':
+--- MATCH AT 6484 ---
+ tests (horizontal angle H = 0°, vertical angle V = 0°); and the point to be taken as the centre of reference during the tests;  (c) The limit of the apparent surface of the function(s); (d) The position and arrangement intended for the approval marking according to paragraph 3.3.2. or the “Unique Identifier”; (e) In case of light-emitting diode (LED) module(s) also the space reserved for the spec
+--- MATCH AT 36289 ---
+ the applicable functions. 4.7.4. The voltage to be applied to the lamp shall be noted in the communication form in Annex 1. 4.7.5. The limits of the apparent surface in the direction of the reference axis of a light-signalling lamp shall be determined. However, in the case of category 5 and 6 direction indicators, the limits of the light emitting surface shall be determined. This requirement shal
+--- MATCH AT 51999 ---
+e lamp is only for use on a vehicle fitted with an operating tell-tale. 5.4.5. The colour of the light emitted shall be white. 5.4.6. The area of the apparent surface in the direction of the axis of reference of the daytime running lamp shall be not less than 25 cm 2  and not more than 200 cm 2 . 5.4.7. The daytime running lamp shall be subjected to the heat resistance test specified in Annex 6. 5
+--- MATCH AT 64744 ---
+ystems depending only on daytime and night time conditions:  under night time conditions; (b) For other systems: under standard conditions 5.9.4. The apparent surface in the direction of the reference axis shall not exceed 140 cm 2 . 5.9.5. The colour of the light emitted shall be red.  5.9.6. The rear fog lamp shall be subjected to the test specified in Annex 6. 5.10. Technical requirements conce
+Found 0 matches for '12.5':
+Found 26 matches for '25':
+--- MATCH 25 AT 52109 ---
+ shall be white. 5.4.6. The area of the apparent surface in the direction of the axis of reference of the daytime running lamp shall be not less than 25 cm 2  and not more than 200 cm 2 . 5.4.7. The daytime running lamp shall be subjected to the heat resistance test specified in Annex 6. 5.5 technical requirements concerning stop lamps (symbols S1, S2, S3, S4, MS) 5.5.1. The light emitted by each 
+--- MATCH 25 AT 52728 ---
+ection when used as (values in cd) A single lamp A lamp marked "D" (paragraph 3.3.2.5.2.) S1 (steady) 60 260 130 S2 (variable) 60 730 365 S3 (steady) 25 110 55 S4 (variable) 25 160 80 MS (steady) 40 260 N.A. 5.5.2. Outside the reference axis the intensity of the light emitted by each lamp shall, in each direction corresponding to the points in the table of standard light distribution reproduced in
+--- MATCH 25 AT 52752 ---
+ues in cd) A single lamp A lamp marked "D" (paragraph 3.3.2.5.2.) S1 (steady) 60 260 130 S2 (variable) 60 730 365 S3 (steady) 25 110 55 S4 (variable) 25 160 80 MS (steady) 40 260 N.A. 5.5.2. Outside the reference axis the intensity of the light emitted by each lamp shall, in each direction corresponding to the points in the table of standard light distribution reproduced in paragraph 2. of Annex 3
+--- MATCH 25 AT 54670 ---
+d) Maximum luminous intensity in any direction  when used as (values in cd) A single lamp  A lamp marked “D” (paragraph 3.3.2.5.2.) 1 175 1000 500 1a 250 1200 600 1b 400 1200 600 2a (steady) 50 500 250 2b (variable) 50 1000 500 5 0.6 280 140 6 50 280 140 11 90 1000 N.A. 11a 175 1000 N.A. 11b 250 1200 N.A. 11c 400 1200 N.A. 12 50 500 N.A. 5.6.2. Outside the reference axis the intensity of the light
+--- MATCH 25 AT 54718 ---
+when used as (values in cd) A single lamp  A lamp marked “D” (paragraph 3.3.2.5.2.) 1 175 1000 500 1a 250 1200 600 1b 400 1200 600 2a (steady) 50 500 250 2b (variable) 50 1000 500 5 0.6 280 140 6 50 280 140 11 90 1000 N.A. 11a 175 1000 N.A. 11b 250 1200 N.A. 11c 400 1200 N.A. 12 50 500 N.A. 5.6.2. Outside the reference axis the intensity of the light emitted by each lamp shall, in each direction c
+--- MATCH 25 AT 54813 ---
+500 1a 250 1200 600 1b 400 1200 600 2a (steady) 50 500 250 2b (variable) 50 1000 500 5 0.6 280 140 6 50 280 140 11 90 1000 N.A. 11a 175 1000 N.A. 11b 250 1200 N.A. 11c 400 1200 N.A. 12 50 500 N.A. 5.6.2. Outside the reference axis the intensity of the light emitted by each lamp shall, in each direction corresponding to the points in the table of standard light distribution reproduced in: (a) Parag
+--- MATCH 25 AT 61168 ---
+ of reference 4.0 cd 0.6 cd Within the specified angular field, other than above 0.6 cd 0.6 cd Maximum intensity Within the specified angular field 1 25.0 cd 25.0 cd Angular field Horizontal  ±45 deg. ±30 deg. Vertical ±10 deg. ±10 deg. In addition, for red side marker lamp, in the angular field from 60° to 90° in horizontal direction and ±20° in vertical direction towards the front of the vehicle
+--- MATCH 25 AT 61176 ---
+rence 4.0 cd 0.6 cd Within the specified angular field, other than above 0.6 cd 0.6 cd Maximum intensity Within the specified angular field 1 25.0 cd 25.0 cd Angular field Horizontal  ±45 deg. ±30 deg. Vertical ±10 deg. ±10 deg. In addition, for red side marker lamp, in the angular field from 60° to 90° in horizontal direction and ±20° in vertical direction towards the front of the vehicle, the ma
+--- MATCH 25 AT 61458 ---
+ field from 60° to 90° in horizontal direction and ±20° in vertical direction towards the front of the vehicle, the maximum intensity is limited to 0.25 cd. 5.7.2. Outside the reference axis and within the angular fields defined in the diagrams in Part C of Annex 2, the intensity of the light emitted by each of the two side marker lamps supplied shall: (a) In each direction corresponding to the po
+--- MATCH 25 AT 63402 ---
+ exclusively in a pair of devices, the photometric intensity may be verified only up to an angle of 30° inwards where a photometric value of at least 25 cd shall be satisfied. This condition shall be clearly explained in the application for approval and relating documents (see paragraph 3.1.). Moreover, in the case where the type approval will be granted applying the condition above, a statement i
+--- MATCH 25 AT 67002 ---
+ourless surface with the tolerance of 5° in each direction at the points shown in paragraph 3. of Annex 3, each point representing a circular area of 25 mm in diameter. The measured luminance shall be corrected for the diffuse reflection factor 1.0. 5.11.3. Photometric characteristics At each of the points of measurement shown in paragraph 3. of Annex 3, the luminance B shall be at least  (a) For 
+--- MATCH 25 AT 80626 ---
+Light distribution for daytime running lamps 0° 5° 10° 15° 20° 5° 10° 15° 20° H V 10° 5° 0° 5° 100 70 70 90 90 70 70 20 20 20 20 20 20 10 10 10 10 20 25 25 2.3. Standard light distribution for category S3 and S4 stop lamps The values shown give, for the various directions of measurement, the minimum intensities as a percentage of the minimum intensities required (see Table 7). Figure A3-III  Light
+--- MATCH 25 AT 80629 ---
+ht distribution for daytime running lamps 0° 5° 10° 15° 20° 5° 10° 15° 20° H V 10° 5° 0° 5° 100 70 70 90 90 70 70 20 20 20 20 20 20 10 10 10 10 20 25 25 2.3. Standard light distribution for category S3 and S4 stop lamps The values shown give, for the various directions of measurement, the minimum intensities as a percentage of the minimum intensities required (see Table 7). Figure A3-III  Light di
+--- MATCH 25 AT 81837 ---
+es of the minimum intensities of the light emitted. Figure A3-V Light distribution for reversing lamps 0° 10° 30° 45° 10° 30° 45° H V 10° 5° 0° 5° 80 25 10 80 15 50 20 50 10 50 20 50 10 25 25 15 15 15 15 15 15 25 25 The values inside figure A3-V are in cd. The directions H = O° and V = O° correspond to the axis of reference.  On the vehicle they are horizontal, parallel to the median longitudinal 
+--- MATCH 25 AT 81873 ---
+ light emitted. Figure A3-V Light distribution for reversing lamps 0° 10° 30° 45° 10° 30° 45° H V 10° 5° 0° 5° 80 25 10 80 15 50 20 50 10 50 20 50 10 25 25 15 15 15 15 15 15 25 25 The values inside figure A3-V are in cd. The directions H = O° and V = O° correspond to the axis of reference.  On the vehicle they are horizontal, parallel to the median longitudinal plane of the vehicle and oriented in
+--- MATCH 25 AT 81876 ---
+ght emitted. Figure A3-V Light distribution for reversing lamps 0° 10° 30° 45° 10° 30° 45° H V 10° 5° 0° 5° 80 25 10 80 15 50 20 50 10 50 20 50 10 25 25 15 15 15 15 15 15 25 25 The values inside figure A3-V are in cd. The directions H = O° and V = O° correspond to the axis of reference.  On the vehicle they are horizontal, parallel to the median longitudinal plane of the vehicle and oriented in th
+--- MATCH 25 AT 81897 ---
+3-V Light distribution for reversing lamps 0° 10° 30° 45° 10° 30° 45° H V 10° 5° 0° 5° 80 25 10 80 15 50 20 50 10 50 20 50 10 25 25 15 15 15 15 15 15 25 25 The values inside figure A3-V are in cd. The directions H = O° and V = O° correspond to the axis of reference.  On the vehicle they are horizontal, parallel to the median longitudinal plane of the vehicle and oriented in the required direction 
+--- MATCH 25 AT 81900 ---
+ Light distribution for reversing lamps 0° 10° 30° 45° 10° 30° 45° H V 10° 5° 0° 5° 80 25 10 80 15 50 20 50 10 50 20 50 10 25 25 15 15 15 15 15 15 25 25 The values inside figure A3-V are in cd. The directions H = O° and V = O° correspond to the axis of reference.  On the vehicle they are horizontal, parallel to the median longitudinal plane of the vehicle and oriented in the required direction of 
+--- MATCH 25 AT 83083 ---
+° H V 10° 5° 0° 5° 10° 10° 40° 10° 45° Minimum values: 0.6 cd at any point other than the reference axis, at which it shall be 4.0 cd Maximum values: 25.0 cd at any point 2.7.2. SM2 category of side marker lamps Figure A3-VIII Light distribution for side marker lamps SM2 0° 5° 20° 30° 5° 20° 30° H V 10° 5° 0° 5° 10° 10° 10° Minimum values: 0.6 cd at any point Maximum values: 25.0 cd at any point 2
+--- MATCH 25 AT 83311 ---
+ight distribution for side marker lamps SM2 0° 5° 20° 30° 5° 20° 30° H V 10° 5° 0° 5° 10° 10° 10° Minimum values: 0.6 cd at any point Maximum values: 25.0 cd at any point 2.7.3. SM1 and SM2 category of side marker lamps For SM1 and SM2 category of side marker lamps it may be sufficient to check only five points selected by the Type Approval Authority. 3. Measurement points for rear-registration pl
+--- MATCH 25 AT 83746 ---
+ph 5.11.3.) 3.1. Category 1a - tall plate (340 x 240 mm) Figure A3-IX  Measuring points for plate size 340 x 240 mm a b b a a a c d c a = b = c = d = 25 mm 95 mm 100 mm 90 mm 3.2. Category 1b - wide plate (520 x 120 mm) Figure A3-X Measuring points for plate size 520 x 120 mm a b a a e c c a = b = c = e = 25 mm 95 mm 100 mm 70 mm a c c 3.3.  Category 1c - plate for agricultural or forestry tractor
+--- MATCH 25 AT 83903 ---
+5 mm 100 mm 90 mm 3.2. Category 1b - wide plate (520 x 120 mm) Figure A3-X Measuring points for plate size 520 x 120 mm a b a a e c c a = b = c = e = 25 mm 95 mm 100 mm 70 mm a c c 3.3.  Category 1c - plate for agricultural or forestry tractors (255 x 165 mm) Figure A3-XI Measuring points for plate size 255 x 165 mm 3.4.  Category 2a – small plate (330 x 165 mm) Figure A3-XII  Measuring points for
+--- MATCH 25 AT 83999 ---
+plate size 520 x 120 mm a b a a e c c a = b = c = e = 25 mm 95 mm 100 mm 70 mm a c c 3.3.  Category 1c - plate for agricultural or forestry tractors (255 x 165 mm) Figure A3-XI Measuring points for plate size 255 x 165 mm 3.4.  Category 2a – small plate (330 x 165 mm) Figure A3-XII  Measuring points for plate size 330 x 165 mm 3.5.  Category 2b – wide plate (440 x 220 mm) Figure A3-XIII  Measuring
+--- MATCH 25 AT 84058 ---
+ 95 mm 100 mm 70 mm a c c 3.3.  Category 1c - plate for agricultural or forestry tractors (255 x 165 mm) Figure A3-XI Measuring points for plate size 255 x 165 mm 3.4.  Category 2a – small plate (330 x 165 mm) Figure A3-XII  Measuring points for plate size 330 x 165 mm 3.5.  Category 2b – wide plate (440 x 220 mm) Figure A3-XIII  Measuring points for plate size 440 x 220 mm Note :  In the case of 
+--- MATCH 25 AT 99009 ---
+f the lamp shall bear the only valid approval mark. 4.  Identification code of light source modules  Figure A7-V Light source module marking MD E3 17325 The light source module bearing the identification code shown above has been approved together with a lamp approved in Italy (E3) under approval number 17325.
+--- MATCH 25 AT 99167 ---
+ight source module bearing the identification code shown above has been approved together with a lamp approved in Italy (E3) under approval number 17325.
+
+========================================
+FILE: UN Regulation No. 148 - Rev.1- Amend.1.docx
+========================================
+Found 0 matches for 'apparent surface':
+Found 0 matches for '12.5':
+Found 0 matches for '25':
+
+========================================
+FILE: UN Regulation No. 148 - Rev.1- Amend.2.docx
+========================================
+Found 0 matches for 'apparent surface':
+Found 0 matches for '12.5':
+Found 0 matches for '25':
+
+========================================
+FILE: UN Regulation No. 48 - Rev.13 - Amend.1.docx
+========================================
+Found 6 matches for 'apparent surface':
+--- MATCH AT 2243 ---
+ Paragraph 2.9.2.2.,  delete. Paragraph 5.7.2.1.,  amend to read: "5.7.2.1.  Single lamps as defined in paragraph  2. 4.11.1. , subparagraph (a), the apparent surface of which is composed of two or more distinct parts, shall be installed in such a way that: (a) Either the total area of the projection of the distinct parts  of the apparent surface in the direction of the reference axis  on a plane 
+--- MATCH AT 2425 ---
+posed of two or more distinct parts, shall be installed in such a way that: (a) Either the total area of the projection of the distinct parts  of the apparent surface in the direction of the reference axis  on a plane tangent to the exterior surface of the outer lens and perpendicular to the reference axis shall occupy not less than 60 per cent of the smallest quadrilateral circumscribing the proj
+--- MATCH AT 2696 ---
+ perpendicular to the reference axis shall occupy not less than 60 per cent of the smallest quadrilateral circumscribing the projection  of the said  apparent  surface in the direction of the reference axis ; or (b) The minimum distance between the facing edges   of two adjacent/tangential distinct parts  of the apparent surface in the direction of the reference axis  shall not exceed 75 mm when m
+--- MATCH AT 2860 ---
+ace in the direction of the reference axis ; or (b) The minimum distance between the facing edges   of two adjacent/tangential distinct parts  of the apparent surface in the direction of the reference axis  shall not exceed 75 mm when measured perpendicularly to the reference axis. These requirements shall not apply to a single retro-reflector ." Paragraphs 5.32. – 5.34.,  renumber and amend to re
+--- MATCH AT 3409 ---
+a) The light intensity in any direction does not exceed 0.5  cd;   (b) The  colour  of the light emitted is white, red or  amber; (c) The area of the apparent surface is not larger than  20  cm 2 . Up to two external status indicators for Vehicle Alarm System (VAS), Alarm System (AS) and immobiliser are allowed on a vehicle provided that the apparent surface does not exceed  10 c m 2  per indicato
+--- MATCH AT 3603 ---
+2 . Up to two external status indicators for Vehicle Alarm System (VAS), Alarm System (AS) and immobiliser are allowed on a vehicle provided that the apparent surface does not exceed  10 c m 2  per indicator. 5.33.   A device type approved according to any preceding series of amendments to UN Regulations Nos. 148 and/or 149 and/or 150 is deemed equivalent to one approved according to the latest se
+Found 0 matches for '12.5':
+Found 2 matches for '25':
+--- MATCH 25 AT 4976 ---
+3 G (off-road) vehicles 10  the maximum height may be increased to 1,500 mm." Paragraph 6.4.4.2.,  amend to read: "6.4.4.2.  In height: not less than 250 mm and not more than 1,200 mm above the ground.  For category N 2 G, N 3 G, M 2 G, M 3 G (off-road) vehicles the maximum  height may be increased to 1,400 mm." Paragraph 6.8.2.,  amend to read: "6.8.2. Number Such that the device illuminates the 
+--- MATCH 25 AT 6453 ---
+ration plate according to the type-approval documentation of the device." Paragraph 6.11.4.2.,  amend to read: "6.11.4.2.   In height:  not less than 250 mm nor more than 1,000 mm above the ground. For rear fog lamps grouped with any rear lamp the maximum height may be increased to 1,200 mm. For categories N 2 G, N 3 G, M 2 G, M 3 G (off-road) vehicles the maximum height may be increased to 1,400 
+
+========================================
+FILE: UN Regulation No. 48 - Rev.13 - Amend.2.docx
+========================================
+Found 3 matches for 'apparent surface':
+--- MATCH AT 1046 ---
+S/WP.29/20 2 1 / 94 .   _________ UNITED NATIONS Paragraph 3.2.5.,  amend to read : " 3.2.5. A statement of the method used for the definition of the apparent surface (see  paragraph 2.10.4.). The method used to determine the apparent surface shall be declared for each lamp,  as defined in paragraph 2.5 . ,  and recorded in item 10.2. of Annex 1. " P aragraph  6.18.4.3 .,  amend to read: " 6.18.4.
+--- MATCH AT 1122 ---
+ read : " 3.2.5. A statement of the method used for the definition of the apparent surface (see  paragraph 2.10.4.). The method used to determine the apparent surface shall be declared for each lamp,  as defined in paragraph 2.5 . ,  and recorded in item 10.2. of Annex 1. " P aragraph  6.18.4.3 .,  amend to read: " 6.18.4.3.  In length: at least one side-marker lamp shall be fitted to the middle t
+--- MATCH AT 2344 ---
+ front and one within the last third of the vehicle length. " Annex 1, item   10.2 . ,  amend to read: " 10. 2. Method used for the definition of the apparent surface: (a) Boundary of the illuminating surface  used for the following lamp(s): ………………………………………………………………………………… ………………………………………………………………………………… ………………………………………………………………………………… (b) Light-emitting surface   used for the following lamp(s): …
+Found 0 matches for '12.5':
+Found 0 matches for '25':
+
+========================================
+FILE: UN Regulation No. 48 - Rev.13 - Amend.3.docx
+========================================
+Found 8 matches for 'apparent surface':
+--- MATCH AT 1096 ---
+E/TRANS/WP.29/11 61 ) . _________ UNITED NATIONS Paragraph 3.2.5.,  amend to read : " 3.2.5. A statement of the method used for the definition of the apparent surface (see paragraph 2.10.4.). The method used to determine the apparent surface shall be declared for each lamp,  as defined in paragraph 2.5 . ,  and recorded in item 10.2. of Annex 1. " Paragraph 4.2. , amend to read: " 4.2. An approval
+--- MATCH AT 1171 ---
+o read : " 3.2.5. A statement of the method used for the definition of the apparent surface (see paragraph 2.10.4.). The method used to determine the apparent surface shall be declared for each lamp,  as defined in paragraph 2.5 . ,  and recorded in item 10.2. of Annex 1. " Paragraph 4.2. , amend to read: " 4.2. An approval number shall be assigned to each type approved. Its first two digits (at  
+--- MATCH AT 10957 ---
+.19.7.6. If a front direction-indicator lamp is not reciprocally incorporated   with a daytime running lamp and the distance between the edges of the apparent surfaces in the direction of the reference axis of the front direction-indicator lamp and the daytime running lamp is equal or less than 40 mm, the electrical connections of the daytime running lamp shall be such that ,  either (a) T he dayt
+--- MATCH AT 12508 ---
+ " 6.19.7. 7. If  a front direction-indicator lamp is reciprocally incorporated with a daytime running lamp, either with: 6.19.7.7.1. T otally common apparent surfaces, the electrical connections shall be such that the daytime running lamp function on the relevant side of the vehicle is switched OFF during the entire period (both ON and OFF cycle) of operation of the front direction-indicator lamp
+--- MATCH AT 12794 ---
+s switched OFF during the entire period (both ON and OFF cycle) of operation of the front direction-indicator lamp or 6.19.7.7. 2. P artially  common apparent surfaces, the electrical connections of the daytime running lamp shall be such that, either: (a) T he whole daytime running lamp function on the relevant side of the vehicle is switched OFF during the entire period (both ON and OFF cycle) of
+--- MATCH AT 13262 ---
+ory 1a or 1b front direction-indicator lamp the daytime running lamp function on the relevant side of the vehicle is switched OFF for the part of the apparent surface in common with the one of the front direction indicator lamp and the luminous intensity of the part of the apparent surface not in common is reduced during the entire period (both ON and OFF cycle) of operation of the front direction
+--- MATCH AT 13386 ---
+d OFF for the part of the apparent surface in common with the one of the front direction indicator lamp and the luminous intensity of the part of the apparent surface not in common is reduced during the entire period (both ON and OFF cycle) of operation of the front direction-indicator lamp, to attain not more than 140 cd within the angles of geometric visibility. The conformity to this requiremen
+--- MATCH AT 15818 ---
+ls to any preceding series of amendments to this Regulation. " Annex 1, item   10.2 . ,  amend to read: " 10.2. Method used for the definition of the apparent surface : (a) Boundary of the illuminating  surface  used for the following lamp(s): ………………………………………………………………………………… ………………………………………………………………………………… ………………………………………………………………………………… (b) Light-emitting surface   used for the following lamp(s):
+Found 0 matches for '12.5':
+Found 0 matches for '25':
+
+========================================
+FILE: UN Regulation No. 48 - Rev.13 - Amend.4.docx
+========================================
+Found 2 matches for 'apparent surface':
+--- MATCH AT 3152 ---
+bility of red light towards the front of a vehicle, with the exception of a red rearmost side-marker lamp, there shall be no direct visibility of the apparent surface of a red lamp if viewed by an observer moving within Zone 1 in a transverse plane situated 25 m in front of the vehicle (see Annex 4);  5.10.4.2. For the visibility of white light towards the rear of a vehicle, with the exception of 
+--- MATCH AT 3500 ---
+owards the rear of a vehicle, with the exception of reversing lamps and white side  conspicuity  markings, there shall be no direct visibility of the apparent surface of a white lamp if viewed by an observer moving within Zone 2 in a transverse plane situated 25 m behind the vehicle (see Annex 4); 5.10.4.3. In case of doubt, the requirement above shall be deemed fulfilled if the luminous intensity
+Found 0 matches for '12.5':
+Found 5 matches for '25':
+--- MATCH 25 AT 3260 ---
+here shall be no direct visibility of the apparent surface of a red lamp if viewed by an observer moving within Zone 1 in a transverse plane situated 25 m in front of the vehicle (see Annex 4);  5.10.4.2. For the visibility of white light towards the rear of a vehicle, with the exception of reversing lamps and white side  conspicuity  markings, there shall be no direct visibility of the apparent s
+--- MATCH 25 AT 3610 ---
+re shall be no direct visibility of the apparent surface of a white lamp if viewed by an observer moving within Zone 2 in a transverse plane situated 25 m behind the vehicle (see Annex 4); 5.10.4.3. In case of doubt, the requirement above shall be deemed fulfilled if the luminous intensity of the red light emitted to the front and/or the white light emitted to the rear, as verified during type app
+--- MATCH 25 AT 3895 ---
+nsity of the red light emitted to the front and/or the white light emitted to the rear, as verified during type approval of the lamps, is less than 0.25 cd per lamp taking into account the influence of the vehicle body if applicable. " Add a new paragraph 5.30.1.   to read: "5.30.1. Especially in case of light- signalling  lamps incorporating a manufacturer logo, the lamp shall be type approved ac
+--- MATCH 25 AT 10467 ---
+the outer edges of the  Driver Assistance Projection  with respect to the trajectory of the centre of gravity of the vehicle shall not be more than 1,250 mm. This shall be demonstrated by the manufacturer by calculation  or by other means accepted by the Type Approval Authority. 6.22.9.3.2.2. Driver Assistance Projection shall not interfere with information displayed by the Field of Vision Assista
+--- MATCH 25 AT 10753 ---
+.3.2.2. Driver Assistance Projection shall not interfere with information displayed by the Field of Vision Assistant as defined in UN Regulation No. 125. 6.22.9.3.2.3. No flashing  n or  transforming of driver assistance projections is  permitted, unless expressly allowed for the use cases described under the conditions in Annex 16.   6.22.9.3.2.4.  Driver Assistance Projection shall not operate w
+
+========================================
+FILE: UN Regulation No. 48 - Rev.13 - Amend.5.docx
+========================================
+Found 0 matches for 'apparent surface':
+Found 0 matches for '12.5':
+Found 0 matches for '25':
+
+========================================
+FILE: UN Regulation No. 48 - Rev.13 - Amend.6.docx
+========================================
+Found 1 matches for 'apparent surface':
+--- MATCH AT 2345 ---
+ing all the position, geometric visibility ,  colorimetric   and photometric requirements for the above indicated lamps shall be switched ON when the apparent surface in the direction of the reference axis of these lamps is more than 50 per cent hidden by the movable component; or " Paragraph 6.1.8. , for "Circuit-closed" read "Closed-circuit".   Paragraph 6.1.8.1.,  for 6.1.7.1. read 6.1.7.2. Par
+Found 0 matches for '12.5':
+Found 0 matches for '25':
+
+========================================
+FILE: UN Regulation No. 48 - Rev.13 - Amend.7.docx
+========================================
+Found 0 matches for 'apparent surface':
+Found 0 matches for '12.5':
+Found 3 matches for '25':
+--- MATCH 25 AT 1347 ---
+y of the red light emitted to the front and/or the white light emitted to the rear, as verified during type approval of the lamps, is not more than 0.25 cd per lamp taking into account the influence of the vehicle body if applicable . " Add a new p aragraph   5.35.3 ,  to read: “5.35.3. Neither flashing nor transforming of  Driver Assistance Projection  is  permitted, unless expressly allowed for 
+--- MATCH 25 AT 2254 ---
+.8. The Driver Assistance Projection shall not interfere with information displayed by the Field of Vision Assistant as defined in UN Regulation No. 125. 5.35.9. The Driver Assistance Projection shall not be switched ON when the windshield wiper is switched ON and its continuous operation has occurred for a period of at least two minutes. 5.35.10. Except for the wrong way warning and risk of colli
+--- MATCH 25 AT 2964 ---
+stance Projection with respect to the longitudinal median plane or to the trajectory of the centre of gravity of the vehicle shall not be more than 1,250 mm. This shall be demonstrated by the manufacturer by calculation or by other means accepted by the Type Approval Authority.” Paragraph  6.22.7.1.2 . , first indent,  for  6.22.9.3.  read   6.22.9.4.   Add  a new  paragraph 6.22.9.2.   to read: “
+
+========================================
+FILE: UN Regulation No. 48 - Rev.13 - Amend.8.docx
+========================================
+Found 0 matches for 'apparent surface':
+Found 0 matches for '12.5':
+Found 0 matches for '25':
+
+========================================
+FILE: UN Regulation No. 48 - Rev.13 - Installation of lighting and light-signalling devices - 07 series.docx
+========================================
+Found 105 matches for 'apparent surface':
+--- MATCH AT 4016 ---
+ rear, front and side of a vehicle 1 17 12 Test drive 1 19 13 Automatic switching conditions dipped-beam headlamps 12 1 14 Observing area towards the apparent surface of manoeuvring and courtesy lamps 1 22 15 Gonio(photo)meter system used for the photometric measurements as defined in  paragraph 2. 10.9.  of this Regulation 1 23 1. Scope This Regulation applies to vehicles of categories M, N, and 
+--- MATCH AT 11364 ---
+e when it is approved on condition that they satisfy the requirements of this Regulation. 2.4.2. " Independent lamps "  means devices having separate apparent surfaces in the direction of the reference axis,  separate light sources and separate lamp bodies.  2.4.3. " Grouped lamps "  means devices having separate apparent surfaces in the direction of the reference axis 2  and separate light source
+--- MATCH AT 11529 ---
+es in the direction of the reference axis,  separate light sources and separate lamp bodies.  2.4.3. " Grouped lamps "  means devices having separate apparent surfaces in the direction of the reference axis 2  and separate light sources, but a common lamp body.  2.4.4. " Combined lamps "  means devices having separate apparent surfaces in the direction of the reference axis 2 , but a common light 
+--- MATCH AT 11699 ---
+ the direction of the reference axis 2  and separate light sources, but a common lamp body.  2.4.4. " Combined lamps "  means devices having separate apparent surfaces in the direction of the reference axis 2 , but a common light source and a common lamp body.  2.4.5. " Reciprocally incorporated lamps "  means devices having separate light sources or a single light source operating under different
+--- MATCH AT 12049 ---
+or a single light source operating under different conditions (for example, optical, mechanical, electrical differences), totally or partially common apparent surfaces in the direction of the reference axis 2  and a common lamp body. 2.4.6. " Single function lamp "  means a part of a device which performs a single lighting or light signalling  function. 2.4.7. " Concealable lamp "  means a lamp ca
+--- MATCH AT 12749 ---
+ be inserted within the bodywork. 2.4.8. " Distance between two lamps "  which face in the same direction means the shortest distance between the two apparent surfaces in the direction of the reference axis. Where the distance between the lamps clearly meets the requirements of the Regulation, the exact edges of apparent surfaces need not be determined. 2.4.9. " Optional lamp "  means a lamp, the 
+--- MATCH AT 12913 ---
+ces in the direction of the reference axis. Where the distance between the lamps clearly meets the requirements of the Regulation, the exact edges of apparent surfaces need not be determined. 2.4.9. " Optional lamp "  means a lamp, the installation of which is left to the discretion of the manufacturer. 2.4.10. " Pair "  means the set of lamps of the same function on the left- and right-hand side 
+--- MATCH AT 13558 ---
+1. " A single lamp "  means: (a) A device or part of a device having one lighting or light- signalling  function, one or more light source(s) and one apparent surface in the direction of the reference axis, which may be a continuous surface or composed of two or more distinct parts; or (b) Any assembly of two lamps marked  " D " , whether identical or not, having the same function; or (c) Any asse
+--- MATCH AT 14634 ---
+rked  " Y " "  means a device operating as part of an interdependent lamp system. Interdependent lamps operate together when activated, have separate apparent surfaces in the direction of the reference axis and separate lamp bodies, and may have separate light source(s). 2.4.13. " Lamps marked  " D " "  means independent lamps, approved as separate devices in such a way that they are allowed to be
+--- MATCH AT 37742 ---
+the purposes of determining the lower, upper and lateral edges of the device, only horizontal and vertical planes shall be considered. 2.10.4. The  " apparent surface "  for a defined direction of observation means, at the request of the manufacturer or his duly accredited representative, the orthogonal projection of: Either the boundary of the illuminating surface projected on the exterior surfac
+--- MATCH AT 38131 ---
+rior surface of the lens; Or the light-emitting surface; Only in the case of a light- signalling  device producing variable luminous intensities, its apparent surface that may be variable as specified in paragraph 2.9.3. shall be considered under all conditions permitted by the variable intensity control, if applicable. In a plane perpendicular to the direction of observation and tangential to the
+--- MATCH AT 38457 ---
+ plane perpendicular to the direction of observation and tangential to the most exterior point of the lens.  Different examples of the application of apparent surface can be found in Annex 3 to this Regulation. 2.10.5. " Axis of reference "  (or  " reference axis " ) means the characteristic axis of the lamp determined by the manufacturer (of the lamp) for use as the direction of reference (H = 0°
+--- MATCH AT 39266 ---
+ufacturer of the lamp. 2.10.7. " Angles of geometric visibility "  means the angles which determine the field of the minimum solid angle in which the apparent surface of the lamp is visible.  That field of the solid angle is determined by the segments of the sphere of which the  centre  coincides with the  centre  of reference of the lamp and the equator is parallel with the ground. These segments
+--- MATCH AT 49066 ---
+ is not necessary in the case of the rear registration plate lamp (paragraph 2.5.5.); 3.2.5. A statement of the method used for the definition of the apparent surface (see paragraph 2.10.4.); 3.2.6. Where an AFS is fitted on the vehicle, the applicant shall submit a detailed description providing the following information: 3.2.6.1. The  lighting functions and modes for which the AFS has been appro
+--- MATCH AT 57557 ---
+lamps are grouped, the following conditions shall be met: 5.7.1.3.1. Any  horizontal or vertical straight line passing through the projections of the apparent surfaces of these functions on a plane perpendicular to the reference  axis, shall not intersect more than two borderlines separating adjacent areas of different colour; 5.7.1.3.2. Their  apparent surfaces in the direction of the reference a
+--- MATCH AT 57754 ---
+ perpendicular to the reference  axis, shall not intersect more than two borderlines separating adjacent areas of different colour; 5.7.1.3.2. Their  apparent surfaces in the direction of the reference axis, based upon the areas bounded by the outline of their light emitting surfaces, do not overlap. 5.7.2. Single lamps 5.7.2.1. Single lamps as defined in paragraph 2. 4.11.1. , subparagraph (a), c
+--- MATCH AT 58156 ---
+posed of two or more distinct parts, shall be installed in such a way that: (a) E ither the total area of the projection of the distinct parts of the apparent surface in the direction of the reference axis on a plane tangent to the exterior surface of the outer lens and perpendicular to the reference axis shall occupy not less than 60 per cent of the smallest quadrilateral circumscribing the proje
+--- MATCH AT 58425 ---
+d perpendicular to the reference axis shall occupy not less than 60 per cent of the smallest quadrilateral circumscribing the projection  of the said apparent  surface in the direction of the reference axis; or (b) T he minimum distance between the facing edges   of two adjacent/tangential distinct parts of the apparent surface in the direction of the reference axis shall not exceed 75 mm when mea
+--- MATCH AT 58588 ---
+face in the direction of the reference axis; or (b) T he minimum distance between the facing edges   of two adjacent/tangential distinct parts of the apparent surface in the direction of the reference axis shall not exceed 75 mm when measured perpendicularly to the reference axis. Th ese  requirement s  shall not apply to a single retro-reflector. 5.7.2.2. Single lamps as defined in paragraph 2. 4
+--- MATCH AT 59017 ---
+ (c), composed of two lamps marked "D" or two independent retro - reflectors, shall be installed in such a way that: (a) Either the projection of the apparent surfaces in the direction of the reference axis of the two lamps or retro reflectors occupies not less than 60 per cent of the smallest quadrilateral circumscribing the projections of the said apparent surfaces in the direction of the refere
+--- MATCH AT 59219 ---
+axis of the two lamps or retro reflectors occupies not less than 60 per cent of the smallest quadrilateral circumscribing the projections of the said apparent surfaces in the direction of the reference axis; or (b) The minimum distance between the facing edges of the apparent surfaces in the direction of the reference axis of two lamps or two independent retro reflectors does not exceed 75 mm when
+--- MATCH AT 59337 ---
+ing the projections of the said apparent surfaces in the direction of the reference axis; or (b) The minimum distance between the facing edges of the apparent surfaces in the direction of the reference axis of two lamps or two independent retro reflectors does not exceed 75 mm when measured perpendicularly to the reference axis. 5.7.2.3. Single lamps as defined  in paragraph 2. 4.11.1. , subparagr
+--- MATCH AT 59701 ---
+ in paragraph 2. 4.11.1. , subparagraph  (d)  shall fulfil the requirements of paragraph 5.7.2.1. Where two or more lamps and/or two or more separate apparent surfaces are included into the same lamp body and/or have a common outer lens these shall not be considered as an interdependent lamp system. However, a lamp in the shape of a band or strip may be part of an interdependent lamp system.   5.7
+--- MATCH AT 60730 ---
+graph 5.7.2.1. 5.8.  The maximum height above the ground shall be measured from the highest point and the minimum height from the lowest point of the apparent surface in the direction of the reference axis. Where the (maximum and minimum) height above the ground clearly meets the requirements of the Regulation, the exact edges of any surface need not be determined. 5.8.1. For the purposes of reduc
+--- MATCH AT 61247 ---
+ from the H plane. 5.8.2. In the case of dipped-beam headlamp, the minimum height in relation to the ground is measured from the lowest point of the  apparent surface in the direction of the reference axis  independent of its utilization. 5.8.3.  The position, as regards width, will be determined from that edge of the apparent surface in the direction of the reference axis which is the furthest fr
+--- MATCH AT 61417 ---
+the direction of the reference axis  independent of its utilization. 5.8.3.  The position, as regards width, will be determined from that edge of the apparent surface in the direction of the reference axis which is the furthest from the median longitudinal plane of the vehicle when referred to the overall width, and from the inner edges of the apparent surface in the direction of the reference axi
+--- MATCH AT 61613 ---
+ence axis which is the furthest from the median longitudinal plane of the vehicle when referred to the overall width, and from the inner edges of the apparent surface in the direction of the reference axis when referred to the distance between lamps. Where the position, as regards width, clearly meets the requirements of the Regulation, the exact edges of any surface need not be determined. 5.9. I
+--- MATCH AT 61960 ---
+t edges of any surface need not be determined. 5.9. In the absence of specific instructions, the photometric characteristics (e.g. intensity, colour, apparent surface, etc.) of a lamp shall not be intentionally varied during the period  when  the lamp  is switched ON . 5.9.1. Direction-indicator lamps, the vehicle-hazard warning signal, amber side-marker lamps complying with paragraph 6.18.7. belo
+--- MATCH AT 63712 ---
+bility of red light towards the front of a vehicle, with the exception of a red rearmost side-marker lamp, there shall be no direct visibility of the apparent surface of a red lamp if viewed by an observer moving within Zone 1 in a transverse plane situated  25  m in front of the vehicle ( see  Annex 4 ) ;  5.10.2. For the visibility of white light towards the rear of a vehicle, with the exception
+--- MATCH AT 64064 ---
+owards the rear of a vehicle, with the exception of reversing lamps  and white side conspicuity markings,  there shall be no direct visibility of the apparent surface of a white lamp if viewed by an observer moving within Zone 2 in a transverse plane situated  25  m behind the vehicle ( see  Annex 4 ) ; 5.10.3. In their respective planes, the zones 1 and 2 explored by the eye of the observer are b
+--- MATCH AT 74809 ---
+.6.1.1. shall then be modified by this excess to decrease the allowed range of inclinations when checking the vehicle according to Annex 6. 5.21. The apparent surface in the direction of the reference axis of front and rear position lamps, front and rear direction-indicator lamps and retro-reflectors shall not be hidden more than 50 per cent by any movable component, with or without a light-signal
+--- MATCH AT 75560 ---
+g all the position, geometric visibility ,  colorimetric   and photometric requirements for the above indicated lamps shall be  switched ON  when the apparent surface in the direction of the reference axis of these lamps is more than 50 per cent hidden by the movable component; or   5.21.2. A remark in the communication form (item 10.1. of Annex 1) shall inform other Administrations that more than
+--- MATCH AT 75830 ---
+mponent; or   5.21.2. A remark in the communication form (item 10.1. of Annex 1) shall inform other Administrations that more than 50 per cent of the apparent surface in the direction of the reference axis can be hidden by the movable components; and A notice in the vehicle shall inform the user that in certain position(s) of the movable components other road users shall be warned of the presence 
+--- MATCH AT 80639 ---
+  v isibility 5.28.1. There shall be no obstacle on the inside of the angles of geometric visibility to the propagation of light from any part of the apparent surface of the lamp observed from infinity. However, no account is taken of obstacles, if they were already presented when the lamp was type approved. 5.28.2. If measurements are taken closer to the lamp, the direction of observation shall b
+--- MATCH AT 80994 ---
+he lamp, the direction of observation shall be shifted parallel to achieve the same accuracy. 5.28.3. If, when the lamp is installed, any part of the apparent surface of the lamp is hidden by any further parts of the vehicle, proof shall be furnished that the part of the lamp not hidden by obstacles still conforms to the photometric values prescribed for the approval of the device. 5.28.4. When th
+--- MATCH AT 82849 ---
+if: (a) The light intensity in any direction does not exceed 0.5 cd;  (b) The colour of the light emitted is white, red or amber; (c) The area of the apparent surface is not larger than  20  cm 2 . Up to two external status indicators for Vehicle Alarm System (VAS), Alarm System (AS) and immobiliser are allowed on a vehicle provided that the apparent surface does not exceed  10 c m 2  per indicato
+--- MATCH AT 83043 ---
+2 . Up to two external status indicators for Vehicle Alarm System (VAS), Alarm System (AS) and immobiliser are allowed on a vehicle provided that the apparent surface does not exceed  10 c m 2  per indicator. 5 .3 3 . A device type approved according to any preceding series of amendments to UN Regulations Nos.  148  and/or  149  and/or  150  is deemed equivalent to one approved according to the la
+--- MATCH AT 93411 ---
+ulation  No.  149 , Classes B and D headlamps only. 6.2.3. Arrangement No special requirement.  6.2.4. Position   6.2.4.1. In width: that edge of the apparent surface in the direction of the reference axis which is farthest from the vehicle's median longitudinal plane shall be not more than 400 mm from the extreme outer edge of the vehicle. The inner edges of the apparent surfaces in the direction
+--- MATCH AT 93627 ---
+arthest from the vehicle's median longitudinal plane shall be not more than 400 mm from the extreme outer edge of the vehicle. The inner edges of the apparent surfaces in the direction of the reference axes shall be not less than 600 mm apart. This does not apply, however, for M 1  and N 1  category vehicles; for all other categories of motor vehicles this distance may be reduced to 400 mm where t
+--- MATCH AT 95347 ---
+clination shall be defined in accordance with paragraph 6.2.6.1.2. 6.2.6.1.2. Depending on the mounting height in metres (h) of the lower edge of the apparent surface in the direction of the reference axis of the dipped beam headlamp, measured on the unladen vehicles, the vertical inclination of the cut off of the dipped- beam shall, under all the static conditions of Annex 5, remain between the f
+--- MATCH AT 104417 ---
+9   or the requirements of UN Regulation No.  149 . 6.3.3. Arrangement No special requirement.  6.3.4. Position  6.3.4.1. In width: that point on the apparent surface in the direction of the reference axis which is farthest from the vehicle's median longitudinal plane shall not be more than 400 mm from the extreme outer edge of the vehicle.  6.3.4.2.  In height: Minimum: Not less than 250 mm above
+--- MATCH AT 104965 ---
+  vehicles: not  more than 1,200 mm above the ground. For category N 3 G vehicles: the m aximum height may be increased  to 1,500 mm. No point on the apparent surface in the direction of the reference axis  shall  be higher than the highest point on the apparent surface in the direction of the reference axis of the dipped-beam headlamp. 6.3.4.3. In length: at the front of the vehicle. This require
+--- MATCH AT 105069 ---
+ay be increased  to 1,500 mm. No point on the apparent surface in the direction of the reference axis  shall  be higher than the highest point on the apparent surface in the direction of the reference axis of the dipped-beam headlamp. 6.3.4.3. In length: at the front of the vehicle. This requirement shall be deemed to be satisfied if the light emitted does not cause discomfort to the driver either
+--- MATCH AT 106587 ---
+he light source for each front fog lamp exceeds 2,000 lumens: 6.3.6.1.2.2. 1. Depending on the mounting height in metres (h) of the lower edge of the apparent surface in the direction of the reference axis of the front fog lamp, measured on the unladen vehicles, the vertical inclination of the cut-off shall under all the static conditions of Annex 5 automatically remain between the following value
+--- MATCH AT 114003 ---
+ments (see figure below)  A: Two front direction-indicator lamps of the following categories:  1 or 1a or 1b, If the distance between the edge of the apparent surface in the direction of the reference axis of this lamp and that of the apparent surface in the direction of the reference axis of the dipped beam headlamp and/or the front fog lamp, if there is one, is at least 40 mm; 1a or 1b, If the d
+--- MATCH AT 114088 ---
+egories:  1 or 1a or 1b, If the distance between the edge of the apparent surface in the direction of the reference axis of this lamp and that of the apparent surface in the direction of the reference axis of the dipped beam headlamp and/or the front fog lamp, if there is one, is at least 40 mm; 1a or 1b, If the distance between the edge of the apparent surface in the direction of the reference ax
+--- MATCH AT 114285 ---
+nce axis of the dipped beam headlamp and/or the front fog lamp, if there is one, is at least 40 mm; 1a or 1b, If the distance between the edge of the apparent surface in the direction of the reference axis of this lamp and that of the apparent surface in the direction of the reference axis of the dipped beam headlamp and/or the front fog lamp, if there is one, is greater than 20 mm and less than 4
+--- MATCH AT 114370 ---
+t least 40 mm; 1a or 1b, If the distance between the edge of the apparent surface in the direction of the reference axis of this lamp and that of the apparent surface in the direction of the reference axis of the dipped beam headlamp and/or the front fog lamp, if there is one, is greater than 20 mm and less than 40 mm;  1b, If the distance between the edge of the apparent surface in the direction 
+--- MATCH AT 114586 ---
+ped beam headlamp and/or the front fog lamp, if there is one, is greater than 20 mm and less than 40 mm;  1b, If the distance between the edge of the apparent surface in the direction of the reference axis of this lamp and that of the apparent surface in the direction of the reference axis of the dipped beam headlamp and/or the front fog lamp, if there is one, is less than or equal to 20 mm; Two r
+--- MATCH AT 114671 ---
+nd less than 40 mm;  1b, If the distance between the edge of the apparent surface in the direction of the reference axis of this lamp and that of the apparent surface in the direction of the reference axis of the dipped beam headlamp and/or the front fog lamp, if there is one, is less than or equal to 20 mm; Two rear direction-indicator lamps (category 2a or 2b);  Two optional lamps (category 2a o
+--- MATCH AT 116909 ---
+n phase and simultaneously with the direction indicator lamps   on the same side of the vehicle. 6.5.4. Position   6.5.4.1. In width: the edge of the apparent surface in the direction of the reference axis farthest from the median longitudinal plane of the vehicle shall not be more than 400 mm from the extreme outer edge of the vehicle. This condition shall not apply to the optional rear lamps. Th
+--- MATCH AT 117205 ---
+rom the extreme outer edge of the vehicle. This condition shall not apply to the optional rear lamps. The distance between the inner edges of the two apparent surfaces in the direction of the reference axes shall not be less than 600 mm. This distance may be reduced to 400 mm where the overall width of the vehicle is less than 1,300 mm.  6.5.4.2. In height: above the ground.  6.5.4.2.1. The height
+--- MATCH AT 121289 ---
+of paragraph 5.8.1), the downward angle of 15°  may be reduced to  5°. To be considered visible, the lamp  shall  provide an unobstructed view of the apparent surface of at least 12.5 square  centimetres , except for side direction-indicators of categories 5 and 6. The illuminating surface area of any retro-reflector that does not transmit light shall be excluded. 6.5.6. Orientation According to t
+--- MATCH AT 128094 ---
+t No special requirement. 6.7.4. Position  6.7.4.1. In width:  For M 1  and N 1  category vehicles: For S1 or S2 categories devices that point on the apparent surface in the direction of the reference axis which is farthest from the vehicle's median longitudinal plane shall not be more than 400 mm from the extreme outer edge of the vehicle; For the distance in between the inner edges of the appare
+--- MATCH AT 128338 ---
+edian longitudinal plane shall not be more than 400 mm from the extreme outer edge of the vehicle; For the distance in between the inner edges of the apparent surfaces in the direction of the reference axes there is no special requirement. For all other categories of vehicles:  For S1 or S2 categories devices the distance in between the inner edges of the apparent surfaces in the direction of the 
+--- MATCH AT 128546 ---
+here is no special requirement. For all other categories of vehicles:  For S1 or S2 categories devices the distance in between the inner edges of the apparent surfaces in the direction of the reference axes shall be not less than 600 mm. This distance may be reduced to 400 mm if the overall width of the vehicle is less than 1,300 mm. For S3 or S4 category devices: the centre of reference shall be 
+--- MATCH AT 129966 ---
+not less than 600 mm above the mandatory lamps. 6.7.4.2.2. For S3 or S4 categories devices: The  horizontal plane tangential to the lower edge of the apparent surface shall:   either not be more than 150 mm below the horizontal plane tangential to the lower edge of the exposed surface of the glass or glazing of the rear window, or not be less than 850 mm above the ground. However, the horizontal p
+--- MATCH AT 130257 ---
+e glass or glazing of the rear window, or not be less than 850 mm above the ground. However, the horizontal plane tangential to the lower edge of the apparent surface of a S3 or S4 category device shall be above the horizontal plane tangential to the upper edge of the apparent surface of S1 or S2 categories devices. 6.7.4.3. In length: 6.7.4.4. For  S1 or S2 categories devices: at the rear of the 
+--- MATCH AT 130376 ---
+ntial to the lower edge of the apparent surface of a S3 or S4 category device shall be above the horizontal plane tangential to the upper edge of the apparent surface of S1 or S2 categories devices. 6.7.4.3. In length: 6.7.4.4. For  S1 or S2 categories devices: at the rear of the vehicle. 6.7.4.5. For  S3  or S4 categories devices: no special requirement. 6.7.5. Geometric visibility Horizontal ang
+--- MATCH AT 134370 ---
+are not more than 1,600 mm wide.  6.9.2. Number Two. 6.9.3. Arrangement No special requirement.  6.9.4. Position 6.9.4.1. In width: that point on the apparent surface in the direction of the reference axis which is farthest from the vehicle's median longitudinal plane shall not be more than 400 mm from the extreme outer edge of the vehicle.  In the case of a trailer, that point on the apparent sur
+--- MATCH AT 134608 ---
+le's median longitudinal plane shall not be more than 400 mm from the extreme outer edge of the vehicle.  In the case of a trailer, that point on the apparent surface in the direction of the reference axis which is farthest from the median longitudinal plane shall not be more than 150 mm from the extreme outer edge of the vehicle. The distance between the inner edges of the two apparent surfaces i
+--- MATCH AT 134839 ---
+e median longitudinal plane shall not be more than 150 mm from the extreme outer edge of the vehicle. The distance between the inner edges of the two apparent surfaces in the direction of the reference axes shall: For M 1  and N 1  category vehicles: No special requirement; For all other categories of vehicles: Not less than 600 mm. This distance may be reduced to 400 mm where the overall width of
+--- MATCH AT 135515 ---
+500 mm). 6.9.4.3. In length: no individual specification.  6.9.4.4. Where the front position lamp and another lamp are reciprocally incorporated, the apparent surface in the direction of the reference axis of the other lamp shall be used to verify compliance with the positioning requirements (paragraphs 6.9.4.1. to 6.9.4.3.).  6.9.5. Geometric visibility 6.9.5.1. Horizontal angle: 45° inwards and 
+--- MATCH AT 136997 ---
+graph 5.8.1. above), the downward angle of 15°  may be reduced to  5°. To be considered visible, the lamp  shall  provide an unobstructed view of the apparent surface of at least 12.5 cm 2 . The illuminating surface area of any retro-reflector that does not transmit light shall be excluded. 6.9.6. Orientation Forwards.  6.9.7. Electrical connections In accordance with paragraph 5.11. However, if a
+--- MATCH AT 139089 ---
+es M 2 , M 3 , N 2 , N 3 , O 2 , O 3 , and O 4 . 6.10.3. Arrangement No special requirement. 6.10.4. Position   6.10.4.1. In width: that point on the apparent surface in the direction of the reference axis which is farthest from the vehicle's median longitudinal plane shall not be more than 400 mm from the extreme outer edge of the vehicle. This condition shall not apply to the optional rear lamps
+--- MATCH AT 139389 ---
+rom the extreme outer edge of the vehicle. This condition shall not apply to the optional rear lamps. The distance between the inner edges of the two apparent surfaces in the direction of the reference axes shall: For M 1  and N 1  category vehicles: have no special requirement; For all other categories of vehicles: be not less than 600 mm. This distance may be reduced to 400 mm where the overall 
+--- MATCH AT 141656 ---
+graph 5.8.1. above), the downward angle of 15°  may be reduced to  5°. To be considered visible, the lamp  shall  provide an unobstructed view of the apparent surface of at least 12.5 square  centimetres . The illuminating surface area of any retro-reflector that does not transmit light shall be excluded. 6.10.6. Orientation Rearwards.  6.10.7. Electrical connections In accordance with paragraph 5
+--- MATCH AT 145418 ---
+angement Either two lamps at the front and two lamps at the rear, or one lamp on each side.  6.12.4. Position   6.12.4.1. In width: that point on the apparent surface in the direction of the reference axis which is farthest from the vehicle's median longitudinal plane shall not be more than 400 mm from the extreme outer edge of the vehicle.  Furthermore, if there are two lamps, they shall be on th
+--- MATCH AT 148414 ---
+idth:  Front and rear: as close as possible to the extreme outer edge of the vehicle. This condition is deemed to have been met when the point on the apparent surface in the direction of the reference axis which is farthest from the vehicle's median longitudinal plane is not more than 400 mm from the extreme outer edge of the vehicle. 6.13.4.2. In height:  Front: Motor vehicles - the horizontal pl
+--- MATCH AT 148704 ---
+mm from the extreme outer edge of the vehicle. 6.13.4.2. In height:  Front: Motor vehicles - the horizontal plane tangential to the upper edge of the apparent surface in the direction of the reference axis of the device shall not be lower than the horizontal plane tangential to the upper edge of the transparent zone of the wind screen. Trailers and semi trailers - at the maximum height compatible 
+--- MATCH AT 150970 ---
+ding position lamp shall be such that the distance between the projections on a transverse vertical plane of the points nearest to one another on the apparent surfaces in the direction of the respective reference axes of the two lamps considered is not less than 200 mm.  The additional lamps, as specified in paragraph 6.13.2. (a), used to mark the rear end outline of the vehicle, the trailer or th
+--- MATCH AT 152327 ---
+ median longitudinal plane shall not be more than 400 mm from the extreme outer edge of the vehicle.  The distance between the inner edges of the two apparent surfaces in the direction of the reference axes shall: For M 1  and N 1  category vehicles: have no special requirement; For all other categories of vehicles: be not less than 600 mm. This distance may be reduced to 400 mm where the overall 
+--- MATCH AT 153352 ---
+ to  5°. 6.14.6. Orientation Rearwards.  6.14.7. Other requirements The illuminating surface of the retro reflector may have parts in common with the apparent surface of any other lamp situated at the rear.  6.15. Rear   retro reflector , triangular  ( UN   Regulation  No. 3   or   150 ) 6.15.1 . Presence Mandatory on trailers.  Prohibited on motor vehicles.  6.15.2. Number Two, the performances o
+--- MATCH AT 155178 ---
+ to  5°. 6.15.6. Orientation Rearwards.  6.15.7. Other requirements The illuminating surface of the retro-reflector may have parts in common with the apparent surface of any other lamp situated at the rear. 6.16. Front retro reflector, non triangular  ( UN   Regulation No. 3  or  150 ) 6.16.1. Presence Mandatory on trailers.  Mandatory on motor vehicles having all forward facing lamps with reflect
+--- MATCH AT 156396 ---
+dian longitudinal plane shall not be farther than 150 mm from the extreme outer edge of the vehicle.  The distance between the inner edges of the two apparent surfaces in the direction of the reference axes shall: For M 1  and N 1  category vehicles: have no special requirement; For all other categories of vehicles: be not less than 600 mm. This distance may be reduced to 400 mm where the overall 
+--- MATCH AT 157750 ---
+ 6.16.6. Orientation Towards the front.  6.16.7. Other requirements The illuminating surface of the retro reflector may have parts in common with the apparent surface of any other lamp situated at the front.  6.17. Side retro reflector, non triangular  ( UN   Regulation No. 3  or  150 ) 6.17.1. Presence Mandatory: On all motor vehicles the length of which exceeds 6 m. On all trailers.  Optional: O
+--- MATCH AT 160653 ---
+7.6. Orientation Towards the side.  6.17.7. Other requirements The illuminating surface of the side retro reflector may have parts in common with the apparent surface of any other side lamp.  6.18. Side marker lamps  ( UN  Regulation No. 91  or  148 ) 6.18.1. Presence Mandatory: On all vehicles the length of which exceeds 6 m, except for chassis cabs.  The SM1 type of side marker lamp shall be use
+--- MATCH AT 165444 ---
+rs. 6.19.2. Number Two. 6.19.3. Arrangement No special requirement.  6.19.4. Position 6.19.4.1. In width: the distance between the inner edges of the apparent surfaces in the direction of the reference axes shall not be less than 600 mm. This distance may be reduced to 400 mm where the overall width of the vehicle is less than 1,300 mm.  6.19.4.2. In height: above the ground not less than 250 mm n
+--- MATCH AT 169116 ---
+ront. 6.20.4.3. In height: minimum: Not less than 250 mm above the ground; maximum: Not more than  900  mm above the ground. However, no point on the apparent surface in the direction of the reference axis  shall  be higher   than the highest point on the apparent surface in the direction of the reference axis of the dipped-beam headlamp .  6.20.5. Geometric visibility Defined by angles    and   a
+--- MATCH AT 169222 ---
+ above the ground. However, no point on the apparent surface in the direction of the reference axis  shall  be higher   than the highest point on the apparent surface in the direction of the reference axis of the dipped-beam headlamp .  6.20.5. Geometric visibility Defined by angles    and   as specified in paragraph 2. 10.7. :   = 10°   upwards and downwards,   = 30° to 60° outwards.  6.20.6. Ori
+--- MATCH AT 182428 ---
+taneously for that lighting function or mode of a function, according to the applicant's description. All dimensions refer to the nearest edge of the apparent surface(s) observed in the direction of the reference axis, of the lighting unit(s).  6.22.4.1.1. Two symmetrically placed lighting units shall be positioned at a height in compliance with the requirements of the relevant paragraphs 6.1.4. a
+--- MATCH AT 182885 ---
+ts "  shall be understood to be two lighting units, one on each side of the vehicle, positioned such that the (geometric) centres of gravity of their apparent surfaces are at the same height and at the same distance from the vehicle's longitudinal median plane within a tolerance of 50 mm, each; their light emitting surfaces, illuminating surfaces, and light outputs, however, may differ. 6.22.4.1.2
+--- MATCH AT 183753 ---
+egulation (G in the figure) above the ground; 6.22.4.1.4. Additionally, in width: For each mode of the  passing-beam  lighting: The outer edge of the apparent surface of at least one lighting unit on each side of the vehicle shall not be more than 400 mm from the extreme outer edge of the vehicle (A in the figure); and,  The inner edges of the apparent surfaces in the direction of the reference ax
+--- MATCH AT 183949 ---
+ on each side of the vehicle shall not be more than 400 mm from the extreme outer edge of the vehicle (A in the figure); and,  The inner edges of the apparent surfaces in the direction of the reference axes shall be not less than 600 mm apart. This does not apply, however, for M 1  and N 1  category vehicles; for all other categories of motor vehicles this distance may be reduced to 400 mm where t
+--- MATCH AT 184256 ---
+es; for all other categories of motor vehicles this distance may be reduced to 400 mm where the overall width of the vehicle is less than 1 , 300 mm. Apparent surfaces of lighting units 1 through 11 of an AFS (example) C D E B F G A 11 10 9 7 8 5 2 1 3 6 4 Lighting units being simultaneously energized for a given lighting mode: No. 3 and 9: (two symmetrically placed lighting units)  No. 1 and 11: 
+--- MATCH AT 206753 ---
+nical service shall, to the satisfaction of the  Type Approval A uthority , perform a visual test to verify that there is no direct visibility of the apparent surface of the exterior courtesy lamps, if viewed by an observer moving on the boundary of a zone  on a transverse plane 10 m from the front of the vehicle, a transverse plane 10 m from the rear of the vehicle , and two longitudinal planes 1
+--- MATCH AT 210765 ---
+ical Service shall, to the satisfaction of the  Type Approval A uthority , perform a visual test to verify that there is no direct  visibility of the apparent surface of these lamps, if viewed by an observer moving on the boundary of a zone  on a transverse plane 10 m from the front of the vehicle, a transverse plane 10 m from the rear of the vehicle , and two longitudinal planes 10 m from each si
+--- MATCH AT 229173 ---
+n this vehicle type: yes/no   2 ,  …………………… ……… 10. Comments :  10.1. Any comments on movable components: 10.2. Method used for the definition of the apparent surface:  (a) Boundary of the illuminating surface 2  or  (b) Light-emitting surface 2 10.3. Other comments (valid for right-hand or left-hand drive vehicles): 10.4. Comments concerning AFS (according to paragraphs 3.2.6. and 6.22.7.4.  of  
+--- MATCH AT 231916 ---
+this  a nnex : 1. Illuminating surface  2. Axis of reference  3. Centre of reference  4. Angle of geometric visibility  5. Light-emitting surface  6. Apparent surface based on the illuminating surface  7a. Apparent surface based on the light-emitting surface  according to paragraph 2. 10.2 .   ( a )   (with outer lens) 7b. Apparent surface based on the light-emitting surface   according to paragra
+--- MATCH AT 231972 ---
+ence  3. Centre of reference  4. Angle of geometric visibility  5. Light-emitting surface  6. Apparent surface based on the illuminating surface  7a. Apparent surface based on the light-emitting surface  according to paragraph 2. 10.2 .   ( a )   (with outer lens) 7b. Apparent surface based on the light-emitting surface   according to paragraph 2. 10.2.   ( b )  (without outer lens) 8. Direction o
+--- MATCH AT 232091 ---
+ the illuminating surface  7a. Apparent surface based on the light-emitting surface  according to paragraph 2. 10.2 .   ( a )   (with outer lens) 7b. Apparent surface based on the light-emitting surface   according to paragraph 2. 10.2.   ( b )  (without outer lens) 8. Direction of visibility IO   Inner optical part LG  Light guide L   Outer lens R   Reflector S   Light source X   Not part of this
+--- MATCH AT 232479 ---
+part of this function F1   Function one F2   Function two Part 1 – Light emitting surface of a light-signalling device other than a retro-reflector   Apparent surface  based on   l ight -e mitting  s urface Part 2 – Illuminating surface of a light-signalling device other than a retro-reflector  Screens; other positions of the screens are possible Illuminating surface Resulting illuminating surface
+--- MATCH AT 232864 ---
+inating surface over all possible screen positions,   e.g. for the determination of maximum or minimum area  specification .    P art 3 – Examples of apparent surface based on illuminating surface in different directions of geometric visibility Apparent surface based on illuminating surface Apparent surface based on  i lluminating surface Apparent surface based on illuminating surface Part 4 – Exa
+--- MATCH AT 232959 ---
+minimum area  specification .    P art 3 – Examples of apparent surface based on illuminating surface in different directions of geometric visibility Apparent surface based on illuminating surface Apparent surface based on  i lluminating surface Apparent surface based on illuminating surface Part 4 – Examples of apparent surface based on light emitting surface in different directions of geometric 
+--- MATCH AT 233006 ---
+ples of apparent surface based on illuminating surface in different directions of geometric visibility Apparent surface based on illuminating surface Apparent surface based on  i lluminating surface Apparent surface based on illuminating surface Part 4 – Examples of apparent surface based on light emitting surface in different directions of geometric visibility Apparent surface based on  l ight -e
+--- MATCH AT 233055 ---
+rface in different directions of geometric visibility Apparent surface based on illuminating surface Apparent surface based on  i lluminating surface Apparent surface based on illuminating surface Part 4 – Examples of apparent surface based on light emitting surface in different directions of geometric visibility Apparent surface based on  l ight -e mitting  s urface  + Apparent surface based on  
+--- MATCH AT 233123 ---
+ce based on illuminating surface Apparent surface based on  i lluminating surface Apparent surface based on illuminating surface Part 4 – Examples of apparent surface based on light emitting surface in different directions of geometric visibility Apparent surface based on  l ight -e mitting  s urface  + Apparent surface based on  l ight -e mitting  s urface  Part 5 – Example of illuminating surfac
+--- MATCH AT 233220 ---
+e based on illuminating surface Part 4 – Examples of apparent surface based on light emitting surface in different directions of geometric visibility Apparent surface based on  l ight -e mitting  s urface  + Apparent surface based on  l ight -e mitting  s urface  Part 5 – Example of illuminating surface  in comparison  with light-emitting surface in the case of a  " single function lamp "   ( s ee
+--- MATCH AT 233278 ---
+ent surface based on light emitting surface in different directions of geometric visibility Apparent surface based on  l ight -e mitting  s urface  + Apparent surface based on  l ight -e mitting  s urface  Part 5 – Example of illuminating surface  in comparison  with light-emitting surface in the case of a  " single function lamp "   ( s ee paragraphs 2. 10.2.  to 2. 10.3.  of this Regulation) Exa
+--- MATCH AT 234208 ---
+) Example of a light guide optic behind an outer lens: Example 7 Section In the case where the non - textured outer lens is excluded,  " 7b "  is the apparent surface according to paragraph 2. 10.2.   ( b ) . Example of a light guide optic or a reflector optic behind an outer lens: Example 8 Sectio n n Section In the case where the  non textured outer lens is excluded,  " 7b "  is the apparent sur
+--- MATCH AT 234446 ---
+c or a reflector optic behind an outer lens: Example 8 Sectio n n Section In the case where the  non textured outer lens is excluded,  " 7b "  is the apparent surface according to paragraph 2. 10.2.   ( b ) , and F1 shall not transparent to F2   Example of a light source with a reflector optic in combination with an area which is not part of this function, behind an outer lens: Example 9 In the ca
+--- MATCH AT 234763 ---
+ area which is not part of this function, behind an outer lens: Example 9 In the case where the  non textured outer lens is excluded,  " 7b "  is the apparent surface according to paragraph 2. 10.2.   ( b ) . Part 6 – Examples showing the determination of the light-emitting surface in comparison with illuminating surface  (See paragraphs 2. 10.2.  and 2. 10.3.  of this Regulation) Note:  Reflected
+--- MATCH AT 236093 ---
+ this function  PROJECTED VIEW Declared Light-emitting surface according to 2. 10.2.   ( a ) Edges are c-d and e-f Example E Example to determine the apparent surface in combination with an area which is not part of the function and a  non-textured  outer lens (according to 2. 10.2.   ( b) ) : PROJECTED VIEW Surface of the lens   Shown flat for convenience X is not part of this function DECLARED A
+--- MATCH AT 237550 ---
+rated ==================================================================== In the case where the non textured outer lens is excluded,  " 7b "  is the apparent surface according to paragraph 2. 10.2 .  and F1 shall not be transparent to F2:  F1 is not reciprocally incorporated with F2 ==================================================================== In the case where the non textured outer lens 
+--- MATCH AT 263514 ---
+ted by the manufacturer by sufficient documentation or by other means accepted by the  Type Approval Authority . Annex 1 4 Observing area towards the apparent surface of manoeuvring and courtesy lamps   Zones of observation This drawing shows the zone from one side, the other zones are from the front, the rear and from the other side of the vehicle Boundaries of the zones Annex 15 Gonio(photo)mete
+Found 5 matches for '12.5':
+--- MATCH 12.5 AT 121318 ---
+ward angle of 15°  may be reduced to  5°. To be considered visible, the lamp  shall  provide an unobstructed view of the apparent surface of at least 12.5 square  centimetres , except for side direction-indicators of categories 5 and 6. The illuminating surface area of any retro-reflector that does not transmit light shall be excluded. 6.5.6. Orientation According to the specifications for install
+--- MATCH 12.5 AT 137026 ---
+ward angle of 15°  may be reduced to  5°. To be considered visible, the lamp  shall  provide an unobstructed view of the apparent surface of at least 12.5 cm 2 . The illuminating surface area of any retro-reflector that does not transmit light shall be excluded. 6.9.6. Orientation Forwards.  6.9.7. Electrical connections In accordance with paragraph 5.11. However, if a front position lamp is recip
+--- MATCH 12.5 AT 141685 ---
+ward angle of 15°  may be reduced to  5°. To be considered visible, the lamp  shall  provide an unobstructed view of the apparent surface of at least 12.5 square  centimetres . The illuminating surface area of any retro-reflector that does not transmit light shall be excluded. 6.10.6. Orientation Rearwards.  6.10.7. Electrical connections In accordance with paragraph 5.11. However, if a rear posit
+--- MATCH 12.5 AT 146007 ---
+ore than 1,500 mm (2,100 mm if the shape of the bodywork makes it impossible to keep within 1,500 mm). 6.12.4.3. In length: no special requirement. 6.12.5. Geometric visibility Horizontal angle:  45° outwards, forwards and rearwards. However, where a front or rear parking lamp is mounted below 750 mm (measured according to the provisions of paragraph 5.8.1. above), the inward angle of 45°  may be 
+--- MATCH 12.5 AT 223616 ---
+s  6.2.7.6.2.  or   6.2.7.6.3. to 6.2.7.6.3.3. instead of those of paragraph 6.2.7.6.1. of this Regulation as amended by the 05 series of amendments. 12.5. Transitional provisions applicable to 06 series of amendments. Contracting Parties applying this Regulation: F rom 18 November 2017 (60 month after the date of entry into force) shall grant approvals only if the vehicle type to be approved meet
+Found 49 matches for '25':
+--- MATCH 25 AT 1494 ---
+Suppl ement  13 to  the  06   series of amendments – Date of entry into force:   29  May 20 20 0 7  series of amendments – Date of entry into force:  25  September 20 20 Uniform provisions concerning the approval of vehicles with regard to the installation of lighting and light-signalling devices This document is meant purely as documentation tool. The authentic and legal binding text is  containe
+--- MATCH 25 AT 43569 ---
+ y = x - 0.120 A 23 the spectral locus A 34 red boundary y = 0.390 A 41 white boundary y = 0.790 - 0.670 x With intersection points: x y A 1 0.545 0.425 A 2 0.560 0.440 A 3 0.609 0.390 A 4 0.597 0.390 2.11.1.4. " Red "  means the chromaticity coordinates ( x,y ) 4  of the light emitted that lie inside the chromaticity areas defined by the boundaries: R 12 yellow boundary y = 0.335 R 23 the spectra
+--- MATCH 25 AT 44096 ---
+of the spectral locus). R 41 purple boundary: y = 0.980 – x With intersection points: x y R 1 0.645 0.335 R 2 0.665 0.335 R 3 0.735 0.265 R 4 0.721 0.259 2.11.2. Night-time  colour  of the light retro-reflected from a device excluding retro-reflective tires according to  UN  Regulation No. 88 2.11.2.1. " White "  means the chromaticity coordinates ( x,y ) 4  of the light reflected that lie inside 
+--- MATCH 25 AT 45364 ---
+.417 x - 0.347 A 23 the spectral locus A 34 red boundary y = 0.390 A 41 white boundary y = 0.790 - 0.670 x With intersection points: x y A 1 0.545 0.425 A 2 0.557 0.442 A 3 0.609 0.390 A 4 0.597 0.390 2.11.2.4. " Red "  means the chromaticity coordinates ( x,y ) 4  of the light reflected that lie inside the chromaticity areas defined by the boundaries: R 12 yellow boundary y = 0.335 R 23 the spect
+--- MATCH 25 AT 45771 ---
+us R 34 the purple line  R 41 purple boundary y = 0.978 - x With intersection points: x y R 1 0.643 0.335 R 2 0.665 0.335 R 3 0.735 0.265 R 4 0.720 0.258 2.11.3. Day-time  Colour  of the light reflected from a device  2.11.3.1. " White "  means the chromaticity coordinates ( x,y ) 4  of the light reflected that lie inside the chromaticity areas defined by the boundaries: W 12 violet boundary y = x
+--- MATCH 25 AT 63821 ---
+ere shall be no direct visibility of the apparent surface of a red lamp if viewed by an observer moving within Zone 1 in a transverse plane situated  25  m in front of the vehicle ( see  Annex 4 ) ;  5.10.2. For the visibility of white light towards the rear of a vehicle, with the exception of reversing lamps  and white side conspicuity markings,  there shall be no direct visibility of the apparen
+--- MATCH 25 AT 64175 ---
+e shall be no direct visibility of the apparent surface of a white lamp if viewed by an observer moving within Zone 2 in a transverse plane situated  25  m behind the vehicle ( see  Annex 4 ) ; 5.10.3. In their respective planes, the zones 1 and 2 explored by the eye of the observer are bounded: 5.10.3.1. In height, by two horizontal planes 1 m and 2.2 m respectively above the ground; 5.10.3.2. In
+--- MATCH 25 AT 77782 ---
+nt, a tell-tale on the dashboard (paragraph 2. 3.5.  of this Regulation) shall indicate occurrence of a temporary replacement and need for repair.  5.25. Where an AFS is fitted, it shall be considered equivalent to a pair of dipped-beam headlamps and, if it provides main-beam function(s), it shall be considered equivalent to a pair of main-beam headlamps. 5.26. Rear direction-indicator lamps, rear
+--- MATCH 25 AT 104655 ---
+le's median longitudinal plane shall not be more than 400 mm from the extreme outer edge of the vehicle.  6.3.4.2.  In height: Minimum: Not less than 250 mm above the ground. Maximum: For M 1   and N 1  category vehicles: not more than 800 mm above the ground.  For all other categories except N 3 G (off-road)  vehicles: not  more than 1,200 mm above the ground. For category N 3 G vehicles: the m a
+--- MATCH 25 AT 110926 ---
+ategory M 1 . 6.4.3. Arrangement No special requirement. 6.4.4. Position 6.4.4.1. In width: no special requirement. 6.4.4.2. In height: not less than 250 mm and not more than 1,200 mm above the   ground. 6.4.4.3. In length:  at the rear of the vehicle However, if installed, the two optional devices mentioned in paragraph 6.4.2.2. may be fitted on the side of the vehicle, provided that the requirem
+--- MATCH 25 AT 135177 ---
+s distance may be reduced to 400 mm where the overall width of the vehicle is less than 1,300 mm. 6.9.4.2. In height: above the ground, not less than 250 mm nor more than 1,500 mm (2,100 mm for O 1  and O 2  categories of vehicles, or if for any other categories of vehicles the shape of the bodywork makes it impossible to keep within 1,500 mm). 6.9.4.3. In length: no individual specification.  6.9
+--- MATCH 25 AT 143167 ---
+ry of registration, the centre of reference may also be situated on the median longitudinal plane of the vehicle.  6.11.4.2. In height: not less than 250 mm nor more than 1,000 mm above the ground. For rear fog lamps grouped with any rear lamp or for category N 3 G (off-road) vehicles, the maximum height may be increased to 1,200 mm.   6.11.4.3. In length: at the rear of the vehicle.  6.11.5. Geom
+--- MATCH 25 AT 143535 ---
+ar of the vehicle.  6.11.5. Geometric visibility Defined by angles α and ß as specified in paragraph 2. 10.7. : α = 5° upwards and 5° downwards;  ß = 25° to right and to left.  6.11.6. Orientation Rearwards. 6.11.7. Electrical connections These shall be such that: 6.11.7.1. The rear fog-lamp(s) cannot be switched ON unless the main beams, dipped   beams or front fog-lamps are switched ON;  6.11.7.
+--- MATCH 25 AT 152675 ---
+distance may be reduced to 400 mm where the overall width of the vehicle is less than 1,300 mm. 6.14.4.2. In height:  Above the ground, not less than 250 mm nor more than 900 mm (not more than 1,200 mm if grouped with any rear lamp(s), 1,500 mm if the shape of the bodywork makes it impossible to keep within 900 mm or 1200 mm respectively). 6.14.4.3. In length: at the rear of the vehicle. 6.14.5. G
+--- MATCH 25 AT 154493 ---
+s distance may be reduced to 400 mm if the overall width of the vehicle is less than 1,300 mm.  6.15.4.2. In height:  Above the ground, not less than 250 mm nor more than 900 mm (not more than 1,200 mm if grouped with any rear lamp(s),1,500 mm if the shape of the bodywork makes it impossible to keep within 900 mm or 1 , 200   mm respectively). 6.15.4.3. In length: at the rear of the vehicle. 6.15.
+--- MATCH 25 AT 156743 ---
+ distance may be reduced to 400 mm where the overall width of the vehicle is less than 1,300 mm. 6.16.4.2. In height: above the ground, not less than 250 mm nor more than 900 mm (1,500 mm if the shape of the bodywork makes it impossible to keep within 900 mm). 6.16.4.3. In length: at the front of the vehicle. 6.16.5. Geometric visibility Horizontal angle: 30° inwards and outwards. In the case of t
+--- MATCH 25 AT 158699 ---
+angement No special requirement. 6.17.4. Position   6.17.4.1. In width: no special requirement.  6.17.4.2. In height: Above the ground, not less than 250 mm nor more than 900 mm (not more than 1,200 mm if grouped with any lamp(s), 1,500 mm if the shape of the bodywork makes it impossible to keep within 900 mm or 1 , 200 mm respectively or if the presence of the device is not mandatory according to
+--- MATCH 25 AT 161678 ---
+ndividual specifications.  6.18.4. Position   6.18.4.1. In width: no individual specifications.  6.18.4.2. In height: Above the ground, not less than 250 mm nor more than 1,500 mm (2,100 mm if the shape of the bodywork makes it impossible to keep within 1,500 mm).  6.18.4.3. In length: at least one side-marker lamp shall be fitted to the middle third of the vehicle, the foremost side-marker lamp b
+--- MATCH 25 AT 165686 ---
+ distance may be reduced to 400 mm where the overall width of the vehicle is less than 1,300 mm.  6.19.4.2. In height: above the ground not less than 250 mm nor more than 1,500 mm.  6.19.4.3. In length: at the front of the vehicle. This requirement shall be deemed to be satisfied if the light emitted does not cause discomfort to the driver either  directly  or indirectly through the devices for in
+--- MATCH 25 AT 169016 ---
+f the vehicle's median longitudinal plane. 6.20.4.2. In length: not further than 1,000 mm from the front. 6.20.4.3. In height: minimum: Not less than 250 mm above the ground; maximum: Not more than  900  mm above the ground. However, no point on the apparent surface in the direction of the reference axis  shall  be higher   than the highest point on the apparent surface in the direction of the ref
+--- MATCH 25 AT 175764 ---
+r Class C of  UN  Regulation No. 104  or  150   are mounted followed by the required conspicuity marking as follows: (a) Retro-reflector size minimum 25 cm 2 ; (b) One retro-reflector mounted not more than 600 mm from the  front end of the vehicle; (c) Additional retro-reflectors spaced not more than 600 mm apart; (d) The distance between the last retro-reflector and the start of the  conspicuity 
+--- MATCH 25 AT 177033 ---
+ar). 6.21.4.3. Height 6.21.4.3.1. Line markings and contour markings lower element(s)  As low as practicable within the range: Minimum: not less than 250 mm above the ground. Maximum: not more than 1,500 mm above the ground. However, a maximum mounting height of 2,500 mm may be accepted where the shape, structure, design or operational conditions of the vehicle prevent compliance with the maximum 
+--- MATCH 25 AT 178185 ---
+ front conspicuity markings (see Annex 11, Figures 1a and 1b) the observation plane is perpendicular to the longitudinal axis of the vehicle situated 25 m from the extreme end of the vehicle and bounded by: 6.21.5.1.1. In  height, by two horizontal planes 1 m and 3.0 m respectively above the ground ; 6.21.5.1.2. In width, by two vertical planes which form an angle of 4° outwards from the vehicle's
+--- MATCH 25 AT 178883 ---
+For  side conspicuity markings (see Annex 11,  F ig .  2) the observation plane is parallel to the longitudinal median plane of the vehicles situated 25 m from the extreme outer edge of the vehicle and bounded by: 6.21.5.2.1. In height, by two horizontal planes 1.0 m and 1.5 m respectively above the ground ; 6.21.5.2.2. In width, by two vertical planes which form an angle of 4° outwards from a pla
+--- MATCH 25 AT 180729 ---
+000 mm. 6.21.7.2. In the case of a partial contour marking, each upper corner shall be described by two lines at 90°, to each other and each at least 250 mm in length; if this is not possible, the marking shall follow as close as practicable the contour of the outer shape of the vehicle. 6.21.7.3. The distance between the conspicuity marking fitted to the rear of a vehicle and each mandatory stop 
+--- MATCH 25 AT 183521 ---
+ the nearest lighting unit; 6.22.4.1.3. None of the additional lighting units described in paragraph 6.22.4.1.2. above shall be positioned lower than 250 mm (F in the figure) nor higher than indicated in paragraph 6.2.4.2. of this Regulation (G in the figure) above the ground; 6.22.4.1.4. Additionally, in width: For each mode of the  passing-beam  lighting: The outer edge of the apparent surface o
+--- MATCH 25 AT 185011 ---
+hicle overall width < 1 , 300 mm, however no requirement for category M 1  and N 1  vehicles C   200 E   140 Vertical dimensions in mm: D    400 F    250 G   1 , 200   6.22.4.2. In length: All lighting units of an AFS shall be mounted at the front. This requirement is deemed to be satisfied if the light emitted does not cause discomfort to the driver either  directly  or indirectly through the dev
+--- MATCH 25 AT 207287 ---
+ex 1 4 . At the request of the applicant and with the consent of the Technical Service this requirement may be verified by a drawing or simulation. 6.25. Rear-end collision alert signal 6.25.1. Presence Optional The rear-end collision alert signal shall be given by the simultaneous operation of all the direction indicator lamps fitted as described in paragraph 6.25.7. 6.25.2. Number As specified i
+--- MATCH 25 AT 207325 ---
+nt and with the consent of the Technical Service this requirement may be verified by a drawing or simulation. 6.25. Rear-end collision alert signal 6.25.1. Presence Optional The rear-end collision alert signal shall be given by the simultaneous operation of all the direction indicator lamps fitted as described in paragraph 6.25.7. 6.25.2. Number As specified in paragraph 6.5.2. 6.25.3. Arrangement
+--- MATCH 25 AT 207502 ---
+ rear-end collision alert signal shall be given by the simultaneous operation of all the direction indicator lamps fitted as described in paragraph 6.25.7. 6.25.2. Number As specified in paragraph 6.5.2. 6.25.3. Arrangement As specified in paragraph 6.5.3. 6.25.4. Position As specified in paragraph 6.5.4. 6.25.5. Geometric visibility As specified in paragraph 6.5.5. 6.25.6. Orientation As specifie
+--- MATCH 25 AT 207510 ---
+d collision alert signal shall be given by the simultaneous operation of all the direction indicator lamps fitted as described in paragraph 6.25.7. 6.25.2. Number As specified in paragraph 6.5.2. 6.25.3. Arrangement As specified in paragraph 6.5.3. 6.25.4. Position As specified in paragraph 6.5.4. 6.25.5. Geometric visibility As specified in paragraph 6.5.5. 6.25.6. Orientation As specified in par
+--- MATCH 25 AT 207558 ---
+imultaneous operation of all the direction indicator lamps fitted as described in paragraph 6.25.7. 6.25.2. Number As specified in paragraph 6.5.2. 6.25.3. Arrangement As specified in paragraph 6.5.3. 6.25.4. Position As specified in paragraph 6.5.4. 6.25.5. Geometric visibility As specified in paragraph 6.5.5. 6.25.6. Orientation As specified in paragraph 6.5.6. 6.25.7. Electrical connections. Co
+--- MATCH 25 AT 207611 ---
+lamps fitted as described in paragraph 6.25.7. 6.25.2. Number As specified in paragraph 6.5.2. 6.25.3. Arrangement As specified in paragraph 6.5.3. 6.25.4. Position As specified in paragraph 6.5.4. 6.25.5. Geometric visibility As specified in paragraph 6.5.5. 6.25.6. Orientation As specified in paragraph 6.5.6. 6.25.7. Electrical connections. Compliance with these requirements shall be demonstrate
+--- MATCH 25 AT 207661 ---
+5.2. Number As specified in paragraph 6.5.2. 6.25.3. Arrangement As specified in paragraph 6.5.3. 6.25.4. Position As specified in paragraph 6.5.4. 6.25.5. Geometric visibility As specified in paragraph 6.5.5. 6.25.6. Orientation As specified in paragraph 6.5.6. 6.25.7. Electrical connections. Compliance with these requirements shall be demonstrated by the applicant, by simulation or other means o
+--- MATCH 25 AT 207723 ---
+nt As specified in paragraph 6.5.3. 6.25.4. Position As specified in paragraph 6.5.4. 6.25.5. Geometric visibility As specified in paragraph 6.5.5. 6.25.6. Orientation As specified in paragraph 6.5.6. 6.25.7. Electrical connections. Compliance with these requirements shall be demonstrated by the applicant, by simulation or other means of verification accepted by the Technical Service responsible f
+--- MATCH 25 AT 207776 ---
+As specified in paragraph 6.5.4. 6.25.5. Geometric visibility As specified in paragraph 6.5.5. 6.25.6. Orientation As specified in paragraph 6.5.6. 6.25.7. Electrical connections. Compliance with these requirements shall be demonstrated by the applicant, by simulation or other means of verification accepted by the Technical Service responsible for type approval. 6.25.7.1. All the lamps of the rear
+--- MATCH 25 AT 207993 ---
+all be demonstrated by the applicant, by simulation or other means of verification accepted by the Technical Service responsible for type approval. 6.25.7.1. All the lamps of the rear-end collision alert signal shall flash in phase at a frequency of 4.0 +/- 1.0 Hz. 6.25.7.1.1. H owever, if any of the lamps of the rear end collision alert signal to the rear of the vehicle use filament light sources
+--- MATCH 25 AT 208111 ---
+esponsible for type approval. 6.25.7.1. All the lamps of the rear-end collision alert signal shall flash in phase at a frequency of 4.0 +/- 1.0 Hz. 6.25.7.1.1. H owever, if any of the lamps of the rear end collision alert signal to the rear of the vehicle use filament light sources the frequency shall be 4.0 +0.0/-1.0 Hz. 6.25.7.2. The rear-end collision alert signal shall operate independently of
+--- MATCH 25 AT 208287 ---
+ of the lamps of the rear end collision alert signal to the rear of the vehicle use filament light sources the frequency shall be 4.0 +0.0/-1.0 Hz. 6.25.7.2. The rear-end collision alert signal shall operate independently of other lamps. 6.25.7.3. The rear-end collision alert signal shall be  switched ON and OFF  automatically. 6.25.7.4. The rear-end collision alert signal shall not be  switched O
+--- MATCH 25 AT 208377 ---
+nt light sources the frequency shall be 4.0 +0.0/-1.0 Hz. 6.25.7.2. The rear-end collision alert signal shall operate independently of other lamps. 6.25.7.3. The rear-end collision alert signal shall be  switched ON and OFF  automatically. 6.25.7.4. The rear-end collision alert signal shall not be  switched ON  if the direction indicator lamps, the hazard warning signal or the emergency stop signa
+--- MATCH 25 AT 208469 ---
+lert signal shall operate independently of other lamps. 6.25.7.3. The rear-end collision alert signal shall be  switched ON and OFF  automatically. 6.25.7.4. The rear-end collision alert signal shall not be  switched ON  if the direction indicator lamps, the hazard warning signal or the emergency stop signal is activated. 6.25.7.5. The rear-end collision alert signal may only be  switched ON  unde
+--- MATCH 25 AT 208645 ---
+sion alert signal shall not be  switched ON  if the direction indicator lamps, the hazard warning signal or the emergency stop signal is activated. 6.25.7.5. The rear-end collision alert signal may only be  switched ON  under the following conditions: Vr switch ON  Vr  > 30 km/h  TTC   1.4  Vr    30 km/h TTC    1.4 / 30 × Vr " Vr  (Relative Speed) " : means the difference in speed between a vehicl
+--- MATCH 25 AT 209192 ---
+cle with rear-end collision alert signal and a following vehicle to collide assuming the relative speed at the time of estimation remains constant. 6.25.7.6. The  switch ON  period of the rear-end collision alert signal shall be not more than 3 seconds. 6.25.8. Tell-tale Optional 6.26.  Manoeuvring  lamps ( UN  Regulation No. 23  or  148 ) 6.26.1. Presence Optional on motor vehicles. 6.26.2. Numbe
+--- MATCH 25 AT 209298 ---
+ the time of estimation remains constant. 6.25.7.6. The  switch ON  period of the rear-end collision alert signal shall be not more than 3 seconds. 6.25.8. Tell-tale Optional 6.26.  Manoeuvring  lamps ( UN  Regulation No. 23  or  148 ) 6.26.1. Presence Optional on motor vehicles. 6.26.2. Number One or two (one per side) 6.26.3.  Arrangement No special requirement, however the requirements of parag
+--- MATCH 25 AT 228718 ---
+2 yes/no 2 9.24.4.  Exemption regarding conspicuity marking according to paragraph 6.21.1.2.5. Rear  yes/no 2   Comments:  Side  yes/no 2 Comments 9. 25. Emergency stop signal:  yes/no 2 9.26. Manoeuvring lamps:  yes/no 2 9.27 . Exterior  courtesy  lam p s:  yes/no   2 9.2 8 . Equivalent lamps: yes/no 2 9.2 9 . Maximum permissible load in the boot:  9.30. Lamps approved for and equipped with LED s
+--- MATCH 25 AT 241020 ---
+ of the vehicle, whichever occurs first, without exceeding a front axle load calculated as the sum of the front axle load of the unladen vehicle plus 25 per cent of the maximum permissible payload on the front axle.  Conversely, the front axle is so considered when the load platform is at the front. 2.4. Vehicles in category N without a load surface: 2.4.1. Drawing vehicles for semi trailers: 2.4.
+--- MATCH 25 AT 258745 ---
+ed Annex 11 Visibility of conspicuity markings to the rear, front and side of a vehicle   ( See  paragraph 6.21.5. of this Regulation) Figure 1a Rear 25 m Observation plane Observation plane Observation plane 4° 4° Figure 1b Front (trailers only) 25 m Observation plane Observation plane Observation plane 4° 4° Figure 2 Side Observation plane 25 m 4° 4° Annex 12 Test  d rive 1. Test drive specifica
+--- MATCH 25 AT 258842 ---
+paragraph 6.21.5. of this Regulation) Figure 1a Rear 25 m Observation plane Observation plane Observation plane 4° 4° Figure 1b Front (trailers only) 25 m Observation plane Observation plane Observation plane 4° 4° Figure 2 Side Observation plane 25 m 4° 4° Annex 12 Test  d rive 1. Test drive specifications for the automatic control of the main-beam headlamps 1.1. The test drive shall be carried o
+--- MATCH 25 AT 258939 ---
+ervation plane 4° 4° Figure 1b Front (trailers only) 25 m Observation plane Observation plane Observation plane 4° 4° Figure 2 Side Observation plane 25 m 4° 4° Annex 12 Test  d rive 1. Test drive specifications for the automatic control of the main-beam headlamps 1.1. The test drive shall be carried out in clear atmosphere  and with clean head-lamps 1.2. The test course shall comprise test sectio

@@ -1,0 +1,14 @@
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# OS X system files
+.DS_Store
+
+# Log files
+*.log
+
+# Editor backups
+*~
+*.swp

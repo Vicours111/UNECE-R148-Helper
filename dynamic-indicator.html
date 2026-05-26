@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN R148 動態方向燈 (Sequential Blinker) 互動式法規解讀系統</title>
+    <meta name="description" content="直觀圖像化解釋汽車法規 UN R48 與 UN R148 中，關於動態方向燈（流水式方向燈）的點亮方向、200ms時間限制、1.7長寬比以及50mm段間距等強制合規要求。">
+    <link rel="stylesheet" href="dynamic-indicator.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header>
+            <div class="logo-area">
+                <span class="logo-icon">⚡</span>
+                <div>
+                    <h1>動態方向燈互動式法規解讀系統</h1>
+                    <p>UN R48 & R148 Sequential Direction Indicator Interactive Guide</p>
+                </div>
+            </div>
+            <div class="back-btn-container">
+                <a href="index.html" id="btnBackToMain" class="back-btn">
+                    <span>⬅️</span> 返回 R148 設計輔助主系統
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Workspace -->
+        <main class="dashboard-content">
+            
+            <div class="d-lamp-grid">
+                
+                <!-- Left Panel: SVG Visualizer & Timing Canvas -->
+                <section class="visualizer-card" id="cardBlinkerVisualizer">
+                    <div class="visualizer-title">
+                        <span>💡</span>
+                        <strong>動態方向燈作動模擬器 (Blinker Simulator)</strong>
+                    </div>
+
+                    <!-- Mid-Cycle Switch Violation Warning Alert Banner (R48 § 6.5.7) -->
+                    <div class="r48-warning-banner" id="divR48Warning" style="display: none;">
+                        <span>⚠️ 法規警告: UN R48 § 6.5.7 禁止在單次點亮循環中途切換作動模式！</span>
+                    </div>
+
+                    <!-- Inboard / Outboard Labels -->
+                    <div class="blinker-direction-labels">
+                        <span class="lbl-dir lbl-outboard">◀ 左外側 (Left Outboard)</span>
+                        <span class="lbl-dir lbl-inboard" style="color: var(--secondary);">車身中心線 (Inboard / 內側)</span>
+                        <span class="lbl-dir lbl-outboard">右外側 (Right Outboard) ▶</span>
+                    </div>
+
+                    <!-- SVG Blinker LED Bar representing Vehicle Rear -->
+                    <div class="svg-blinker-container" style="aspect-ratio: 3.75;">
+                        <svg viewBox="0 0 600 160" id="svgBlinkerBar" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="amberGlow" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#f59e0b" stop-opacity="1" />
+                                    <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.5" />
+                                    <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+                                </radialGradient>
+                            </defs>
+                            
+                            <!-- Static Car Outline Elements -->
+                            <!-- Car Rear Windshield Line -->
+                            <path d="M 100,5 Q 300,-12 500,5" fill="none" stroke="#1e293b" stroke-width="2" />
+                            
+                            <!-- Main rear body panel outline (sleek fender curves) -->
+                            <path d="M 30,140 L 25,48 C 25,40 32,32 40,32 L 560,32 C 568,32 575,40 575,48 L 570,140 Z" fill="#090d16" stroke="#1e293b" stroke-width="1.5" />
+                            
+                            <!-- Bumper licensee plateframe in center -->
+                            <rect x="220" y="80" width="160" height="42" rx="4" fill="#020617" stroke="#1e293b" stroke-width="1.5" />
+                            <!-- License plate inside -->
+                            <rect x="230" y="86" width="140" height="30" rx="2" fill="#fef08a" stroke="#ca8a04" stroke-width="1" />
+                            <text x="300" y="105" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="#1e293b" text-anchor="middle" letter-spacing="1">R148-SEQUENTIAL</text>
+                            
+                            <!-- Bottom bumper crease and exhaust pipes -->
+                            <line x1="80" y1="135" x2="520" y2="135" stroke="#1e293b" stroke-width="2" />
+                            <rect x="70" y="137" width="36" height="8" rx="2" fill="#090d16" stroke="#334155" />
+                            <rect x="494" y="137" width="36" height="8" rx="2" fill="#090d16" stroke="#334155" />
+                            
+                            <!-- Sleek connecting Tail Lightbar (glowing central red guide) -->
+                            <path d="M 38,50 L 562,50" stroke="#450a0a" stroke-width="4.5" stroke-linecap="round" opacity="0.8" />
+                            <path d="M 38,50 L 562,50" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" opacity="0.6" id="centralRedTaillight" />
+                            
+                            <!-- LEFT Turn Signal Assembly -->
+                            <!-- Housing -->
+                            <rect x="36" y="44" width="184" height="42" rx="4" fill="#05080f" stroke="#334155" stroke-width="1.2" />
+                            <!-- 10 LED Segments (flows right-to-left: inside-out) -->
+                            <g id="ledLeftGroup">
+                                <rect id="ledL-0" x="202" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledL-1" x="184" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledL-2" x="166" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledL-3" x="148" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledL-4" x="130" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledL-5" x="112" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledL-6" x="94" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledL-7" x="76" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledL-8" x="58" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledL-9" x="40" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                            </g>
+
+                            <!-- RIGHT Turn Signal Assembly -->
+                            <!-- Housing -->
+                            <rect x="380" y="44" width="184" height="42" rx="4" fill="#05080f" stroke="#334155" stroke-width="1.2" />
+                            <!-- 10 LED Segments (flows left-to-right: inside-out) -->
+                            <g id="ledRightGroup">
+                                <rect id="ledR-0" x="384" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledR-1" x="402" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledR-2" x="420" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledR-3" x="438" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledR-4" x="456" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledR-5" x="474" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledR-6" x="492" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledR-7" x="510" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledR-8" x="528" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                                <rect id="ledR-9" x="546" y="50" width="14" height="30" rx="1.5" class="led-block" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Blinker Side Selector Bar -->
+                    <div class="visualizer-action-bar" style="margin-top: 5px;">
+                        <button type="button" class="action-btn active" id="btnActiveBoth" onclick="setBlinkerSide('both')">
+                            <span>雙閃</span> <span id="lblBothText">雙閃警示燈 (Hazard)</span>
+                        </button>
+                        <button type="button" class="action-btn" id="btnActiveLeft" onclick="setBlinkerSide('left')">
+                            <span>左轉</span> <span id="lblLeftText">左轉指示燈 (Left)</span>
+                        </button>
+                        <button type="button" class="action-btn" id="btnActiveRight" onclick="setBlinkerSide('right')">
+                            <span>右轉</span> <span id="lblRightText">右轉指示燈 (Right)</span>
+                        </button>
+                    </div>
+
+                    <!-- Simulator Speed & Control Bar -->
+                    <div class="visualizer-action-bar" style="margin-top: 10px;">
+                        <button type="button" class="action-btn" id="btnPlayPause">
+                            <span id="playIcon">⏸️</span> <span id="btnPlayPauseText">暫停 (Pause)</span>
+                        </button>
+                        <button type="button" class="action-btn" id="btnToggleSpeed">
+                            <span>⏱️</span> <span id="lblSpeedText">速度: 1.0x (標準)</span>
+                        </button>
+                    </div>
+
+                    <!-- UN R48 Mode Selector (Static vs Sequential) -->
+                    <div class="visualizer-action-bar" style="margin-top: 10px; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 10px; width: 100%; max-width: 540px;">
+                        <span class="preset-label" style="align-self: center; margin-right: auto; margin-bottom: 0;">點亮模式 (R48 Mode):</span>
+                        <button type="button" class="action-btn active" id="btnModeSequential" onclick="setFlashingMode('sequential')" style="flex: 1.2;">
+                            <span>💫</span> 序列流水 (Sequential)
+                        </button>
+                        <button type="button" class="action-btn" id="btnModeStatic" onclick="setFlashingMode('static')" style="flex: 0.8;">
+                            <span>💡</span> 靜態閃爍 (Static)
+                        </button>
+                    </div>
+
+                    <!-- Presets Selector Grid -->
+                    <div class="presets-grid-container">
+                        <span class="preset-label">選擇演示模式 (Flashing Preset):</span>
+                        <div class="preset-buttons">
+                            <button type="button" class="preset-btn active" id="presetCompliant" onclick="selectPreset('compliant')">
+                                <span class="indicator-dot green"></span> 合規漸進點亮
+                            </button>
+                            <button type="button" class="preset-btn" id="presetWave" onclick="selectPreset('wave')">
+                                <span class="indicator-dot red"></span> 掃描波浪式 (不合規)
+                            </button>
+                            <button type="button" class="preset-btn" id="presetReverse" onclick="selectPreset('reverse')">
+                                <span class="indicator-dot red"></span> 由外向內式 (不合規)
+                            </button>
+                            <button type="button" class="preset-btn" id="presetSlow" onclick="selectPreset('slow')">
+                                <span class="indicator-dot red"></span> 超時作動式 (不合規)
+                            </button>
+                            <button type="button" class="preset-btn" id="presetOscillate" onclick="selectPreset('oscillate')">
+                                <span class="indicator-dot red"></span> 垂直抖動式 (不合規)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Time Oscilloscope Canvas -->
+                    <div class="timeline-canvas-container">
+                        <div class="timeline-title-bar">
+                            <span>📊</span> LED 訊號時序分析示波器 (Live Blinker Oscilloscope)
+                        </div>
+                        <canvas id="canvasTimeline" width="460" height="150"></canvas>
+                        <div class="timeline-footer" style="display: flex; flex-direction: column; gap: 4px; padding-top: 8px; border-top: 1px dashed rgba(255,255,255,0.05); margin-top: 8px; font-size: 0.78rem; line-height: 1.4;">
+                            <div style="display: flex; justify-content: space-between; width: 100%; gap: 10px;">
+                                <span style="color: var(--text-secondary);">時間軸範圍: 0ms 至 1000ms (閃爍循環週期)</span>
+                                <span style="color: #eab308; font-weight: 600;">黃色實線 = 實際全亮完成時間 (Sequence Complete Time)</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; width: 100%; gap: 10px;">
+                                <span style="color: var(--danger); font-weight: 600;">紅色虛線 = 200 ms 法規限制上限線</span>
+                                <span style="color: var(--text-muted); text-align: right;">法規要求：每分鐘閃爍 90±30 次 (週期 500~1000ms，ON 區間 ≧ 50% 且流水 ≦ 200ms)</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Right Panel: Regulatory Checklist & Explanations -->
+                <section class="explain-card" id="cardRegulatoryChecklist">
+                    <div class="explain-header">
+                        <h2>動態方向燈法規核准狀態</h2>
+                        <p>UN Regulation No. 48 § 6.5.3.9 & R148 § 5.6</p>
+                    </div>
+
+                    <!-- Live Compliance Summary Box -->
+                    <div class="compliance-summary-box" id="divComplianceSummary">
+                        <div class="summary-status-header">
+                            <span class="status-badge status-compliant" id="lblComplianceBadge">COMPLIANT / 符合法規</span>
+                        </div>
+                        <p class="summary-explain-text" id="lblComplianceExplain">
+                            本段點亮順序與時序特徵完全符合聯合國 UN R48 安裝規範與 R148 燈具光學標準。車燈從靠近車輛中線內側向車側外側均勻遞進開啟，且在週期內點亮的光源均持續保持開啟（鎖存），並於 200 ms 內完成整個動態流水變化。
+                        </p>
+                    </div>
+
+                    <!-- Interactive Parameter Checklist -->
+                    <div class="interactive-checklist">
+                        <h3>合規要件檢核表 (Blinker Parameter Check)</h3>
+                        <div class="checklist-items-wrapper">
+                            
+                            <div class="checklist-item compliant" id="check-direction">
+                                <span class="check-icon">✓</span>
+                                <div class="check-body">
+                                    <div class="check-title">點亮方向限制 (Direction of Activation)</div>
+                                    <div class="check-desc" id="desc-direction">由靠近車輛中心線之內側 (Inboard) 向車外側 (Outboard) 遞進。</div>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-item compliant" id="check-retention">
+                                <span class="check-icon">✓</span>
+                                <div class="check-body">
+                                    <div class="check-title">光源點亮鎖存性 (Continuous Latching)</div>
+                                    <div class="check-desc" id="desc-retention">點亮的光源必須持續保持點亮，直至該 ON 週期結束，不得有波浪消退或中間熄滅之情形。</div>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-item compliant" id="check-timing">
+                                <span class="check-icon">✓</span>
+                                <div class="check-body">
+                                    <div class="check-title">順序完成時間 (Sequence Complete Time)</div>
+                                    <div class="check-desc" id="desc-timing">動態點亮流水過程，必須在 ON 週期開始後的 <strong>200 毫秒 (ms)</strong> 內完全結束並維持全亮。</div>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-item compliant" id="check-oscillation">
+                                <span class="check-icon">✓</span>
+                                <div class="check-body">
+                                    <div class="check-title">垂直方向波形限制 (No Vertical Oscillation)</div>
+                                    <div class="check-desc" id="desc-oscillation">點亮順序必須是平順的水平遞進，在垂直高度軸向上不得有反覆來回振盪的抖動。</div>
+                                </div>
+                            </div>
+
+                            <div class="checklist-item compliant" id="check-modelock">
+                                <span class="check-icon">✓</span>
+                                <div class="check-body">
+                                    <div class="check-title">啟動模式鎖定要求 (Activation Mode Lock)</div>
+                                    <div class="check-desc" id="desc-modelock">一旦開啟作動，在該次點亮週期中絕不允許於靜態與序列模式之間來回變更。</div>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-item compliant" id="check-hazardsym">
+                                <span class="check-icon">✓</span>
+                                <div class="check-body">
+                                    <div class="check-title">雙閃對稱同模式要求 (Hazard Warning Symmetry)</div>
+                                    <div class="check-desc" id="desc-hazardsym">雙閃警示燈點亮時，前後左右所有方向指示燈必須操作在完全相同的模式（同為靜態或同為流水）。</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+
+            <!-- Bottom Section: Interactive Geometrical Playgrounds -->
+            <div class="playgrounds-grid">
+                
+                <!-- Playgound 1: Aspect Ratio 1.7 Ruler -->
+                <section class="playground-section" id="sectionAspectRatio">
+                    <h3><span>📐</span> 發光視表面長寬比判定互動說明 (Aspect Ratio 1.7 Check)</h3>
+                    
+                    <div class="playground-layout-wrapper">
+                        
+                        <div class="playground-controls">
+                            <p class="playground-intro">
+                                根據 <b>UN R148 § 5.6.2</b> 規定：只有當燈具發光視表面正交投影的外接矩形<b>「水平長邊與垂直短邊之比不小於 1.7」</b>時，才<b>允許</b>設計成動態/流水順序點亮。若是偏向方形或垂直窄高的燈具，依法規一律禁止使用動態流水效果。
+                            </p>
+                            
+                            <div class="control-item">
+                                <label>
+                                    <span>視表面設計寬度 (Width)</span>
+                                    <span id="lblWidthValue" class="val-display">250 mm</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="range-bound">100mm</span>
+                                    <input type="range" id="sliderWidth" min="100" max="450" value="250" step="10" oninput="updateAspectRatioPlayground()">
+                                    <span class="range-bound">450mm</span>
+                                </div>
+                            </div>
+
+                            <div class="control-item" style="margin-top: 10px;">
+                                <label>
+                                    <span>視表面設計高度 (Height)</span>
+                                    <span id="lblHeightValue" class="val-display">100 mm</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="range-bound">20mm</span>
+                                    <input type="range" id="sliderHeight" min="20" max="200" value="100" step="5" oninput="updateAspectRatioPlayground()">
+                                    <span class="range-bound">200mm</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Spacing Result Card -->
+                            <div class="judge-result-box" id="ratioJudgeResultCard">
+                                <div class="judge-status status-compliant" id="lblRatioJudgeStatus">RATIO: 2.50 / COMPLIANT</div>
+                                <p class="judge-explain-sub" id="lblRatioJudgeExplain">
+                                    長寬比 2.50 ≧ 1.7。此長寬比足以產生顯著的水平移動方向感，法規<b>核准</b>配備動態流水作動。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Visual representation SVG -->
+                        <div class="svg-playground-container" style="aspect-ratio: 1.5;">
+                            <svg viewBox="0 0 320 220" id="svgRatioPlayground" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="blinkerOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#f59e0b" />
+                                        <stop offset="100%" stop-color="#f97316" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Grid Lines -->
+                                <rect x="10" y="10" width="300" height="200" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.03)" />
+                                
+                                <!-- Outer boundary bounds indicator -->
+                                <rect x="35" y="45" width="250" height="100" fill="none" stroke="rgba(6,182,212,0.3)" stroke-dasharray="3 3" id="rectRatioBoundary" />
+                                
+                                <!-- The Lamp Body Emitting Surface -->
+                                <rect x="35" y="45" width="250" height="100" fill="url(#blinkerOrange)" stroke="#fef08a" stroke-width="1.5" id="rectRatioLamp" rx="4" opacity="0.8" />
+                                <text x="160" y="100" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="#0f172a" text-anchor="middle" id="lblRatioLampText">Apparent Surface</text>
+                                
+                                <!-- Horizontal Dimension Line -->
+                                <line x1="35" y1="165" x2="285" y2="165" stroke="#06b6d4" stroke-width="1.5" marker-start="url(#arrow-start)" marker-end="url(#arrow-end)" id="lineRatioWidth" />
+                                <text x="160" y="182" fill="#06b6d4" font-family="'Outfit', sans-serif" font-size="11" font-weight="600" text-anchor="middle" id="lblDimensionWidthText">250 mm</text>
+                                
+                                <!-- Vertical Dimension Line -->
+                                <line x1="300" y1="45" x2="300" y2="145" stroke="#06b6d4" stroke-width="1.5" marker-start="url(#arrow-start)" marker-end="url(#arrow-end)" id="lineRatioHeight" />
+                                <text x="312" y="100" fill="#06b6d4" font-family="'Outfit', sans-serif" font-size="11" font-weight="600" dominant-baseline="middle" id="lblDimensionHeightText">100 mm</text>
+                                
+                                <!-- Dimension Extension lines -->
+                                <line x1="35" y1="145" x2="35" y2="172" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2" id="lineExtW-L" />
+                                <line x1="285" y1="145" x2="285" y2="172" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2" id="lineExtW-R" />
+                                <line x1="285" y1="45" x2="307" y2="45" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2" id="lineExtH-T" />
+                                <line x1="285" y1="145" x2="307" y2="145" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2" id="lineExtH-B" />
+                            </svg>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+                <!-- Playgound 2: LED Segment Gap spacing 50mm -->
+                <section class="playground-section" id="sectionSegmentGap">
+                    <h3><span>📐</span> LED 區段投影間距校核判定互動說明 (Segment Gap 50mm Check)</h3>
+                    
+                    <div class="playground-layout-wrapper">
+                        
+                        <div class="playground-controls">
+                            <p class="playground-intro">
+                                根據 <b>UN R148 § 5.6.1.3</b> 規定：在水平方向投影上，若動態流水燈具是由多個分散的LED發光區塊（發光視表面）組合而成，<b>「相鄰發光區塊投影邊緣的最短間距不得大於 50 mm」</b>。
+                            </p>
+                            
+                            <div class="control-item">
+                                <label>
+                                    <span>區段相鄰間距 (Segment Gap)</span>
+                                    <span id="lblGapValue" class="val-display">30 mm</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span class="range-bound">10mm</span>
+                                    <input type="range" id="sliderGap" min="10" max="95" value="30" step="5" oninput="updateGapPlayground()">
+                                    <span class="range-bound">95mm</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Gap Spacing Result Card -->
+                            <div class="judge-result-box" id="gapJudgeResultCard">
+                                <div class="judge-status status-compliant" id="lblGapJudgeStatus">GAP: 30mm / COMPLIANT</div>
+                                <p class="judge-explain-sub" id="lblGapJudgeExplain">
+                                    相鄰間距 30mm ≦ 50mm。發光區段緊密相鄰，符合流水連貫性，法規<b>允許</b>視為同一組流水燈組合。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Visual representation SVG -->
+                        <div class="svg-playground-container" style="aspect-ratio: 1.5;">
+                            <svg viewBox="0 0 320 220" id="svgGapPlayground" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <!-- Markers for arrows -->
+                                    <marker id="arrow-start" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 10 0 L 0 5 L 10 10 z" fill="#06b6d4" />
+                                    </marker>
+                                    <marker id="arrow-end" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#06b6d4" />
+                                    </marker>
+                                </defs>
+                                <!-- Grid Lines -->
+                                <rect x="10" y="10" width="300" height="200" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.03)" />
+                                
+                                <!-- Segment 1 (Static) -->
+                                <rect x="20" y="65" width="110" height="90" fill="url(#blinkerOrange)" stroke="#fef08a" stroke-width="1.5" rx="4" opacity="0.8" />
+                                <text x="75" y="114" font-family="'Outfit', sans-serif" font-size="11" font-weight="600" fill="#0f172a" text-anchor="middle">Segment 1</text>
+                                
+                                <!-- Segment 2 (Movable via transform in JS) -->
+                                <g id="grpMovableSegment" transform="translate(30, 0)">
+                                    <rect x="130" y="65" width="110" height="90" fill="url(#blinkerOrange)" stroke="#fef08a" stroke-width="1.5" rx="4" opacity="0.8" />
+                                    <text x="185" y="114" font-family="'Outfit', sans-serif" font-size="11" font-weight="600" fill="#0f172a" text-anchor="middle">Segment 2</text>
+                                </g>
+                                
+                                <!-- Gap Overlay Indicators (Dynamic Width in JS) -->
+                                <!-- Dynamic line for dimension -->
+                                <line x1="130" y1="110" x2="160" y2="110" stroke="#06b6d4" stroke-width="1.5" marker-start="url(#arrow-start)" marker-end="url(#arrow-end)" id="lineGapDimension" />
+                                <!-- Extension Lines -->
+                                <line x1="130" y1="65" x2="130" y2="155" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2" id="lineGapExtL" />
+                                <line x1="160" y1="65" x2="160" y2="155" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2" id="lineGapExtR" />
+                                
+                                <!-- Spacing dimension text -->
+                                <text x="145" y="168" fill="#06b6d4" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" text-anchor="middle" id="lblGapDimensionText">30 mm</text>
+                            </svg>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+            </div>
+            
+            <!-- Legal Copy Summary Card -->
+            <section class="playground-section" style="margin-bottom: 0;">
+                <h3><span>📜</span> 聯合國 ECE R48 / R148 方向指示燈法規條文對照說明</h3>
+                <div class="regulatory-details-grid">
+                    
+                    <div class="regulatory-details-card">
+                        <h4>點亮順序與鎖存要求 (R48 § 6.5.3.9 / R148 § 5.6.1.1)</h4>
+                        <p>
+                            方向指示燈若宣告為「動態流水順序點亮 (Sequential Activation)」，其內部的所有發光單元（Light Sources）點亮次序應自<b>車身中心線側（Inboard）均勻遞進朝車身側（Outboard）點亮</b>。
+                            <br><br>
+                            更為關鍵的是法規中的<b>「鎖存（Latching）」</b>要求：一個光源在週期中點亮後，<b>必須保持點亮直到該 ON 週期結束</b>。這意味著「跑馬燈」、「掃描波浪（前方熄滅）」或「霓虹式波動」在汽車安全法規上是<b>絕對不合規</b>的，會被直接拒絕型式審驗。
+                        </p>
+                    </div>
+
+                    <div class="regulatory-details-card">
+                        <h4>200毫秒反應時限要求 (R48 § 6.5.3.9 / R148 § 5.6.1.2)</h4>
+                        <p>
+                            法規出於行車防追撞反應時間的考量，對動態順序開啟過程有嚴格的時間限制：<b>「從最內側第一個光源點亮開始算起，到最後一個最外側的光源點亮為止，整個漸進式開啟過程必須在 200 ms (0.2 秒) 內完全完成。」</b>
+                            <br><br>
+                            隨後，所有光源必須在該 ON 週期剩餘時間內保持 100% 穩定全亮（Full-ON），直到 ON 週期結束（進入 OFF 滅燈週期）。這保證了方向燈能具備與傳統方向燈同等的辨識即時性，防止過慢的流水拖延後車駕駛的警示判斷。
+                        </p>
+                    </div>
+
+                    <div class="regulatory-details-card">
+                        <h4>作動模式與雙閃警示同步 (R48 § 6.5.7 & § 6.6.1)</h4>
+                        <p>
+                            法規為防止不對稱燈光造成用路人識別混亂，對動態燈具進行了電氣層面的雙重限制：
+                            <br>
+                            1. **作動中禁止切換**：兼具「靜態」與「流水」模式的方向燈，一旦啟動點亮，在該次點亮循環中<b>嚴禁在中途進行模式切換</b>。
+                            <br>
+                            2. **雙閃與大型車同步**：當啟動「雙閃警示燈（Hazard）」時，全車方向指示燈<b>必須強制使用相同的點亮模式運行**（全靜態或全序列），不可一邊流水一邊靜態。
+                        </p>
+                    </div>
+
+                    <div class="regulatory-details-card">
+                        <h4>閃爍頻率與響應延遲限制 (R48 § 6.5.9)</h4>
+                        <p>
+                            動態流水方向燈本質上仍為「閃爍燈光」，其基本閃爍參數受到嚴密管控：
+                            <br>
+                            1. **閃爍頻率限制**：閃爍頻率必須穩定在每分鐘 **$90 \pm 30$ 次**（相當於 $1.5\text{ Hz} \pm 0.5\text{ Hz}$，作動週期介於 $500\text{ ms} \sim 1000\text{ ms}$）。
+                            <br>
+                            2. **響應延遲限制**：為防止信號滯後，操作方向指示控制後，<b>燈具首發光必須在 1.0 秒內發出**，且**首熄滅必須在 1.5 秒內完成**。
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+            
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <span>參考法規文檔：UN Regulation No. 148 (LSD) § 5.6 & UN Regulation No. 48 (Installation) § 6.5.3.9</span>
+            <span>系統設計開發：Antigravity AI | <a href="#" onclick="alert('本互動式動態方向燈解讀系統基於聯合國 UN R48 與 R148 修正案進行圖像化視覺化，旨在輔助車燈光學與機構開發工程師，避免在前期造型評估時產生設計盲點。')">關於本模組說明</a></span>
+        </footer>
+
+    </div>
+
+    <!-- Application Logic Loader -->
+    <script src="dynamic-indicator.js" charset="utf-8"></script>
+</body>
+</html>

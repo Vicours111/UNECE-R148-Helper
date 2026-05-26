@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN R148 相互依賴燈具 (D-Lamp & Y-Lamp Mode) 互動式法規解讀系統</title>
+    <meta name="description" content="直觀圖像化解釋汽車法規 UN R148 與 R48 中，關於雙燈具系統 (D-Lamp) 與相互依賴車燈系統 (Y-Lamp) 的發光強度、發光面積、75mm間距校核以及尾門開啟失效補償法規。">
+    <link rel="stylesheet" href="d-lamp.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header>
+            <div class="logo-area">
+                <span class="logo-icon">🚗</span>
+                <div>
+                    <h1>相互依賴燈具與 D-Lamp 互動式法規解讀系統</h1>
+                    <p>UN R48 & R148 Interdependent Lamp & D-Lamp Mode Interactive Guide</p>
+                </div>
+            </div>
+            <div class="back-btn-container">
+                <a href="index.html" id="btnBackToMain" class="back-btn">
+                    <span>⬅️</span> 返回 R148 設計輔助主系統
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Workspace Panels -->
+        <main class="dashboard-content">
+            
+            <div class="d-lamp-grid">
+                
+                <!-- Left Panel: SVG Visualizer -->
+                <section class="visualizer-card" id="cardVehicleVisualizer">
+                    
+                    <div class="visualizer-title">
+                        <span>💡</span>
+                        <strong id="visualizerTitleText">相互依賴車燈運行模擬器 (Y-Lamp Mode)</strong>
+                    </div>
+                    
+                    <!-- SVG Interactive Vehicle Graphic -->
+                    <div class="svg-vehicle-container" id="vehicleSvgContainer">
+                        <svg viewBox="0 0 480 400" id="svgCarRear" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <!-- Glow gradients for lights -->
+                                <radialGradient id="glowRed" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#ef4444" stop-opacity="1" />
+                                    <stop offset="50%" stop-color="#ef4444" stop-opacity="0.5" />
+                                    <stop offset="100%" stop-color="#ef4444" stop-opacity="0" />
+                                </radialGradient>
+                                <radialGradient id="glowAmber" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#f59e0b" stop-opacity="1" />
+                                    <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.5" />
+                                    <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+                                </radialGradient>
+                                <radialGradient id="glowWhite" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#f8fafc" stop-opacity="1" />
+                                    <stop offset="50%" stop-color="#f8fafc" stop-opacity="0.5" />
+                                    <stop offset="100%" stop-color="#f8fafc" stop-opacity="0" />
+                                </radialGradient>
+                            </defs>
+
+                            <!-- Road / Shadow -->
+                            <ellipse cx="240" cy="355" rx="190" ry="15" class="car-shadow" />
+                            
+                            <!-- Static Car Parts (Tires, Side Mirrors, Main Fixed Fender Body) -->
+                            <!-- Tires -->
+                            <rect x="70" y="300" width="40" height="50" rx="8" class="car-tire" />
+                            <rect x="370" y="300" width="40" height="50" rx="8" class="car-tire" />
+                            
+                            <!-- Side Mirrors -->
+                            <path d="M 60,175 Q 40,170 50,160 Z" fill="#0f172a" stroke="#475569" stroke-width="1.5" />
+                            <path d="M 420,175 Q 440,170 430,160 Z" fill="#0f172a" stroke="#475569" stroke-width="1.5" />
+                            
+                            <!-- Main Outer Body Silhouette -->
+                            <path d="M 100,320 L 75,320 L 75,180 L 105,100 L 140,80 L 340,80 L 375,100 L 405,180 L 405,320 L 380,320 L 380,335 C 380,345 100,345 100,335 Z" class="car-body-base" id="pathCarBodyOuter" />
+                            
+                            <!-- Fixed Fender Side Panels (For static lights) -->
+                            <path d="M 75,200 L 120,200 L 120,270 L 75,270 Z" fill="none" stroke="#334155" stroke-dasharray="3 3" />
+                            <path d="M 405,200 L 360,200 L 360,270 L 405,270 Z" fill="none" stroke="#334155" stroke-dasharray="3 3" />
+
+                            <!-- Bumper -->
+                            <rect x="75" y="285" width="330" height="35" rx="6" class="car-bumper" />
+                            
+                            <!-- Bumper License Plate Nest -->
+                            <rect x="180" y="292" width="120" height="22" fill="#020617" stroke="#1e293b" rx="2" />
+                            
+                            <!-- Auxiliary / Bumper Backup lamps (Y-Lamp compensatory lamps) -->
+                            <!-- Lower Amber / Red Reflex units in bumper -->
+                            <rect x="90" y="295" width="40" height="8" rx="2" class="lamp-housing" />
+                            <rect x="92" y="297" width="36" height="4" rx="1" fill="#ef4444" opacity="0.4" id="bumperReflexL" />
+                            
+                            <rect x="350" y="295" width="40" height="8" rx="2" class="lamp-housing" />
+                            <rect x="352" y="297" width="36" height="4" rx="1" fill="#ef4444" opacity="0.4" id="bumperReflexR" />
+
+                            <!-- FIXED Lamp Assemblies (Body side - Fender mounted) -->
+                            <!-- Left Fixed Outer Lamp (Part 1) -->
+                            <path d="M 77,215 Q 115,220 115,245 Q 95,255 77,250 Z" class="lamp-housing" />
+                            <path d="M 79,217 Q 112,222 112,243 Q 95,252 79,248 Z" fill="#450a0a" id="outerLampHousingL" />
+                            <!-- Light emitting lens -->
+                            <path d="M 82,220 Q 108,225 108,241 Q 95,248 82,245 Z" fill="#ef4444" class="lamp-source lamp-glow-red" id="lampFixedL" />
+                            
+                            <!-- Right Fixed Outer Lamp (Part 1) -->
+                            <path d="M 403,215 Q 365,220 365,245 Q 385,255 403,250 Z" class="lamp-housing" />
+                            <path d="M 401,217 Q 368,222 368,243 Q 385,252 401,248 Z" fill="#450a0a" id="outerLampHousingR" />
+                            <!-- Light emitting lens -->
+                            <path d="M 398,220 Q 372,225 372,241 Q 385,248 398,245 Z" fill="#ef4444" class="lamp-source lamp-glow-red" id="lampFixedR" />
+
+                            <!-- ============================================== -->
+                            <!-- MOVING TAILGATE GROUP (Splits / Opens) -->
+                            <!-- ============================================== -->
+                            <g id="svg-tailgate-group">
+                                <!-- Tailgate Outer Panel Silhouette -->
+                                <path d="M 125,82 L 355,82 L 385,140 L 385,275 L 95,275 L 95,140 Z" fill="#1e293b" stroke="#475569" stroke-width="2" />
+                                
+                                <!-- Rear Window Pane -->
+                                <path d="M 140,92 L 340,92 L 368,140 L 112,140 Z" class="car-window" />
+                                
+                                <!-- License Plate (Tailgate style) -->
+                                <rect x="180" y="215" width="120" height="30" fill="#fef08a" stroke="#ca8a04" rx="2" />
+                                <text x="240" y="235" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle" letter-spacing="1">R148-DLAMP</text>
+                                
+                                <!-- Tailgate Handle / Logo Trim -->
+                                <rect x="210" y="195" width="60" height="8" rx="2" fill="#0f172a" stroke="#334155" />
+                                <circle cx="240" cy="180" r="8" fill="none" stroke="#06b6d4" stroke-width="1.5" />
+                                
+                                <!-- MOVABLE Lamp Assemblies (Inner side - Tailgate mounted) -->
+                                <!-- Left Movable Inner Lamp (Part 2) -->
+                                <path d="M 120,218 Q 165,225 165,245 Q 145,252 120,250 Z" class="lamp-housing" />
+                                <path d="M 122,220 Q 162,227 162,243 Q 145,249 122,248 Z" fill="#450a0a" id="innerLampHousingL" />
+                                <!-- Light emitting lens -->
+                                <path d="M 125,223 Q 158,229 158,241 Q 145,246 125,245 Z" fill="#ef4444" class="lamp-source lamp-glow-red" id="lampMovableL" />
+                                
+                                <!-- Right Movable Inner Lamp (Part 2) -->
+                                <path d="M 360,218 Q 315,225 315,245 Q 335,252 360,250 Z" class="lamp-housing" />
+                                <path d="M 358,220 Q 318,227 318,243 Q 335,249 358,248 Z" fill="#450a0a" id="innerLampHousingR" />
+                                <!-- Light emitting lens -->
+                                <path d="M 355,223 Q 322,229 322,241 Q 335,246 355,245 Z" fill="#ef4444" class="lamp-source lamp-glow-red" id="lampMovableR" />
+                            </g>
+                        </svg>
+                    </div>
+                    
+                    <!-- Action controls -->
+                    <div class="visualizer-action-bar">
+                        <button type="button" class="action-btn" id="btnToggleTailgate">
+                            <span id="txtGateIcon">🔓</span> <span id="txtGateBtn">開啟尾門 (Open Tailgate)</span>
+                        </button>
+                        <button type="button" class="action-btn" id="btnToggleFailure">
+                            <span>⚠️</span> <span id="txtFailureBtn">模擬光源失效 (Simulate Failure)</span>
+                        </button>
+                    </div>
+                    
+                </section>
+                
+                <!-- Right Panel: Legal & Mode Configurations -->
+                <section class="explain-card" id="cardRegulatoryExplainer">
+                    
+                    <div class="explain-header">
+                        <h2 id="lblModeTitle">相互依賴車燈模式 (Y-Lamp Mode)</h2>
+                        <p id="lblModeSubtitle">雙車體區塊分佈，協同點亮與連動控制</p>
+                    </div>
+                    
+                    <!-- Tab buttons to switch Modes -->
+                    <div class="explain-tabs">
+                        <button class="explain-tab-btn active" id="tabModeY" onclick="switchSystemMode('Y')">
+                            Y 標記 相互依賴燈具
+                        </button>
+                        <button class="explain-tab-btn" id="tabModeD" onclick="switchSystemMode('D')">
+                            D 標記 雙燈組合系統
+                        </button>
+                    </div>
+                    
+                    <!-- Spec details & database link -->
+                    <div class="control-item" style="margin-bottom:16px;">
+                        <label>
+                            <span>比對車燈法規功能</span>
+                        </label>
+                        <div class="search-input-box" style="margin-top:6px;">
+                            <select id="lampSpecSelector" onchange="handleSpecSelectorChange()">
+                                <option value="S1" selected>煞車燈 - 穩態 (Stop Lamp S1)</option>
+                                <option value="R1">後位置燈 - 穩態 (Rear Position R1)</option>
+                                <option value="F1">後霧燈 - 穩態 (Rear Fog F1)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Panels for Mode Y -->
+                    <div class="explain-panel active" id="panelModeY">
+                        <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin-bottom:12px;">
+                            <strong>「相互依賴燈具系統 (Y-Lamp System)」</strong>是指由兩個或三個標記有 <strong>"Y"</strong> 的部分燈體組合成的單一光學功能系統。典型例子為<strong>掀背車/SUV的貫穿式尾燈</strong>。
+                        </p>
+                        
+                        <div class="note-box" style="margin-bottom:16px; border-color:var(--secondary-glow); background:rgba(6,182,212,0.02);">
+                            <strong>⚠️ 尾門開啟 (Movable Tailgate) 極限法規限制：</strong><br>
+                            當一部分燈具安裝在會被開啟的尾門上時：
+                            <ul style="margin-left: 18px; margin-top: 6px; font-size:0.78rem; display:flex; flex-direction:column; gap:4px;">
+                                <li><strong>方案 A</strong>：留在車體固定端的其餘燈體（Fender Mounted）必須<strong>獨立完全符合</strong> 100% 的配光強度下限門檻。</li>
+                                <li><strong>方案 B</strong>：若固定端不足以符合 100% 強度，則在尾門開啟時，車身保險桿處的<strong>輔助燈具 (Auxiliary Lamp) 必須自動啟動代替點亮</strong>。</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-list">
+                            <div class="spec-item">
+                                <span class="spec-item-lbl">系統宣告類型 (Marking)</span>
+                                <span class="badge-info badge-y">Y 標記 (如 S1-Y / R-Y)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-item-lbl">基準功能光度下限 (Min Intensity)</span>
+                                <span class="spec-item-val" id="valMinIntensityY" style="color:var(--secondary);">60 cd</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-item-lbl">系統合計光度上限 (Combined Max)</span>
+                                <span class="spec-item-val" id="valMaxIntensityY">260 cd</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-item-lbl">光源開關同步性要求</span>
+                                <span class="spec-item-val" style="color:var(--success);">必須同步連動切換</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Panels for Mode D -->
+                    <div class="explain-panel" id="panelModeD">
+                        <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin-bottom:12px;">
+                            <strong>「雙燈組合系統 (D-Lamp Mode)」</strong>是指兩個獨立核准並標有 <strong>"D"</strong> 標記的燈體安裝在一起，在整車安裝法規上被視為「單一燈具」。
+                        </p>
+                        
+                        <div class="note-box" style="margin-bottom:16px; border-color:var(--primary-glow); background:rgba(79,70,229,0.02)">
+                            <strong>🛡️ 失效安全防護精神 (Single Failure Fallback)：</strong><br>
+                            當其中一盞標記為 "D" 的燈體失效（例如損壞、斷路）時：
+                            <ul style="margin-left: 18px; margin-top: 6px; font-size:0.78rem; display:flex; flex-direction:column; gap:4px;">
+                                <li>另一盞正常工作的燈體<strong>依然必須滿足 100% 的基準最小光度下限</strong>，以保證最基本的行車安全性！</li>
+                                <li>為了防眩光，兩盞燈同時工作時，<strong>單燈的最大光度被強制限制在普通單燈的 50%</strong>。</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-list">
+                            <div class="spec-item">
+                                <span class="spec-item-lbl">系統宣告類型 (Marking)</span>
+                                <span class="badge-info badge-d">D 標記 (如 S1-D / R-D)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-item-lbl">單個D燈具光度上限 (50% Max Capped)</span>
+                                <span class="spec-item-val" id="valMaxIntensityD" style="color:var(--danger);">130 cd (減半)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-item-lbl">單一光源失效下限門檻</span>
+                                <span class="spec-item-val" id="valMinIntensityD" style="color:var(--success);">滿足 100% 最小強度 (60 cd)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-item-lbl">配光均勻度要求</span>
+                                <span class="spec-item-val">兩側發光面積與光強必須平衡</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+                
+            </div>
+            
+            <!-- Bottom Section: The 75mm Distance Rule Playground -->
+            <section class="playground-section" id="section75mmPlayground">
+                <h3><span>📐</span> 75mm 視表面間距判定互動說明 (75mm Apparent Surface Edge-to-Edge Rule)</h3>
+                
+                <div class="slider-panel-75">
+                    
+                    <div class="slider-controls-75">
+                        <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;">
+                            根據 UN Regulation No. 48 安裝法規規定：多個發光區塊（Apparent Surfaces）若要在安裝上被合法判定為<b>「單一燈具 (Single Lamp)」</b>，其相鄰發光區塊投影邊緣的最短間距<b>不得大於 75 mm</b>。
+                        </p>
+                        
+                        <div class="control-item" style="margin-top:10px;">
+                            <label>
+                                <span>發光視表面間距 (Edge Gap)</span>
+                                <span id="lblGapValue" class="val-display">60 mm</span>
+                            </label>
+                            <div class="slider-container">
+                                <span style="font-size:0.75rem; color:var(--text-muted);">10mm</span>
+                                <input type="range" id="gapRangeSlider" min="10" max="150" value="60" step="5" oninput="updateGapPlayground(this.value)">
+                                <span style="font-size:0.75rem; color:var(--text-muted);">150mm</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Status indicator card -->
+                        <div class="judge-result-box" id="gapJudgeResultCard" style="background:rgba(255,255,255,0.01); min-height:80px; padding:12px; margin-top:10px;">
+                            <div class="judge-status status-compliant" id="lblGapJudgeStatus">COMPLIANT / 視為單一燈具</div>
+                            <p style="font-size:0.76rem; color:var(--text-muted); margin-top:4px;" id="lblGapJudgeExplain">
+                                間距 ≦ 75mm，兩發光表面非常貼近，在視覺光學上可被法規宣告為「一個單一車燈」進行型式認證。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- SVG Interactive Spacing Render -->
+                    <div class="svg-playground-container" id="playgroundSvgContainer">
+                        <svg viewBox="0 0 440 200" id="svgPlayground" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <!-- Arrow heads marker -->
+                                <marker id="arrow-start" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M 10 0 L 0 5 L 10 10 z" fill="#06b6d4" />
+                                </marker>
+                                <marker id="arrow-end" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#06b6d4" />
+                                </marker>
+                                
+                                <linearGradient id="lensGradRed" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#fca5a5" />
+                                    <stop offset="30%" stop-color="#ef4444" />
+                                    <stop offset="100%" stop-color="#991b1b" />
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Boundary Grid lines for reference -->
+                            <line x1="20" y1="30" x2="420" y2="30" stroke="rgba(255,255,255,0.05)" />
+                            <line x1="20" y1="130" x2="420" y2="130" stroke="rgba(255,255,255,0.05)" />
+                            
+                            <!-- Left Apparent Surface (Lens 1) - STATIC -->
+                            <g id="grp-lens-static">
+                                <!-- Lens Glow -->
+                                <rect x="50" y="35" width="100" height="90" rx="8" class="surface-lens-glow" />
+                                <!-- Lens Body -->
+                                <rect x="50" y="35" width="100" height="90" rx="8" class="surface-lens" />
+                                <text x="100" y="85" font-family="'Outfit', sans-serif" font-size="11" font-weight="600" fill="#fca5a5" text-anchor="middle">Surface 1</text>
+                            </g>
+                            
+                            <!-- Right Apparent Surface (Lens 2) - DYNAMICALLY TRANSLATED -->
+                            <g id="grp-lens-dynamic" transform="translate(60, 0)">
+                                <!-- Lens Glow -->
+                                <rect x="150" y="35" width="100" height="90" rx="8" class="surface-lens-glow" />
+                                <!-- Lens Body -->
+                                <rect x="150" y="35" width="100" height="90" rx="8" class="surface-lens" />
+                                <text x="200" y="85" font-family="'Outfit', sans-serif" font-size="11" font-weight="600" fill="#fca5a5" text-anchor="middle">Surface 2</text>
+                            </g>
+                            
+                            <!-- DYNAMIC Dimension lines overlay -->
+                            <!-- Left Extension line -->
+                            <line x1="150" y1="125" x2="150" y2="175" class="dimension-extension" id="lineExtensionL" />
+                            <!-- Right Extension line (Dynamic X) -->
+                            <line x1="210" y1="125" x2="210" y2="175" class="dimension-extension" id="lineExtensionR" />
+                            
+                            <!-- Spacing dimension arrow line -->
+                            <line x1="150" y1="160" x2="210" y2="160" class="dimension-line" id="lineDimensionGap" />
+                            <!-- Dimension label text -->
+                            <text x="180" y="152" class="dimension-text" id="lblDimensionText">60 mm</text>
+                        </svg>
+                    </div>
+                    
+                </div>
+                
+                <!-- Comp Table side by side -->
+                <div class="comparison-grid">
+                    
+                    <div class="comp-card">
+                        <div class="comp-card-title red">
+                            <span class="dot-lead">■</span> D 標記燈具 (D-Lamps) 法規判定
+                        </div>
+                        <ul class="comp-list">
+                            <li><strong>物理定義：</strong>兩盞完全獨立經認證的燈具組裝在一起。</li>
+                            <li><strong>最大光度上限限制：</strong>各單燈強度最高不可超過標準單燈的 <strong>50%</strong>。</li>
+                            <li><strong>單一失效模式防護：</strong>一燈失效，另一燈必須滿足 <strong>100% 最小發光強度要求</strong>。</li>
+                            <li><strong>燈具標記：</strong>燈罩上必須模刻或標註英文字母 <strong>「D」</strong> (例如 S1 D, R D)。</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comp-card">
+                        <div class="comp-card-title cyan">
+                            <span class="dot-lead">■</span> Y 標記相互依賴燈具 (Y-Lamps) 法規判定
+                        </div>
+                        <ul class="comp-list">
+                            <li><strong>物理定義：</strong>單一光學功能分佈在兩個或三個相互依賴的燈體。</li>
+                            <li><strong>最大光度上限限制：</strong>多個燈體同時亮起時，<strong>總強度</strong>不可超過標準單燈的 100%。</li>
+                            <li><strong>可活動車體（尾門）開啟：</strong>移位的燈體熄滅，固定端燈體必須獨自滿足 100% 最小光度，或啟動<strong>保險桿上的輔助燈</strong>。</li>
+                            <li><strong>燈具標記：</strong>所有燈體上必須模刻或標註英文字母 <strong>「Y」</strong> (例如 S1 Y, R Y)。</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+            </section>
+            
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <span>參考法規文檔：UN Regulation No. 148 (LSD) & UN Regulation No. 48 (Installation of Lighting)</span>
+            <span>系統設計開發：Antigravity AI | <a href="#" onclick="alert('本互動解讀模組專為車燈光學工程師與車身機構設計師開發，旨在將複雜的幾何發光視表面與失效安全法規進行直觀視覺化呈現。')">關於本模組說明</a></span>
+        </footer>
+
+    </div>
+    
+    <!-- Application Logic Loader -->
+    <script src="d-lamp.js"></script>
+</body>
+</html>

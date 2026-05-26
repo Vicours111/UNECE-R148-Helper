@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN R148 車燈設計工程輔助系統 (UN R148 Car Lighting Design Helper)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header>
+            <div class="logo-area">
+                <span class="logo-icon">💡</span>
+                <div>
+                    <h1>UN R148 車燈設計工程輔助系統</h1>
+                    <p>UN R148 Car Lighting Design Helper</p>
+                </div>
+            </div>
+            <div class="language-selector">
+                <button type="button" onclick="alert('系統採用繁體中文與法規英文術語並排，方便對接國際標準！')">Bilingual Mode</button>
+            </div>
+        </header>
+
+        <!-- Global Parameter Control Panel -->
+        <section class="global-control-panel">
+            <div class="control-item">
+                <label>
+                    <span>安裝高度 (Mounting Height)</span>
+                    <span id="heightValue" class="val-display">250 mm</span>
+                </label>
+                <div class="slider-container">
+                    <span style="font-size:0.75rem; color:var(--text-muted);">250mm</span>
+                    <input type="range" id="heightSlider" min="250" max="2500" value="250" step="50">
+                    <span style="font-size:0.75rem; color:var(--text-muted);">2500mm</span>
+                </div>
+            </div>
+            
+
+
+
+
+            <div class="control-item" style="justify-content: center;">
+                <div class="toggle-wrapper" style="padding-top: 4px; width: 100%;">
+                    <a href="d-lamp.html" id="btnGoToDLamp" style="display: inline-flex; width: 100%; justify-content: center; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(79, 70, 229, 0.25) 0%, rgba(6, 182, 212, 0.25) 100%); border: 1px solid var(--border-color-active); color: var(--text-primary); text-decoration: none; padding: 10px 14px; border-radius: var(--border-radius-md); font-size: 0.85rem; font-weight: 600; font-family: 'Outfit', sans-serif; transition: var(--transition-smooth); box-shadow: 0 4px 15px rgba(6, 182, 212, 0.15); text-align: center; border-color: rgba(6, 182, 212, 0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='var(--secondary)'; this.style.boxShadow='0 6px 20px rgba(6, 182, 212, 0.3)';" onmouseout="this.style.transform='none'; this.style.borderColor='rgba(6, 182, 212, 0.4)'; this.style.boxShadow='0 4px 15px rgba(6, 182, 212, 0.15)';">
+                        <span>✨</span> 法規專題：D/Y-Lamp 互動模擬 ➔
+                    </a>
+                </div>
+            </div>
+
+            <div class="control-item" style="justify-content: center;">
+                <div class="toggle-wrapper" style="padding-top: 4px; width: 100%;">
+                    <a href="dynamic-indicator.html" id="btnGoToDynamicIndicator" style="display: inline-flex; width: 100%; justify-content: center; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(239, 68, 68, 0.25) 100%); border: 1px solid rgba(245, 158, 11, 0.4); color: var(--text-primary); text-decoration: none; padding: 10px 14px; border-radius: var(--border-radius-md); font-size: 0.85rem; font-weight: 600; font-family: 'Outfit', sans-serif; transition: var(--transition-smooth); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15); text-align: center;" onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='#f59e0b'; this.style.boxShadow='0 6px 20px rgba(245, 158, 11, 0.3)';" onmouseout="this.style.transform='none'; this.style.borderColor='rgba(245, 158, 11, 0.4)'; this.style.boxShadow='0 4px 15px rgba(245, 158, 11, 0.15)';">
+                        <span>⚡</span> 法規專題：動態方向燈模擬 ➔
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabs Navigation -->
+        <nav class="tabs-navigation">
+            <button class="tab-btn active" data-tab="single">📊 單一車燈查詢 (Single Spec)</button>
+            <button class="tab-btn" data-tab="cross">🔄 複合交叉比對 (Cross-Reference)</button>
+            <button class="tab-btn" data-tab="cie">🎨 CIE 1931 色座標驗證</button>
+            <button class="tab-btn" data-tab="checklist">📋 工程設計檢查表 (Checklist)</button>
+        </nav>
+
+        <!-- Main Workspace Panels -->
+        <main class="dashboard-content">
+            
+            <!-- Tab 1: Single Spec Details -->
+            <section class="tab-panel active" id="singleTab">
+                <div class="spec-split-container">
+                    
+                    <!-- Sidebar Selector -->
+                    <aside class="lamp-sidebar-selector">
+                        <h3 style="font-size: 1.05rem; color: var(--text-primary);">選取車燈功能</h3>
+                        <div class="search-input-box">
+                            <input type="text" id="searchBox" placeholder="搜尋燈具名稱或符號...">
+                        </div>
+                        <div class="lamp-list" id="lampListContainer">
+                            <!-- JS loaded list items -->
+                        </div>
+                    </aside>
+                    
+                    <!-- Spec details & SVG visually -->
+                    <article class="spec-main-detail" id="detailPanel">
+                        
+                        <!-- Selected Lamp Header -->
+                        <div class="selected-lamp-header" style="margin-bottom: 12px; padding: 16px 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                            <h2 id="lblLampName" style="font-size: 1.6rem; color: var(--secondary); margin-bottom: 2px;">載入中...</h2>
+                            <p id="lblLampNameEn" style="font-size: 0.95rem; color: var(--text-secondary); font-family: 'Outfit', sans-serif; text-transform: uppercase; letter-spacing: 0.05em;">Loading...</p>
+                        </div>
+                        
+                        <!-- Row 1: Intensity Specs -->
+                        <div class="grid-2col">
+                            <div class="spec-card card-white" id="basicSpecCard">
+                                <h3 style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                    <span>車燈基礎規格 (Basic Specs)</span>
+                                    <div id="dLampToggleWrapper" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: normal; color: var(--text-secondary); transition: var(--transition-smooth);">
+                                        <span>相互依賴燈具 (D-Lamp Mode)</span>
+                                        <label class="switch" style="margin-left: 4px;">
+                                            <input type="checkbox" id="dLampToggle">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </h3>
+                                <div class="detail-data-grid">
+                                    <div class="data-cell">
+                                        <span class="lbl">發光顏色 (Color)</span>
+                                        <span id="valColor" class="val">載入中...</span>
+                                    </div>
+                                    <div class="data-cell">
+                                        <span class="lbl">法規代號 (Symbol)</span>
+                                        <span id="lblLampSymbol" class="val" style="font-family:'Outfit';">載入中...</span>
+                                    </div>
+                                    <div class="data-cell">
+                                        <span class="lbl">最少發光強度 (Min Luminous)</span>
+                                        <span id="valMinCd" class="val" style="color: var(--secondary);">0 cd</span>
+                                    </div>
+                                    <div class="data-cell">
+                                        <span class="lbl">最大發光強度 (Max Luminous)</span>
+                                        <div>
+                                            <span id="valMaxCd" class="val" style="color: var(--secondary);">0 cd</span>
+                                            <div id="valMaxCdIndicator" style="font-size:0.65rem; color:var(--text-secondary); margin-top:2px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="data-cell" style="grid-column: span 2;">
+                                        <span class="lbl">生產一致性 (CoP) 暫態點亮測試時間</span>
+                                        <span id="valTestTime" class="val">0.2 秒</span>
+                                    </div>
+                                    <div class="data-cell" style="grid-column: span 2;">
+                                        <span class="lbl">D類燈 / Y類燈 適用性 (D/Y Lamp Compatibility)</span>
+                                        <span id="valDYCompatibility" class="val" style="font-size: 0.95rem; line-height: 1.5;">載入中...</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="display:flex; flex-direction:column; gap:20px;">
+                                <div class="spec-card card-accent" id="visibilitySpecCard" style="padding: 20px 24px;">
+                                    <h3 style="margin-bottom: 12px;">能見可視角要求 (Geometric Visibility)</h3>
+                                    <div class="detail-data-grid" style="gap: 12px;">
+                                        <div class="data-cell" style="grid-column: span 2;">
+                                            <span class="lbl">水平能見角度要求 (Horizontal Field)</span>
+                                            <span id="valHorizAngle" class="val" style="font-size: 1.15rem;">載入中...</span>
+                                        </div>
+                                        <div class="data-cell" style="grid-column: span 2;">
+                                            <span class="lbl">垂直能見角度要求 (Vertical Field)</span>
+                                            <span id="valVertAngle" class="val" style="font-size: 1.15rem;">載入中...</span>
+                                        </div>
+                                        <div class="data-cell" style="grid-column: span 2;">
+                                            <span class="lbl">對應標準配光網格</span>
+                                            <span id="valPhotGrid" class="val" style="color: var(--secondary); font-size: 1.1rem;">載入中...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="spec-card card-accent" id="apparentSurfaceCard" style="padding: 20px 24px;">
+                                    <h3 style="margin-bottom: 12px;">發光視表面 (Apparent Surface) 投影面積要求</h3>
+                                    <div class="detail-data-grid" style="gap: 12px;">
+                                        <div class="data-cell" style="grid-column: span 2;">
+                                            <span class="lbl">法規最少面積投影要求 (Legal Min Projected Area)</span>
+                                            <span id="valApparentSurfaceArea" class="val" style="color: var(--secondary); font-size: 1.15rem;">載入中...</span>
+                                        </div>
+                                        <div class="data-cell" style="grid-column: span 2;">
+                                            <span class="lbl">設計合規安全建議 (Engineering Advisory)</span>
+                                            <span id="valApparentSurfaceAdvisory" class="val" style="font-size: 0.8rem; line-height: 1.4; color: var(--text-secondary); font-weight: normal;">載入中...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Standard Photometric Grid Card -->
+                        <div class="spec-card card-accent">
+                            <h3>標準配光光度百分比分佈圖 (Standard Photometric Grid)</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 24px;">
+                                本圖以標準測點的百分比重量分佈進行視覺化展示。將滑鼠懸停於測點上，可動態計算當前選取燈具（<strong><span id="gridLampTitle" style="color:var(--secondary);">S1</span></strong>）在該測點的法定最小光度 (cd) 門檻值。
+                            </p>
+                            <div class="photometric-view-grid">
+                                <div class="grid-layout-wrapper">
+                                    <div class="grid-main-row">
+                                        <div class="grid-y-axis-labels">
+                                            <span>10°U</span>
+                                            <span>5°U</span>
+                                            <span>H (0°)</span>
+                                            <span>5°D</span>
+                                            <span>10°D</span>
+                                        </div>
+                                        <div class="grid-visualization-map" id="gridMapContainer">
+                                            <!-- JS loaded nodes -->
+                                        </div>
+                                    </div>
+                                    <div class="grid-axis-labels">
+                                        <span>左側 20°L</span>
+                                        <span>10°L</span>
+                                        <span>5°L</span>
+                                        <span style="color:var(--text-primary);">垂直 HV</span>
+                                        <span>5°R</span>
+                                        <span>10°R</span>
+                                        <span>右側 20°R</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Row 2: SVG Visualization Cones -->
+                        <div class="spec-card card-accent">
+                            <h3>光學可視錐形模擬 (Geometric Visibility Cones)</h3>
+                            <div class="visibility-visualizer-container">
+                                <div class="cone-views-wrapper">
+                                    <div class="cone-view-box">
+                                        <h4>水平俯視切面 (Horizontal View)</h4>
+                                        <div class="svg-container" id="horizSvgContainer">
+                                            <!-- SVG JS loaded -->
+                                        </div>
+                                    </div>
+                                    <div class="cone-view-box">
+                                        <h4>垂直側視切面 (Vertical View)</h4>
+                                        <div class="svg-container" id="vertSvgContainer">
+                                            <!-- SVG JS loaded -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="note-box">
+                                    <strong>💡 安裝幾何學重點：</strong> 
+                                    R148 法規允許當車燈安裝高度<strong>低於 750 mm</strong> 時，垂直下方的能見度角度要求可以自動收縮至 <strong>5°</strong>（原標準為 15° 或 10°）。拉動最上方滑桿可進行即時模擬。
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Row 3: Design Footnotes -->
+                        <div class="spec-card card-accent">
+                            <h3>工程設計法規備註 (Engineering Guidelines)</h3>
+                            <div style="font-size:0.95rem; color:var(--text-secondary); line-height:1.7;" id="valNotes">
+                                載入中...
+                            </div>
+                        </div>
+                        
+                    </article>
+                </div>
+            </section>
+            
+            <!-- Tab 2: Cross Reference Table -->
+            <section class="tab-panel" id="crossTab">
+                <div class="cross-ref-selector-bar">
+                    <h3>選擇欲交叉查詢的複合車燈</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 8px;">
+                        勾選多個車燈功能，表格會自動產生並排比對欄位，利於尾燈整合設計（如：煞車燈、位置燈與方向燈合一設計）。
+                    </p>
+                    <div class="cross-ref-categories">
+                        <div class="category-block">
+                            <h4 class="category-title"><span class="category-icon">🔦</span> 前燈類 (Front Lamps)</h4>
+                            <div class="checkbox-grid" id="crossRefCheckboxes-front"></div>
+                        </div>
+                        <div class="category-block">
+                            <h4 class="category-title"><span class="category-icon">↔️</span> 側邊燈類 (Side Lamps)</h4>
+                            <div class="checkbox-grid" id="crossRefCheckboxes-side"></div>
+                        </div>
+                        <div class="category-block">
+                            <h4 class="category-title"><span class="category-icon">🔴</span> 尾燈類 (Rear Lamps)</h4>
+                            <div class="checkbox-grid" id="crossRefCheckboxes-rear"></div>
+                        </div>
+                        <div class="category-block" id="category-block-other" style="display: none;">
+                            <h4 class="category-title"><span class="category-icon">⚙️</span> 其他類 (Others)</h4>
+                            <div class="checkbox-grid" id="crossRefCheckboxes-other"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="table-responsive-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 60px;">符號</th>
+                                <th style="width: 140px;">燈具名稱 (Function)</th>
+                                <th style="width: 80px;">燈光顏色</th>
+                                <th style="width: 95px;">安裝最低高度</th>
+                                <th style="width: 95px;">安裝最高高度</th>
+                                <th style="width: 105px;">兩燈最小間距</th>
+                                <th style="width: 105px;">車側最遠距離</th>
+                                <th style="width: 95px;">發光面積最小</th>
+                                <th style="width: 95px;">發光面積最大</th>
+                                <th style="width: 110px;">配光強度限制</th>
+                                <th style="width: 110px;">幾何能見角</th>
+                                <th style="min-width: 200px;">法規與相互要求備註</th>
+                            </tr>
+                        </thead>
+                        <tbody id="crossRefTableBody">
+                            <!-- JS Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Dynamic Mutual Requirements Section -->
+                <div id="crossRefMutualContainer" style="margin-top: 20px; display: none;">
+                    <div class="spec-card card-accent" style="padding: 20px 24px; background: rgba(56, 189, 248, 0.03); border-color: rgba(56, 189, 248, 0.25);">
+                        <h4 style="font-size: 1.05rem; color: var(--secondary); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; font-weight: 600;">
+                            <span>🔗</span> 選取燈具安裝距離與電氣功能相互關聯要求 (R48 Mutual Requirements)
+                        </h4>
+                        <div id="crossRefMutualList" style="display: flex; flex-direction: column; gap: 12px;">
+                            <!-- Dynamic items generated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Tab 3: CIE 1931 Chart Judge -->
+            <section class="tab-panel" id="cieTab">
+                <div class="spec-card card-accent">
+                    <h3 style="margin-bottom:24px;">CIE 1931 色度空間坐標判定 (UN R148 Color Boundary Judge)</h3>
+                    <div class="cie-chart-layout">
+                        
+                        <!-- Canvas Plotter -->
+                        <div class="canvas-container">
+                            <canvas id="cieCanvas"></canvas>
+                        </div>
+                        
+                        <!-- Inputs Panel -->
+                        <div class="cie-info-panel">
+                            <div class="judgement-card" style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 18px; display:flex; flex-direction:column; gap:16px;">
+                                <h4 style="font-size: 0.95rem; color:var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">色座標判定輸入</h4>
+                                <div class="coordinate-inputs">
+                                    <div class="coord-group">
+                                        <label for="cieInputX">X 軸坐標 (x)</label>
+                                        <input type="number" id="cieInputX" value="0.330" step="0.005" min="0.0" max="0.8">
+                                    </div>
+                                    <div class="coord-group">
+                                        <label for="cieInputY">Y 軸坐標 (y)</label>
+                                        <input type="number" id="cieInputY" value="0.330" step="0.005" min="0.0" max="0.9">
+                                    </div>
+                                </div>
+                                <button type="button" class="check-btn" id="btnCheckCie">驗證坐標合規性</button>
+                            </div>
+                            
+                            <div class="judge-result-box" id="cieResultBox">
+                                <div class="judge-status status-idle">等待輸入坐標驗證...</div>
+                                <p style="font-size:0.8rem; color:var(--text-muted); text-align:center; margin-top: 12px;">
+                                    在上方輸入光學量測儀器量測之色度空間坐標 (x, y)，以判定是否符合法規要求。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Tab 5: Engineering Checklist -->
+            <section class="tab-panel" id="checklistTab">
+                <div class="checklist-container">
+                    
+                    <div class="checklist-item-card">
+                        <span class="checklist-num">01</span>
+                        <div class="checklist-body">
+                            <h4>視表面發光面積限制 (Apparent Surface Requirement)</h4>
+                            <p>
+                                根據 R148 第 5 節之規定，每款安裝於車輛上的獨立功能燈具，其<strong>發光視表面 (Apparent Surface) 投影面積必須 ≧ 12.5 cm²</strong>。
+                            </p>
+                            <ul>
+                                <li>設計工程師必須在 CAD 設計圖面中建立發光體（Outer Lens/Reflector）的投影分析。</li>
+                                <li><strong>相互依賴燈具 (D-Lamp)：</strong>若是由兩個燈具相互整合以提供相同功能，則兩者總面積必須達到法規要求。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item-card">
+                        <span class="checklist-num">02</span>
+                        <div class="checklist-body">
+                            <h4>生產一致性暫態量測時間 (Conformity of Production testing)</h4>
+                            <p>
+                                生產一致性 (CoP) 測試中，暫態光源點亮反應時間有嚴格的秒數規定，旨在維護行車中後車的防追撞警示安全。
+                            </p>
+                            <ul>
+                                <li><strong>0.2 秒 (Instant-On) 測量點燈具：</strong>煞車燈 (S1/S2/S3/S4/MS)、方向燈 (Cat 1/1a/1b/2a/2b/5/6/11/12) 與倒車燈 (AR)。在點亮 0.2 秒內必須達到法定光度最小值的至少 90%。</li>
+                                <li><strong>4.0 秒 (Thermal Stabilization) 測量點燈具：</strong>日行燈 (RL)、前/後位置燈 (A/R1/R2)、輪廓邊界燈 (AM/RM1/RM2) 以及後霧燈 (F1/F2)。可在點亮 4 秒後或熱平衡後進行最終光度測量。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item-card">
+                        <span class="checklist-num">03</span>
+                        <div class="checklist-body">
+                            <h4>相互依賴系統與單一燈具標記設計限制</h4>
+                            <p>
+                                車燈外殼標記（Marking）直接決定了法規審核時的光度判定上限：
+                            </p>
+                            <ul>
+                                <li><strong>"D" 標記燈具 (相互依賴)：</strong>最大光度限制為單一燈具的 <strong>50%</strong>。設計時必須確保兩個燈具的發光均勻度一致，且共用同一組線束或控制器。</li>
+                                <li><strong>"Y" 標記系統：</strong>屬於單一功能分散多處發光的系統，需特別注意個別測點的亮度疊加計算。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item-card">
+                        <span class="checklist-num">04</span>
+                        <div class="checklist-body">
+                            <h4>前方向燈與大燈之間距阻礙設計</h4>
+                            <p>
+                                方向指示燈與前照燈（近光燈/前霧燈）的距離直接決定了方向燈的光度等級：
+                            </p>
+                            <ul>
+                                <li>距離 <strong>≧ 40 mm</strong> 時：可選用標準 <strong>Cat 1</strong> (最小值 175 cd)。</li>
+                                <li>距離 <strong>≧ 20 mm 且 < 40 mm</strong> 時：必須選用 <strong>Cat 1a</strong> (最小值 250 cd)。</li>
+                                <li>距離 <strong>< 20 mm 甚至整合在一起</strong> 時：必須選用 <strong>Cat 1b</strong> (最小值達 400 cd) 以抵抗大燈炫光。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <span>參考法規文檔：UN Regulation No. 148 (ECE/TRANS/505/Rev.3/Add.147 + Amendments 1-5)</span>
+            <span>系統設計開發：Antigravity AI | <a href="#" onclick="alert('本系統彙整法規至 Amend 5 最新實務數值，僅供工程設計參考。')">免責聲明與備註</a></span>
+        </footer>
+
+    </div>
+    
+    <!-- Application Logic Loader -->
+    <script src="app.js" charset="utf-8"></script>
+</body>
+</html>
