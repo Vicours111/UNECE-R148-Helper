@@ -421,10 +421,10 @@ const R148_DATABASE = {
         horizOutboard: 20,
         horizInboard: 20,
         vertAbove: 10,
-        vertBelow: 5,
+        vertBelow: 10,
         testTime: 4.0,
         photometricGrid: "Figure A3-II",
-        notesZh: "【關鍵】設計高強度白色發光體，最小光度為 400 cd，上限為 1200 cd。幾何可視角度：左右各 20°，上方 10°，下方 5°。當大燈點亮時，日行燈必須自動熄滅或減光至位置燈級別。",
+        notesZh: "【關鍵】設計高強度白色發光體，最小光度為 400 cd，上限為 1200 cd。幾何可視角度：左右各 20°，上方 10°，下方 10°。當大燈點亮時，日行燈必須自動熄滅或減光至位置燈級別。",
         notesEn: "High-intensity white source. Min 400 cd, Max 1200 cd. Must turn off or dim to position level when headlamps turn on."
     },
 
