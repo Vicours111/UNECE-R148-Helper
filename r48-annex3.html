@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN R48 Annex 3 燈具基準、軸與幾何視表面互動解讀系統</title>
+    <meta name="description" content="直觀圖像化解釋汽車法規 UN R48 Annex 3 中，關於基準軸 (Axis of Reference)、基準中心 (Centre of Reference)、照明表面 (Illuminating Surface)、發光表面 (Light-emitting Surface) 以及投影視表面 (Apparent Surface) 的動態核算與混合安裝 (Reciprocal Incorporation) 判定。">
+    <link rel="stylesheet" href="r48-annex3.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header>
+            <div class="logo-area">
+                <span class="logo-icon">📐</span>
+                <div>
+                    <h1>R48 Annex 3 燈具基準與幾何視表面互動系統</h1>
+                    <p>UN Regulation No. 48 Annex 3 Lamp Surfaces, Axes, and Geometric Visibility</p>
+                </div>
+            </div>
+            <div class="back-btn-container">
+                <a href="index.html" id="btnBackToMain" class="back-btn">
+                    <span>⬅️</span> 返回 R148 設計輔助主系統
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Workspace -->
+        <main class="annex3-workspace">
+            
+            <!-- Left Navigation Sidebar -->
+            <aside class="annex-sidebar">
+                <div class="sidebar-title">
+                    <span>📑</span> 法規分頁章節 (Annex 3 Parts)
+                </div>
+                <nav class="annex-nav">
+                    <button class="annex-nav-btn active" data-tab="part12">
+                        <span class="nav-num">1/2</span>
+                        <div class="nav-info">
+                            <h4>發光與照明表面</h4>
+                            <p>Surface Basics & Screen Blocker</p>
+                        </div>
+                    </button>
+                    <button class="annex-nav-btn" data-tab="part34">
+                        <span class="nav-num">3/4</span>
+                        <div class="nav-info">
+                            <h4>視表面角度投影</h4>
+                            <p>Apparent Surface & Cosine Projection</p>
+                        </div>
+                    </button>
+                    <button class="annex-nav-btn" data-tab="part5">
+                        <span class="nav-num">5</span>
+                        <div class="nav-info">
+                            <h4>9大經典結構光學剖面</h4>
+                            <p>9 Structural Lens Examples</p>
+                        </div>
+                    </button>
+                    <button class="annex-nav-btn" data-tab="part6">
+                        <span class="nav-num">6</span>
+                        <div class="nav-info">
+                            <h4>邊界與基準軸判定</h4>
+                            <p>Declared Edges & Axis Rotation</p>
+                        </div>
+                    </button>
+                    <button class="annex-nav-btn" data-tab="part7">
+                        <span class="nav-num">7</span>
+                        <div class="nav-info">
+                            <h4>混合安裝判定決策器</h4>
+                            <p>Reciprocal Incorporation Decider</p>
+                        </div>
+                    </button>
+                </nav>
+
+                <!-- Global Legend (KEY) Interactive Box -->
+                <div class="global-key-card">
+                    <h3><span>🔑</span> 官方圖例索引 (R48 Annex 3 Key)</h3>
+                    <p class="key-advisory">點擊下方圖例，可動態在右側 SVG 模擬圖中高亮標示該光學零件：</p>
+                    <div class="key-grid">
+                        <button class="key-item" data-key="1"><span class="k-num">1</span> 照明表面 (Illuminating Surface)</button>
+                        <button class="key-item" data-key="5"><span class="k-num">5</span> 發光表面 (Light-emitting Surface)</button>
+                        <button class="key-item" data-key="6"><span class="k-num">6</span> 視表面-基於照明 (Apparent-Illum)</button>
+                        <button class="key-item" data-key="7a"><span class="k-num">7a</span> 視表面-含外燈罩 (Apparent-With Lens)</button>
+                        <button class="key-item" data-key="7b"><span class="k-num">7b</span> 視表面-無外燈罩 (Apparent-No Lens)</button>
+                        <button class="key-item" data-key="2"><span class="k-num">2</span> 基準軸 (Axis of reference)</button>
+                        <button class="key-item" data-key="3"><span class="k-num">3</span> 基準中心 (Centre of reference)</button>
+                        <button class="key-item" data-key="8"><span class="k-num">8</span> 能見方向 (Direction of visibility)</button>
+                        <button class="key-item" data-key="S"><span class="k-char">S</span> 光源 (Light source)</button>
+                        <button class="key-item" data-key="R"><span class="k-char">R</span> 反射鏡 (Reflector)</button>
+                        <button class="key-item" data-key="L"><span class="k-char">L</span> 外燈罩 (Outer lens)</button>
+                        <button class="key-item" data-key="IO"><span class="k-char">IO</span> 內光學件 (Inner optical part)</button>
+                        <button class="key-item" data-key="LG"><span class="k-char">LG</span> 導光條 (Light guide)</button>
+                        <button class="key-item" data-key="X"><span class="k-char">X</span> 非本功能區域 (Non-functional)</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Content Panels -->
+            <section class="annex-content">
+                
+                <!-- Tab 1: Part 1 & 2 Surface Basics -->
+                <div class="annex-panel active" id="panel-part12">
+                    <div class="panel-header">
+                        <h2>發光表面與照明表面基礎原理 (Part 1 & Part 2)</h2>
+                        <p>理解「發光表面」與「照明表面」的定義差異，並透過遮板擋光實驗觀察照明表面之動態剪裁</p>
+                    </div>
+
+                    <div class="panel-layout">
+                        <!-- Simulation Workspace -->
+                        <div class="simulation-canvas card-accent">
+                            <div class="canvas-header">
+                                <span>💡 燈具光學剖面與遮板模擬器</span>
+                                <div class="toggle-group">
+                                    <label class="toggle-item-checkbox">
+                                        <input type="checkbox" id="chkShowLightRays" checked> 顯示光線射線
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="svg-container-annex" id="part12SvgContainer">
+                                <svg viewBox="0 0 500 350" id="svgPart12" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Definitions -->
+                                    <defs>
+                                        <!-- Glows -->
+                                        <radialGradient id="bulbGlow" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0%" stop-color="#ca8a04" stop-opacity="1" />
+                                            <stop offset="30%" stop-color="#eab308" stop-opacity="0.8" />
+                                            <stop offset="100%" stop-color="#eab308" stop-opacity="0" />
+                                        </radialGradient>
+                                        <linearGradient id="refGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#475569" />
+                                            <stop offset="70%" stop-color="#94a3b8" />
+                                            <stop offset="100%" stop-color="#e2e8f0" />
+                                        </linearGradient>
+                                    </defs>
+                                    
+                                    <!-- Ground Grid Background -->
+                                    <g stroke="rgba(255,255,255,0.03)" stroke-width="0.5">
+                                        <line x1="0" y1="50" x2="500" y2="50" />
+                                        <line x1="0" y1="100" x2="500" y2="100" />
+                                        <line x1="0" y1="150" x2="500" y2="150" />
+                                        <line x1="0" y1="200" x2="500" y2="200" />
+                                        <line x1="0" y1="250" x2="500" y2="250" />
+                                        <line x1="0" y1="300" x2="500" y2="300" />
+                                        <line x1="100" y1="0" x2="100" y2="350" />
+                                        <line x1="200" y1="0" x2="200" y2="350" />
+                                        <line x1="300" y1="0" x2="300" y2="350" />
+                                        <line x1="400" y1="0" x2="400" y2="350" />
+                                    </g>
+
+                                    <!-- Light Ray Lines (Underneath) -->
+                                    <g id="grp-light-rays"></g>
+
+                                    <!-- Reflector (R) -->
+                                    <path d="M 60,60 Q 150,175 60,290" fill="none" stroke="url(#refGrad)" stroke-width="12" stroke-linecap="round" class="part-element part-reflector" data-part="R" />
+                                    
+                                    <!-- Light Source / Filament (S) -->
+                                    <circle cx="120" cy="175" r="28" fill="url(#bulbGlow)" class="part-element" data-part="S" />
+                                    <circle cx="120" cy="175" r="8" fill="#eab308" stroke="#ffffff" stroke-width="2" class="part-element part-source" data-part="S" />
+                                    <line x1="120" y1="175" x2="120" y2="205" stroke="#94a3b8" stroke-width="3" />
+                                    <rect x="112" y="205" width="16" height="15" fill="#334155" rx="1" />
+
+                                    <!-- Outer Textured Lens (L) -->
+                                    <path d="M 280,50 L 280,300" stroke="#06b6d4" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.85" class="part-element part-lens" data-part="L" />
+                                    <!-- Lens Texture representation -->
+                                    <g stroke="rgba(255,255,255,0.4)" stroke-width="1.5">
+                                        <line x1="280" y1="70" x2="283" y2="75" /><line x1="280" y1="90" x2="283" y2="95" />
+                                        <line x1="280" y1="110" x2="283" y2="115" /><line x1="280" y1="130" x2="283" y2="135" />
+                                        <line x1="280" y1="150" x2="283" y2="155" /><line x1="280" y1="170" x2="283" y2="175" />
+                                        <line x1="280" y1="190" x2="283" y2="195" /><line x1="280" y1="210" x2="283" y2="215" />
+                                        <line x1="280" y1="230" x2="283" y2="235" /><line x1="280" y1="250" x2="283" y2="255" />
+                                        <line x1="280" y1="270" x2="283" y2="275" /><line x1="280" y1="290" x2="283" y2="295" />
+                                    </g>
+
+                                    <!-- Surface Fills (Dynamic Highlights based on selected modes) -->
+                                    <!-- Light-emitting surface: the lens face (5) -->
+                                    <line x1="284" y1="52" x2="284" y2="298" stroke="transparent" stroke-width="16" id="highlight-surface-5" class="part-element highlight-plane" data-part="5" />
+                                    
+                                    <!-- Illuminating surface: reflector aperture projection (1) -->
+                                    <!-- Aperture is from Y=65 to Y=285 -->
+                                    <line x1="276" y1="65" x2="276" y2="285" stroke="transparent" stroke-width="16" id="highlight-surface-1" class="part-element highlight-plane" data-part="1" />
+                                    <line x1="284" y1="65" x2="284" y2="285" stroke="transparent" stroke-width="16" id="highlight-surface-6" class="part-element highlight-plane" data-part="6" />
+
+                                    <!-- Movable Screen Blockers (Part 2) -->
+                                    <!-- Top Screen -->
+                                    <g id="grp-top-screen" transform="translate(0, 0)">
+                                        <rect x="200" y="0" width="30" height="90" fill="#334155" stroke="#475569" stroke-width="1.5" rx="3" />
+                                        <line x1="215" y1="40" x2="215" y2="80" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" />
+                                        <circle cx="215" cy="80" r="4" fill="#ef4444" />
+                                        <text x="215" y="30" font-family="'Outfit'" font-size="10" font-weight="700" fill="#94a3b8" text-anchor="middle">SCREEN</text>
+                                    </g>
+                                    <!-- Bottom Screen -->
+                                    <g id="grp-bottom-screen" transform="translate(0, 0)">
+                                        <rect x="200" y="260" width="30" height="90" fill="#334155" stroke="#475569" stroke-width="1.5" rx="3" />
+                                        <line x1="215" y1="270" x2="215" y2="310" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" />
+                                        <circle cx="215" cy="270" r="4" fill="#ef4444" />
+                                        <text x="215" y="330" font-family="'Outfit'" font-size="10" font-weight="700" fill="#94a3b8" text-anchor="middle">SCREEN</text>
+                                    </g>
+
+                                    <!-- Axis of Reference & Centre of Reference lines -->
+                                    <!-- Axis (2) -->
+                                    <line x1="30" y1="175" x2="450" y2="175" stroke="#6366f1" stroke-width="2" stroke-dasharray="8 4" class="part-element part-axis" id="line-axis-2" data-part="2" />
+                                    <!-- Centre of Reference (3) -->
+                                    <circle cx="280" cy="175" r="7" fill="#6366f1" stroke="#ffffff" stroke-width="2" class="part-element part-centre" id="dot-centre-3" data-part="3" />
+
+                                    <!-- Projection Screens on Right -->
+                                    <!-- Original Aperture Size Reference -->
+                                    <line x1="380" y1="65" x2="380" y2="285" stroke="rgba(255,255,255,0.08)" stroke-width="6" stroke-dasharray="3 3" />
+                                    
+                                    <!-- Dynamically Scaled Resulting Illuminating Surface -->
+                                    <line x1="380" y1="65" x2="380" y2="285" stroke="#10b981" stroke-width="10" stroke-linecap="round" id="line-resulting-illum" opacity="0.3" />
+                                    
+                                    <!-- Dynamic 引導虛線 (Reference dimension connectors) -->
+                                    <line x1="280" y1="65" x2="380" y2="65" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2 2" id="conn-top" />
+                                    <line x1="280" y1="285" x2="380" y2="285" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2 2" id="conn-bottom" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Param Controls & Explainer -->
+                        <div class="simulation-explain">
+                            <div class="explain-card" style="height: auto; margin-bottom: 16px;">
+                                <h3><span>🛠️</span> 參數控制面板 (Control Panel)</h3>
+                                
+                                <div class="control-item">
+                                    <label>
+                                        <span>上遮板高度 (Top Screen Depth)</span>
+                                        <span id="lblTopScreenVal" class="val-display">0 mm</span>
+                                    </label>
+                                    <div class="slider-container">
+                                        <span>無阻擋</span>
+                                        <input type="range" id="sliderTopScreen" min="0" max="110" value="0" step="5">
+                                        <span>深遮</span>
+                                    </div>
+                                </div>
+
+                                <div class="control-item" style="margin-top: 16px;">
+                                    <label>
+                                        <span>下遮板高度 (Bottom Screen Depth)</span>
+                                        <span id="lblBottomScreenVal" class="val-display">0 mm</span>
+                                    </label>
+                                    <div class="slider-container">
+                                        <span>無阻擋</span>
+                                        <input type="range" id="sliderBottomScreen" min="0" max="110" value="0" step="5">
+                                        <span>深遮</span>
+                                    </div>
+                                </div>
+
+                                <div class="control-tab-group" style="margin-top: 20px;">
+                                    <button class="control-tab-btn active" id="btnShowIllum">💡 顯示照明表面 (Illuminating Surface)</button>
+                                    <button class="control-tab-btn" id="btnShowEmit">🌟 顯示發光表面 (Light-emitting Surface)</button>
+                                </div>
+                            </div>
+
+                            <div class="explain-card" style="height: auto;">
+                                <h3><span>📖</span> 法規觀念解析 (R48 Regulation Focus)</h3>
+                                <div class="concept-body">
+                                    <h4 id="lblConceptTitle" style="color: var(--secondary); font-size: 1.05rem; margin-bottom: 8px;">照明表面 (Illuminating Surface)</h4>
+                                    <p id="lblConceptDetail" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                        指燈具反射鏡口徑（或投影透鏡）在與基準軸垂直的平面上的正投影。如圖中<b>綠色虛線段 [1]</b> 所示。<br><br>
+                                        <b>遮板(Screen) 的影射規則 (Part 2)：</b>當設計中有阻擋光線的邊緣遮板存在時，必須利用這些遮板的投影來<b>扣除被阻擋的面積</b>。拖動滑桿模擬遮板推入光路，最終的照明表面（右側綠色實線）會被動態截除，這直接影響了「法規最小投影視表面面積」的核算基準。
+                                    </p>
+                                    <div class="verdict-box" id="divSurfaceAreaVerdict">
+                                        <span class="verdict-title">📊 當前照明表面正投影高度：</span>
+                                        <strong id="valApertureHeight" style="color: var(--success); font-family: 'Outfit'; font-size: 1.2rem;">220 mm</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Part 3 & 4 Apparent Surface Projection -->
+                <div class="annex-panel" id="panel-part34">
+                    <div class="panel-header">
+                        <h2>幾何能見度角度與視表面投影 (Part 3 & Part 4)</h2>
+                        <p>拉動觀測角度滑桿，模擬工程師或測試人員從不同角度觀測時，發光視表面產生的餘弦投影面積收縮</p>
+                    </div>
+
+                    <div class="panel-layout">
+                        <!-- Simulation Workspace -->
+                        <div class="simulation-canvas card-accent">
+                            <div class="canvas-header">
+                                <span>📐 視表面餘弦投影 ($\cos\theta$) 模擬器</span>
+                                <span class="badge-info badge-y" id="lblProjMethod">基於照明表面投影 (Part 3)</span>
+                            </div>
+                            
+                            <div class="svg-container-annex" id="part34SvgContainer">
+                                <svg viewBox="0 0 500 350" id="svgPart34" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <!-- Grid shading for projected area -->
+                                        <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                                            <line x1="0" y1="0" x2="0" y2="10" stroke="#06b6d4" stroke-width="1.5" opacity="0.5" />
+                                        </pattern>
+                                        <pattern id="diagonalHatchRed" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                                            <line x1="0" y1="0" x2="0" y2="10" stroke="#ef4444" stroke-width="1.5" opacity="0.5" />
+                                        </pattern>
+                                    </defs>
+
+                                    <!-- Ground grid -->
+                                    <g stroke="rgba(255,255,255,0.02)" stroke-width="0.5">
+                                        <circle cx="200" cy="175" r="50" fill="none" />
+                                        <circle cx="200" cy="175" r="100" fill="none" />
+                                        <line x1="0" y1="175" x2="500" y2="175" />
+                                        <line x1="200" y1="0" x2="200" y2="350" />
+                                    </g>
+
+                                    <!-- Reference Dot (3) -->
+                                    <circle cx="200" cy="175" r="5" fill="#6366f1" />
+                                    
+                                    <!-- original surface source (Lens / Aperture) flat on Y axis -->
+                                    <line x1="200" y1="100" x2="200" y2="250" stroke="#94a3b8" stroke-width="8" stroke-linecap="round" />
+                                    <text x="185" y="180" font-family="'Outfit'" font-size="11" fill="#94a3b8" text-anchor="end" font-weight="700">LENS</text>
+
+                                    <!-- Ray of Observation (8) -->
+                                    <line x1="200" y1="175" x2="450" y2="175" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="4" id="line-ray-8" class="part-element part-visibility-ray" data-part="8" />
+                                    
+                                    <!-- Angle curve arc (4) -->
+                                    <path d="M 250,175 A 50,50 0 0 1 250,175" fill="none" stroke="#6366f1" stroke-width="2" id="arc-angle-4" class="part-element" data-part="4" />
+
+                                    <!-- Apparent Surface plane (6 or 7a/7b) perpendicular to Ray of Observation -->
+                                    <!-- Drawn at X=380 -->
+                                    <line x1="380" y1="80" x2="380" y2="270" stroke="rgba(255,255,255,0.1)" stroke-width="4" stroke-dasharray="3 3" />
+                                    <!-- Actual dynamic projected apparent surface -->
+                                    <line x1="380" y1="100" x2="380" y2="250" stroke="#06b6d4" stroke-width="12" stroke-linecap="round" id="line-apparent-6" class="part-element" data-part="6" />
+
+                                    <!-- Dotted connection rays from Original lens edges to apparent surface projection plane -->
+                                    <line x1="200" y1="100" x2="380" y2="100" stroke="#64748b" stroke-width="1" stroke-dasharray="2 2" id="proj-conn-top" />
+                                    <line x1="200" y1="250" x2="380" y2="250" stroke="#64748b" stroke-width="1" stroke-dasharray="2 2" id="proj-conn-bottom" />
+                                    
+                                    <!-- Orthogonal projection shaded bounds -->
+                                    <polygon points="200,100 380,100 380,250 200,250" fill="url(#diagonalHatch)" id="poly-hatch-bound" />
+
+                                    <!-- Labels -->
+                                    <text x="380" y="65" font-family="'Outfit'" font-size="10" font-weight="700" fill="#06b6d4" text-anchor="middle" id="lblApparentSurfaceTag">視表面正投影 [6]</text>
+                                    <text x="240" y="155" font-family="'Outfit'" font-size="13" font-weight="700" fill="#6366f1" id="lblAngleTheta">θ = 0°</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Param Controls & Explainer -->
+                        <div class="simulation-explain">
+                            <div class="explain-card" style="height: auto; margin-bottom: 16px;">
+                                <h3><span>🛠️</span> 觀測角度控制面板</h3>
+                                
+                                <div class="control-item">
+                                    <label>
+                                        <span>水平觀測角度 (Angle of Observation $\theta$)</span>
+                                        <span id="lblAngleVal" class="val-display">0°</span>
+                                    </label>
+                                    <div class="slider-container">
+                                        <span>-45° (左側)</span>
+                                        <input type="range" id="sliderAngle" min="-45" max="45" value="0" step="5">
+                                        <span>+45° (右側)</span>
+                                    </div>
+                                    <p class="slider-hint">💡 幾何能見度角（如方向燈的 $45^\circ\text{ H}$、煞車燈的 $45^\circ\text{ H}$）是決定投影面積最小限制的關鍵量測角度。</p>
+                                </div>
+
+                                <div class="control-tab-group" style="margin-top: 20px;">
+                                    <button class="control-tab-btn active" id="btnProjIllum">⚙️ 基於照明表面投影 (Part 3)</button>
+                                    <button class="control-tab-btn" id="btnProjEmit">🔮 基於外燈罩發光投影 (Part 4)</button>
+                                </div>
+                            </div>
+
+                            <div class="explain-card" style="height: auto;">
+                                <h3><span>📖</span> 餘弦收縮與視表面面積核算</h3>
+                                <div class="concept-body">
+                                    <h4 style="color: var(--secondary); font-size: 1.05rem; margin-bottom: 8px;">發光視表面投影定律</h4>
+                                    <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                        <b>視表面 (Apparent Surface [6/7a/7b])</b> 是發光表面或照明表面在<b>觀測方向平面 [8]</b> 上的正交投影。當觀測者自基準軸偏轉 $\theta$ 角度時：
+                                        $$\text{投影寬度} = \text{原始寬度} \times \cos(\theta)$$
+                                        拖動角度滑桿，即可看見黃色射線與投影斜率動態偏轉，網格線與陰影多邊形隨之收縮，反映出大角度下投影面積大幅減小的物理限制。
+                                    </p>
+                                    <div class="verdict-box" style="background: rgba(6, 182, 212, 0.05); border-color: rgba(6, 182, 212, 0.3);">
+                                        <span class="verdict-title">📐 當前視表面投影面積收縮率 ($\cos\theta$)：</span>
+                                        <strong id="valCosineShrink" style="color: var(--secondary); font-family: 'Outfit'; font-size: 1.25rem;">100.0% (完全投影)</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Part 5 9 Structural Lens Examples -->
+                <div class="annex-panel" id="panel-part5">
+                    <div class="panel-header">
+                        <h2>9大經典結構光學剖面與視表面分析 (Part 5)</h2>
+                        <p>切換法規中定義的 9 種燈具光學結構案例，直觀比對「含外燈罩視表面 7a」與「不含外燈罩視表面 7b」的物理邊界範圍</p>
+                    </div>
+
+                    <div class="part5-layout">
+                        <!-- Left Selector Side -->
+                        <div class="part5-selector card-accent">
+                            <h3>🔍 選取光學結構案例 (Examples 1-9)</h3>
+                            <div class="example-btn-list">
+                                <button class="example-btn active" data-ex="1">
+                                    <span class="ex-tag">Ex.1</span> 反射鏡 + textured外燈罩 (含外燈罩)
+                                </button>
+                                <button class="example-btn" data-ex="2">
+                                    <span class="ex-tag">Ex.2</span> 反射鏡 + non-textured外燈罩 (排除燈罩)
+                                </button>
+                                <button class="example-btn" data-ex="3">
+                                    <span class="ex-tag">Ex.3</span> 反射鏡 + 內透鏡 + textured外燈罩
+                                </button>
+                                <button class="example-btn" data-ex="4">
+                                    <span class="ex-tag">Ex.4</span> 反射鏡 + 內透鏡 + non-textured外燈罩
+                                </button>
+                                <button class="example-btn" data-ex="5">
+                                    <span class="ex-tag">Ex.5</span> 反射鏡 + 局部內透鏡 + textured外燈罩
+                                </button>
+                                <button class="example-btn" data-ex="6">
+                                    <span class="ex-tag">Ex.6</span> 反射鏡 + 局部內透鏡 + non-textured外燈罩
+                                </button>
+                                <button class="example-btn" data-ex="7">
+                                    <span class="ex-tag">Ex.7</span> 導光條 (Light Guide) 光學元件
+                                </button>
+                                <button class="example-btn" data-ex="8">
+                                    <span class="ex-tag">Ex.8</span> 導光與反射組合 (雙功能隔牆結構)
+                                </button>
+                                <button class="example-btn" data-ex="9">
+                                    <span class="ex-tag">Ex.9</span> 反射鏡 + 結合非功能阻礙區 X
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Center/Right Render and Explainer -->
+                        <div class="part5-detail">
+                            <div class="simulation-canvas card-accent" style="min-height: 280px;">
+                                <div class="canvas-header">
+                                    <span id="lblExTitle">Example 1: 光源與反射鏡 + textured 外燈罩</span>
+                                    <div class="control-tab-group" style="margin-top:0;">
+                                        <button class="control-tab-btn active" id="btnToggle7a">🔦 視表面 7a (含外罩)</button>
+                                        <button class="control-tab-btn" id="btnToggle7b">🚪 視表面 7b (排除外罩)</button>
+                                    </div>
+                                </div>
+                                <div class="svg-container-annex" id="part5SvgContainer">
+                                    <!-- Loaded Dynamically via JS -->
+                                    <svg viewBox="0 0 450 240" id="svgPart5" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Rendered by JS based on Example selection -->
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="explain-card" style="height: auto; margin-top: 16px;">
+                                <h3><span>📐</span> 光學零件與視表面邊界界定</h3>
+                                <div class="concept-body">
+                                    <div class="verdict-box" style="margin-bottom: 12px; background: rgba(79, 70, 229, 0.04); border-color: rgba(79, 70, 229, 0.25);">
+                                        <strong>💡 法規解讀核心焦點：</strong>
+                                        <span id="lblExFocusText" style="display:block; font-size:0.85rem; color:var(--text-secondary); margin-top:6px; line-height:1.5;">
+                                            在此案例中，由於外燈罩具有折射花紋 (Textured Outer Lens)，它能將光線擴散。因此，發光視表面的邊界「7a」會延伸至整個被照射並照亮的外燈罩邊緣！
+                                        </span>
+                                    </div>
+                                    <p id="lblExDescText" style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">
+                                        Example 1 說明了典型的擴散花紋燈罩設計。當判定發光視表面時，只要外燈罩（Outer Lens L）上具有網格花紋且被點亮，外燈罩的全部光學透光表面皆被計入視表面 7a 之中。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Part 6 Edge & Reference Axis -->
+                <div class="annex-panel" id="panel-part6">
+                    <div class="panel-header">
+                        <h2> declared 邊界與基準軸倾斜判定 (Part 6 Example A-E)</h2>
+                        <p>變換基準軸倾斜度，動態調整 declared 發光表面的投影引線，深入研究 Example A 至 E 之投影邊界點 (a, b, c, d) 標定規則</p>
+                    </div>
+
+                    <div class="part6-layout">
+                        <!-- Controls Sidebar -->
+                        <div class="part6-controls card-accent">
+                            <h3>🔍 選擇核對案例 (Example A-E)</h3>
+                            <div class="example-btn-list-horizontal">
+                                <button class="ex-btn-p6 active" data-case="A">Example A (凸面燈罩投影)</button>
+                                <button class="ex-btn-p6" data-case="B">Example B (大弧度拋物燈罩)</button>
+                                <button class="ex-btn-p6" data-case="C">Example C (包含非本功能區 X)</button>
+                                <button class="ex-btn-p6" data-case="D">Example D (分散式多發光區)</button>
+                                <button class="ex-btn-p6" data-case="E">Example E (無折射外燈罩 7b 邊界)</button>
+                            </div>
+
+                            <div class="control-item" style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 16px;">
+                                <label>
+                                    <span>基準軸倾斜角度 (Axis of Reference Tilt $\alpha$)</span>
+                                    <span id="lblAxisTiltVal" class="val-display">0° (水平)</span>
+                                </label>
+                                <div class="slider-container">
+                                    <span>-15° (下仰)</span>
+                                    <input type="range" id="sliderAxisTilt" min="-15" max="15" value="0" step="2.5">
+                                    <span>+15° (上仰)</span>
+                                </div>
+                                <p class="slider-hint">💡 基準軸（Axis of Reference）是製造商在圖面上宣告的基準線。當改變基準軸夾角時，正交投影的切點與引線邊緣位置（a, b, c, d 點）會即時滑動位移！</p>
+                            </div>
+                        </div>
+
+                        <!-- Render Screen -->
+                        <div class="part6-detail-workspace">
+                            <div class="simulation-canvas card-accent" style="min-height: 300px;">
+                                <div class="canvas-header">
+                                    <span id="lblCaseTitle">Example A: 凸形外燈罩之發光表面與邊界點投影</span>
+                                    <span class="badge-info badge-y" style="background: rgba(99, 102, 241, 0.15); color: #a5b4fc; border-color: rgba(99, 102, 241, 0.3);">R48 2.10.2 投影核算</span>
+                                </div>
+                                
+                                <div class="svg-container-annex" id="part6SvgContainer">
+                                    <!-- Rendered dynamically by JS -->
+                                    <svg viewBox="0 0 500 250" id="svgPart6" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Loaded by JS -->
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="explain-card" style="height: auto; margin-top: 16px;">
+                                <h3><span>📐</span> 官方定義邊界引線 (Edges a-b & c-d) 解讀</h3>
+                                <div class="concept-body" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; align-items: start;">
+                                    <div>
+                                        <p id="lblCaseDescText" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                                            在此案例中，<b>引線邊界 a 與 b</b> 代表照明表面的最邊緣切點。而 <b>引線邊界 c 與 d</b> 代表了製造商宣告的發光表面外側切緣。<br><br>
+                                            基準軸的變換會改變切線的斜率，進而影響邊界的投影長度（視表面面寬）。拉動上方的角度滑桿，即可即時模擬光學工程師在 CAD 圖紙上調整基準軸對接量測儀器時的切線偏移。
+                                        </p>
+                                    </div>
+                                    <div class="verdict-box" style="margin: 0; background: rgba(99, 102, 241, 0.05); border-color: rgba(99, 102, 241, 0.3);">
+                                        <span class="verdict-title">📏 當前投影邊界尺寸：</span>
+                                        <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px; display:flex; flex-direction:column; gap:4px;">
+                                            <div>照明投影邊距 (a-b): <strong id="valEdgeAB" style="color: var(--secondary); font-family: 'Outfit'; font-size: 1.05rem;">180 mm</strong></div>
+                                            <div>發光投影邊距 (c-d): <strong id="valEdgeCD" style="color: var(--secondary); font-family: 'Outfit'; font-size: 1.05rem;">150 mm</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 5: Part 7 Reciprocal Incorporation Decider -->
+                <div class="annex-panel" id="panel-part7">
+                    <div class="panel-header">
+                        <h2>雙功能燈具「混合安裝」法規互動判定決策器 (Part 7)</h2>
+                        <p>汽車整合式尾燈設計（例如煞車與位置燈整合）的核心判定流程，勾選結構特徵，系統即時給出法規裁決與光路屏障解析</p>
+                    </div>
+
+                    <div class="part7-layout">
+                        <!-- Left Quiz Selector -->
+                        <div class="part7-questions card-accent">
+                            <h3>📋 車燈物理結構特徵判定 (Design Checklist)</h3>
+                            <p class="quiz-hint">請根據您目前開發的雙功能車燈（如煞車燈 F1 與尾燈 F2）之物理結構，逐一進行剔除勾選：</p>
+                            
+                            <div class="quiz-list">
+                                <div class="quiz-item">
+                                    <label class="quiz-label">
+                                        <input type="checkbox" id="chkOptLensIncluded" checked>
+                                        <div class="quiz-text">
+                                            <h4>1. 兩功能是否共用同一外燈罩 (Outer Lens)？</h4>
+                                            <p>外燈罩通常是指車燈最外側的透光塑膠殼。</p>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="quiz-item">
+                                    <label class="quiz-label">
+                                        <input type="checkbox" id="chkOptLensTextured" checked>
+                                        <div class="quiz-text">
+                                            <h4>2. 該共用的外燈罩是否具有「光學花紋/皮紋」？</h4>
+                                            <p>即 Textured Outer Lens，外燈罩是否能對光線產生折射或擴散效果。</p>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="quiz-item">
+                                    <label class="quiz-label">
+                                        <input type="checkbox" id="chkOptHasWall" checked>
+                                        <div class="quiz-text">
+                                            <h4>3. 兩功能腔體之間是否設有「物理隔牆」？</h4>
+                                            <p>指內部阻隔光線互通的遮光隔板 (Wall / Barrier)。</p>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="quiz-item">
+                                    <label class="quiz-label">
+                                        <input type="checkbox" id="chkOptNonTexturedExcluded">
+                                        <div class="quiz-text">
+                                            <h4>4. 判定時是否排除非折射的無花紋外燈罩？</h4>
+                                            <p>即是否套用 R48 2.10.2 (b) 之不含無紋理外燈罩視表面宣告條款。</p>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="quiz-item" id="divQuizTransparent" style="display: none;">
+                                    <label class="quiz-label">
+                                        <input type="checkbox" id="chkOptF1TransparentToF2">
+                                        <div class="quiz-text">
+                                            <h4>5. 功能一的腔體是否對功能二「完全透光/透明」？</h4>
+                                            <p>即 F1 區域之材質本身是否允許 F2 的光線無阻擋穿透並發射。</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Output Screen -->
+                        <div class="part7-verdict">
+                            <!-- Live Verdict Card -->
+                            <div class="verdict-card card-accent" id="cardVerdictResult">
+                                <div class="verdict-header">
+                                    <span>⚖️ R48 法規判定裁決書 (ECE R48 Verdict)</span>
+                                </div>
+                                <div class="verdict-status-box status-active" id="divVerdictStatus">
+                                    <h3 id="lblVerdictTitle">混合安裝 (Reciprocally Incorporated)</h3>
+                                    <span id="lblVerdictSubtitle">視為一體式連動核算，發光面積可重疊</span>
+                                </div>
+                                <div class="verdict-explanation">
+                                    <h4>💡 判定條款依據：</h4>
+                                    <p id="lblVerdictExplanationText">
+                                        在此案例中，兩盞燈具具有折射功能的外燈罩，且中間無實體物理隔牆阻擋，符合 R48 規定之「混合安裝 (Reciprocally Incorporated)」定義。這意味著在進行發光視表面投影面積核算時，兩功能所覆蓋的面積可相互重疊並累加計算。
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Interactive SVG Diagram for scenario -->
+                            <div class="simulation-canvas card-accent" style="min-height: 180px; margin-top: 16px;">
+                                <div class="canvas-header">
+                                    <span>⚙️ 物理光路腔體切面示意圖 (Optical Cavity Cross-Section)</span>
+                                </div>
+                                <div class="svg-container-annex" id="part7SvgContainer" style="aspect-ratio: 2.2;">
+                                    <!-- Rendered dynamically by JS -->
+                                    <svg viewBox="0 0 400 160" id="svgPart7" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Loaded by JS -->
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <span>參考法規文檔：UN Regulation No. 48 Annex 3 (Examples of lamp surfaces, axes, centres of reference)</span>
+            <span>系統設計開發：Antigravity AI | <a href="#" onclick="alert('本互動系統旨在為車燈光學工程師提供 UN R48 Annex 3 燈具基準軸、基準中心與視表面的直觀視覺化工具，數值符合 E-mark 安裝法規標準。')">免責聲明與備註</a></span>
+        </footer>
+
+    </div>
+
+    <!-- Application Script Loader -->
+    <script src="r48-annex3.js"></script>
+</body>
+</html>

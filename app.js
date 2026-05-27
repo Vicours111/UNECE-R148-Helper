@@ -1068,7 +1068,7 @@ function updateDashboard() {
 }
 
 // Helpers to generate beautifully stylized vector cars for the visibility visualizer
-function getTopDownCarSVG(category, colorHex) {
+function getTopDownCarSVG(category, colorHex, isRightSide = false) {
     let dx = 140;
     let dy = 140;
     let showHeadlights = false;
@@ -1083,7 +1083,7 @@ function getTopDownCarSVG(category, colorHex) {
         dy = 96;
         showTaillights = true;
     } else if (category === "side") {
-        dx = 163; // Centered properly
+        dx = isRightSide ? 117 : 163; // Shift to left (117) if indicator is on right side
         dy = 140;
         showHeadlights = true;
         showTaillights = true;
@@ -1109,7 +1109,7 @@ function getTopDownCarSVG(category, colorHex) {
         <circle cx="23" cy="44" r="5" fill="#ef4444" filter="blur(2px)"/>
     ` : "";
 
-    const activeX = (category === "other") ? 0 : -23;
+    const activeX = (category === "other") ? 0 : (isRightSide ? 23 : -23);
     const activeY = (category === "front") ? -44 : ((category === "side") ? 0 : 44);
 
     // High-contrast hood and trunk directional badges to make front/rear orientation 100% obvious at a single glance
@@ -1488,8 +1488,18 @@ function drawSVGConeVisuals(lamp) {
             startRad = (270 - outDeg) * Math.PI / 180;
             endRad = (270 + inDeg) * Math.PI / 180;
         } else if (category === "side") {
-            startRad = (180 - outDeg) * Math.PI / 180;
-            endRad = (180 + inDeg) * Math.PI / 180;
+            if (lamp.symbol === "5" || lamp.symbol === "6") {
+                // For Side Direction Indicators (Cat 5 / Cat 6), the visibility is asymmetric relative to the longitudinal rear axis (90°).
+                // Per user request, the car is shifted to the left and the cone is drawn on the right side of the car:
+                // 5° inwards (towards the car body, i.e., rearward / South) -> 90° - 5° = 85° (green line pointing near rear vertical axis)
+                // 55° outwards (away from the car body, i.e., forward / South-East) -> 90° - 55° = 35° (blue line pointing to the right-downwards)
+                startRad = (90 - outDeg) * Math.PI / 180;
+                endRad = (90 - inDeg) * Math.PI / 180;
+            } else {
+                // For symmetric Side Marker Lamps (SM1 / SM2) relative to lateral axis (180°)
+                startRad = (180 - outDeg) * Math.PI / 180;
+                endRad = (180 + inDeg) * Math.PI / 180;
+            }
         } else { // rear / other
             startRad = (90 - inDeg) * Math.PI / 180;
             endRad = (90 + outDeg) * Math.PI / 180;
@@ -1503,7 +1513,8 @@ function drawSVGConeVisuals(lamp) {
         const arcFlag = (outDeg + inDeg) > 180 ? 1 : 0;
         const pathData = `M 140 140 L ${xStart} ${yStart} A 90 90 0 ${arcFlag} 1 ${xEnd} ${yEnd} Z`;
         
-        const carSVG = getTopDownCarSVG(category, colorHex);
+        const isRightSide = (lamp.symbol === "5" || lamp.symbol === "6");
+        const carSVG = getTopDownCarSVG(category, colorHex, isRightSide);
         
         horizSvg.innerHTML = `
             <svg viewBox="0 0 280 280">
@@ -1707,13 +1718,30 @@ function drawPhotometricWeightGrid(lamp) {
     else if(lamp.symbol === "RL") gridType = "drl";
     else if(lamp.symbol === "AR") gridType = "reversing";
     else if(lamp.photometricGrid === "Figure A3-VI") gridType = "rear-fog";
+    else if(lamp.photometricGrid === "Figure A3-VII") gridType = "sm1";
+    else if(lamp.photometricGrid === "Figure A3-VIII") gridType = "sm2";
+    else if(lamp.symbol === "5") gridType = "cat5";
+    else if(lamp.symbol === "6") gridType = "cat6";
     
-    // Node configuration rows
-    // Row U10, U5, H, D5, D10
-    const rows = ["10U", "5U", "H", "5D", "10D"];
-    const cols = ["20L", "10L", "5L", "V", "5R", "10R", "20R"];
+    // Node configuration rows & cols (Dynamically configured based on gridType)
+    let rows = ["10U", "5U", "H", "5D", "10D"];
+    let cols = ["20L", "10L", "5L", "V", "5R", "10R", "20R"];
     
-    // Core weight percentage calculations (mock weights representation for visual reference)
+    if(gridType === "cat6") {
+        rows = ["30U", "15U", "5U", "H", "5D"];
+        cols = ["V", "5R", "10R", "20R", "30R", "60R"];
+    } else if(gridType === "sm1") {
+        rows = ["10U", "5U", "H", "5D", "10D"];
+        cols = ["45L", "40L", "30L", "20L", "10L", "5L", "V", "5R", "10R", "20R", "30R", "40R", "45R"];
+    } else if(gridType === "sm2") {
+        rows = ["10U", "5U", "H", "5D", "10D"];
+        cols = ["30L", "20L", "10L", "5L", "V", "5R", "10R", "20R", "30R"];
+    } else if(gridType === "reversing") {
+        rows = ["10U", "5U", "H", "5D"];
+        cols = ["45L", "30L", "10L", "V", "10R", "30R", "45R"];
+    }
+    
+    // Core weight percentage calculations
     let weights = {};
     if(gridType === "chmsl") {
         // Stop lamp S3 and S4 (Figure A3-III) - standard light distribution
@@ -1724,18 +1752,62 @@ function drawPhotometricWeightGrid(lamp) {
             "5D-10L": 64, "5D-5L": 100, "5D-V": 100, "5D-5R": 100, "5D-10R": 64
         };
     } else if(gridType === "drl") {
-        // Daytime running lamp concentrated
+        // Daytime running lamp standard light distribution (Figure A3-II)
         weights = {
-            "H-V": 100, "5U-V": 70, "5D-V": 70, 
-            "H-5L": 90, "H-5R": 90, "H-10L": 20, "H-10R": 20,
-            "H-20L": 10, "H-20R": 10,
-            "5U-5L": 65, "5U-5R": 65, "5D-5L": 65, "5D-5R": 65
+            "10U-5L": 20, "10U-V": 20, "10U-5R": 20,
+            "5U-20L": 10, "5U-10L": 20, "5U-V": 70, "5U-10R": 20, "5U-20R": 10,
+            "H-20L": 25, "H-10L": 70, "H-5L": 90, "H-V": 100, "H-5R": 90, "H-10R": 70, "H-20R": 25,
+            "5D-20L": 10, "5D-10L": 20, "5D-V": 70, "5D-10R": 20, "5D-20R": 10
         };
     } else if(gridType === "reversing") {
-        // Reversing lamp spread below horizon
+        // Reversing lamp spread (Figure A3-V - values mapped directly from the official image)
         weights = {
-            "H-V": 10, "5D-V": 100, "10D-V": 80,
-            "5D-10L": 50, "5D-10R": 50, "10D-20L": 25, "10D-20R": 25
+            // 10U Row: 10L (10 cd), V (15 cd), 10R (10 cd)
+            "10U-10L": 10, "10U-V": 15, "10U-10R": 10,
+            // 5U Row: 45L/R (15 cd), 10L/R (20 cd), V (25 cd)
+            "5U-45L": 15, "5U-10L": 20, "5U-V": 25, "5U-10R": 20, "5U-45R": 15,
+            // H Row: 45L/R (15 cd), 30L/R (25 cd), 10L/R (50 cd), V (80 cd)
+            "H-45L": 15, "H-30L": 25, "H-10L": 50, "H-V": 80, "H-10R": 50, "H-30R": 25, "H-45R": 15,
+            // 5D Row: 45L/R (15 cd), 30L/R (25 cd), 10L/R (50 cd), V (80 cd)
+            "5D-45L": 15, "5D-30L": 25, "5D-10L": 50, "5D-V": 80, "5D-10R": 50, "5D-30R": 25, "5D-45R": 15
+        };
+    } else if(gridType === "cat5") {
+        // Side Direction Indicator (Cat 5) - Table A2-2 asymmetric rearward focus
+        weights = {
+            "H-V": 100, "H-5R": 100, "H-10R": 100, "H-20R": 100,
+            "5U-5R": 60, "5D-5R": 60, "H-5L": 10
+        };
+    } else if(gridType === "cat6") {
+        // Side Direction Indicator (Cat 6) - Figure A3-IV heavy vehicles
+        weights = {
+            // H Row: V (20%), 5R (100%), 10R (80%), 20R (60%), 30R (40%), 60R (40%)
+            "H-V": 20, "H-5R": 100, "H-10R": 80, "H-20R": 60, "H-30R": 40, "H-60R": 40,
+            // 5U Row: V (20%), 5R (60%), 10R (60%), 20R (40%), 30R (30%), 60R (30%)
+            "5U-V": 20, "5U-5R": 60, "5U-10R": 60, "5U-20R": 40, "5U-30R": 30, "5U-60R": 30,
+            // 5D Row: V (20%), 5R (60%), 10R (60%), 20R (40%), 30R (30%), 60R (30%)
+            "5D-V": 20, "5D-5R": 60, "5D-10R": 60, "5D-20R": 40, "5D-30R": 30, "5D-60R": 30,
+            // 15U Row: V (20%), 5R (20%), 10R (20%), 20R (20%), 30R (20%), 60R (20%)
+            "15U-V": 20, "15U-5R": 20, "15U-10R": 20, "15U-20R": 20, "15U-30R": 20, "15U-60R": 20,
+            // 30U Row: V (20%), 5R (20%), 10R (20%), 20R (20%), 30R (20%), 60R (20%)
+            "30U-V": 20, "30U-5R": 20, "30U-10R": 20, "30U-20R": 20, "30U-30R": 20, "30U-60R": 20
+        };
+    } else if(gridType === "sm1") {
+        // Side Marker Lamp SM1 (Figure A3-VII) - Corner points 0.6 cd, HV 4.0 cd
+        weights = {
+            "H-V": 4.0,
+            "10U-45L": 0.6,
+            "10U-45R": 0.6,
+            "10D-45L": 0.6,
+            "10D-45R": 0.6
+        };
+    } else if(gridType === "sm2") {
+        // Side Marker Lamp SM2 (Figure A3-VIII) - Corner points 0.6 cd, HV 0.6 cd
+        weights = {
+            "H-V": 0.6,
+            "10U-30L": 0.6,
+            "10U-30R": 0.6,
+            "10D-30L": 0.6,
+            "10D-30R": 0.6
         };
     } else if(gridType === "rear-fog") {
         // Rear Fog Lamp (Figure A3-VI) - narrow concentration, no 20L/R, no 10U/D
@@ -1747,10 +1819,11 @@ function drawPhotometricWeightGrid(lamp) {
     } else {
         // Standard position/stop lamp distributions (Figure A3-I standard)
         weights = {
-            "H-V": 100, "5U-V": 70, "5D-V": 70, "10U-V": 20, "10D-V": 20,
-            "H-5L": 90, "H-5R": 90, "H-10L": 35, "H-10R": 35, "H-20L": 10, "H-20R": 10,
-            "5U-5L": 60, "5U-5R": 60, "5D-5L": 60, "5D-5R": 60,
-            "5U-10L": 20, "5U-10R": 20, "5D-10L": 20, "5D-10R": 20
+            "10U-5L": 20, "10U-5R": 20,
+            "5U-20L": 10, "5U-10L": 20, "5U-V": 70, "5U-10R": 20, "5U-20R": 10,
+            "H-10L": 35, "H-5L": 90, "H-V": 100, "H-5R": 90, "H-10R": 35,
+            "5D-20L": 10, "5D-10L": 20, "5D-V": 70, "5D-10R": 20, "5D-20R": 10,
+            "10D-5L": 20, "10D-5R": 20
         };
     }
     
@@ -1779,7 +1852,30 @@ function drawPhotometricWeightGrid(lamp) {
             <text x="29" y="78.5" fill="#ef4444" font-size="2.4" font-weight="bold" font-family="'Outfit', sans-serif" text-anchor="middle">75 cd 菱形區域</text>
         </svg>
         `;
+    } else if (gridType === "sm1" || gridType === "sm2") {
+        const xStart = gridType === "sm1" ? 3.85 : 5.56;
+        const xEnd = gridType === "sm1" ? 96.15 : 94.44;
+        const yStart = 10;
+        const yEnd = 90;
+        svgOverlay = `
+        <svg style="position:absolute; top:24px; left:24px; width:calc(100% - 48px); height:calc(100% - 48px); pointer-events:none; z-index:1;" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+                <pattern id="amberHatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                    <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(245, 158, 11, 0.22)" stroke-width="1.2" />
+                </pattern>
+            </defs>
+            <!-- Glowing Shaded Rectangle Area (0.6 cd Continuous Zone) -->
+            <rect x="${xStart}" y="${yStart}" width="${xEnd - xStart}" height="${yEnd - yStart}" fill="url(#amberHatch)" stroke="rgba(245, 158, 11, 0.55)" stroke-dasharray="3,3" stroke-width="1.2" style="filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.3));" />
+            
+            <!-- Green Dashed Axes passing through center (50, 50) as requested in sketch -->
+            <line x1="${xStart}" y1="50" x2="${xEnd}" y2="50" stroke="rgba(16, 185, 129, 0.55)" stroke-dasharray="3,3" stroke-width="1" />
+            <line x1="50" y1="${yStart}" x2="50" y2="${yEnd}" stroke="rgba(16, 185, 129, 0.55)" stroke-dasharray="3,3" stroke-width="1" />
+        </svg>
+        `;
     }
+    
+    // Set dynamic template rows on container
+    gridMap.setAttribute("style", `grid-template-rows: repeat(${rows.length}, 1fr);`);
     
     let html = svgOverlay + `
         <div class="grid-h-axis"></div>
@@ -1787,10 +1883,9 @@ function drawPhotometricWeightGrid(lamp) {
     `;
     
     rows.forEach(r => {
-        html += `<div class="grid-node-row">`;
+        // Set dynamic template columns on each row
+        html += `<div class="grid-node-row" style="grid-template-columns: repeat(${cols.length}, 1fr);">`;
         cols.forEach(c => {
-            const key = `${r}-${c.replace("V", "V")}`;
-            // Standardizing clean tags
             let nodeKey = "";
             if(r === "H" && c === "V") nodeKey = "H-V";
             else if(r === "H") nodeKey = `H-${c}`;
@@ -1799,34 +1894,100 @@ function drawPhotometricWeightGrid(lamp) {
             
             const pct = weights[nodeKey] || 0;
             
+            // Adjust styling for high-density grids to prevent overflow
+            let pointStyle = "";
+            let textScaleClass = "";
+            if(cols.length > 9) {
+                pointStyle = `style="width: 40px; height: 40px; min-width: 40px; margin: 1px;"`;
+                textScaleClass = `style="font-size: 0.55rem;"`;
+            } else if(cols.length > 7) {
+                pointStyle = `style="width: 48px; height: 48px; min-width: 48px; margin: 2px;"`;
+                textScaleClass = `style="font-size: 0.65rem;"`;
+            }
+            
+            // Dynamic Label swap / visual enlargement for SM1/SM2 central HV point
+            if(nodeKey === "H-V" && (gridType === "sm1" || gridType === "sm2")) {
+                pointStyle = `style="width: 52px; height: 52px; min-width: 52px; margin: 1px; z-index: 10; border-width: 2px; filter: drop-shadow(0 0 6px var(--accent-glow, rgba(255, 170, 0, 0.45))); border-color: rgba(255, 255, 255, 0.65);"`;
+                textScaleClass = `style="font-size: 0.85rem; font-weight: 800;"`;
+            }
+            
+            let displayNodeKey = nodeKey;
+            
             let displayVal = "";
             let activeClass = "";
             if(pct > 0) {
                 // Calculate absolute CD
-                const absCd = ((pct / 100) * lamp.minIntensity).toFixed(1);
+                let absCd = 0;
+                if(gridType === "reversing" || gridType === "sm1" || gridType === "sm2") {
+                    absCd = pct.toFixed(1);
+                } else {
+                    absCd = ((pct / 100) * lamp.minIntensity).toFixed(1);
+                }
                 const maxCd = lamp.activeMax;
-                displayVal = `${pct}%`;
+                
+                if(gridType === "reversing" || gridType === "sm1" || gridType === "sm2") {
+                    displayVal = `${pct} cd`;
+                } else {
+                    displayVal = `${pct}%`;
+                }
                 activeClass = `active-point active-${lamp.color.toLowerCase()}`;
                 
-                // Show CD on hover or inside the small node
+                let hoverTitle = `配光測試點 ${displayNodeKey} | 最小光度比重: ${pct}% | 法定最小光度: ${absCd} cd | 法定最大光度: ${maxCd} cd`;
+                if(gridType === "reversing" || gridType === "sm1" || gridType === "sm2") {
+                    hoverTitle = `配光測試點 ${displayNodeKey} | 法定最小光度: ${absCd} cd | 法定最大光度: ${maxCd} cd`;
+                }
+                
+                // Show CD on hover or inside the small node - only display Coord, DisplayVal (white) and Max cd, removing min cd from node UI
                 html += `
-                    <div class="grid-point ${activeClass}" title="配光測試點 ${nodeKey} | 最小光度比重: ${pct}% | 法定最小光度: ${absCd} cd | 法定最大光度: ${maxCd} cd">
-                        <span class="coord">${nodeKey}</span>
-                        <span class="val-pct">${pct}%</span>
-                        <span class="val-min">Min: ${absCd}cd</span>
-                        <span class="val-max">Max: ${maxCd}cd</span>
+                    <div class="grid-point ${activeClass}" ${pointStyle} title="${hoverTitle}">
+                        <span class="coord" ${textScaleClass}>${displayNodeKey}</span>
+                        <span class="val-pct" ${textScaleClass}>${displayVal}</span>
+                        <span class="val-max" ${textScaleClass}>Max: ${maxCd}cd</span>
                     </div>
                 `;
             } else {
-                html += `<div class="grid-point" style="opacity: 0.15;">
-                    <span class="coord" style="font-size:0.5rem;">${nodeKey}</span>
-                </div>`;
+                if (gridType === "sm1" || gridType === "sm2") {
+                    html += `<div class="grid-point" ${pointStyle} style="background: none; border-color: transparent; box-shadow: none; cursor: default; opacity: 0.25;">
+                        <span class="coord" style="font-size:0.45rem; color: rgba(255, 255, 255, 0.3); font-weight: normal;">${displayNodeKey}</span>
+                    </div>`;
+                } else {
+                    html += `<div class="grid-point" ${pointStyle} style="opacity: 0.15;">
+                        <span class="coord" style="font-size:0.5rem;">${displayNodeKey}</span>
+                    </div>`;
+                }
             }
         });
         html += `</div>`;
     });
     
     gridMap.innerHTML = html;
+    
+    // Dynamic Axis Labels to perfectly align bottom angles with grid columns
+    const axisLabelsContainer = document.querySelector(".grid-axis-labels");
+    if(axisLabelsContainer) {
+        let fontSizeStyle = "0.75rem";
+        if(cols.length > 9) {
+            fontSizeStyle = "0.62rem";
+        } else if(cols.length > 7) {
+            fontSizeStyle = "0.7rem";
+        }
+        axisLabelsContainer.setAttribute("style", `display: grid; grid-template-columns: repeat(${cols.length}, 1fr); justify-items: center; text-align: center; font-size: ${fontSizeStyle};`);
+        let labelHtml = "";
+        cols.forEach((c, idx) => {
+            let text = c;
+            let spanStyle = "";
+            if(c === "V") {
+                text = "垂直 HV";
+                spanStyle = ` style="color: var(--text-primary); font-weight: 700;"`;
+            } else {
+                text = c.replace("L", "°L").replace("R", "°R");
+            }
+            if(idx === 0) text = "左側 " + text;
+            else if(idx === cols.length - 1) text = "右側 " + text;
+            labelHtml += `<span${spanStyle}>${text}</span>`;
+        });
+        axisLabelsContainer.innerHTML = labelHtml;
+    }
 }
 
 // CIE 1931 Canvas Rendering and Calculation
