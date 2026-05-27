@@ -25,17 +25,6 @@
 
         <!-- Global Parameter Control Panel -->
         <section class="global-control-panel">
-            <div class="control-item">
-                <label>
-                    <span>安裝高度 (Mounting Height)</span>
-                    <span id="heightValue" class="val-display">250 mm</span>
-                </label>
-                <div class="slider-container">
-                    <span style="font-size:0.75rem; color:var(--text-muted);">250mm</span>
-                    <input type="range" id="heightSlider" min="250" max="2500" value="250" step="50">
-                    <span style="font-size:0.75rem; color:var(--text-muted);">2500mm</span>
-                </div>
-            </div>
             
 
 
@@ -140,20 +129,41 @@
                             </div>
                             
                             <div style="display:flex; flex-direction:column; gap:20px;">
-                                <div class="spec-card card-accent" id="visibilitySpecCard" style="padding: 20px 24px;">
-                                    <h3 style="margin-bottom: 12px;">能見可視角要求 (Geometric Visibility)</h3>
-                                    <div class="detail-data-grid" style="gap: 12px;">
+                                <div class="spec-card card-accent" id="visibilitySpecCard" style="padding: 16px 20px;">
+                                    <h3 style="font-size: 1.05rem; color: var(--text-primary); margin-bottom: 10px; font-weight: 600;">
+                                        能見可視角要求 (Geometric Visibility)
+                                    </h3>
+                                    <!-- Full width height control strip -->
+                                    <div class="sync-height-control" style="display: flex; align-items: center; gap: 12px; font-size: 0.85rem; font-weight: normal; color: var(--text-secondary); background: rgba(6, 182, 212, 0.03); border: 1px solid rgba(6, 182, 212, 0.2); padding: 12px 16px 8px 16px; border-radius: var(--border-radius-md); box-shadow: 0 4px 15px rgba(6, 182, 212, 0.05); margin-bottom: 14px; width: 100%;">
+                                        <span style="font-weight: 600; color: var(--text-primary); white-space: nowrap; flex-shrink: 0; padding-top: 6px;">安裝高度:</span>
+                                        <div class="slider-container" style="display: flex; align-items: center; gap: 8px; flex: 1; position: relative;">
+                                            <span style="font-size:0.7rem; color:var(--text-muted); white-space: nowrap; flex-shrink: 0; padding-top: 10px;">250mm</span>
+                                            
+                                            <!-- Slider Track Wrapper for Tick -->
+                                            <div style="position: relative; flex: 1; display: flex; align-items: center; padding: 14px 0 6px 0;">
+                                                <input type="range" class="heightSliderSync" min="250" max="2500" value="250" step="50" style="width: 100%; accent-color: var(--secondary); background: rgba(255,255,255,0.1); border-radius: 4px; height: 6px; cursor: pointer; margin: 0;">
+                                                <!-- Yellow 750mm Tick Line -->
+                                                <div style="position: absolute; left: 22.22%; height: 12px; width: 1.5px; background: #eab308; pointer-events: none; z-index: 1;"></div>
+                                                <!-- Yellow "750mm" Text Label -->
+                                                <span style="position: absolute; left: 22.22%; transform: translateX(-50%); top: -6px; font-size: 0.62rem; color: #eab308; font-weight: 800; pointer-events: none; white-space: nowrap; font-family: 'Outfit';">750mm</span>
+                                            </div>
+                                            
+                                            <span style="font-size:0.7rem; color:var(--text-muted); white-space: nowrap; flex-shrink: 0; padding-top: 10px;">2500mm</span>
+                                        </div>
+                                        <span class="heightValueSync" style="font-size: 1.05rem; width: 90px; flex-shrink: 0; padding-top: 6px;">250 mm</span>
+                                    </div>
+                                    <div class="detail-data-grid" style="gap: 8px;">
                                         <div class="data-cell" style="grid-column: span 2;">
-                                            <span class="lbl">水平能見角度要求 (Horizontal Field)</span>
-                                            <span id="valHorizAngle" class="val" style="font-size: 1.15rem;">載入中...</span>
+                                            <span class="lbl" style="font-size: 0.72rem; margin-bottom: 2px;">水平能見角度要求 (Horizontal Field)</span>
+                                            <span id="valHorizAngle" class="val" style="font-size: 1.05rem;">載入中...</span>
                                         </div>
                                         <div class="data-cell" style="grid-column: span 2;">
-                                            <span class="lbl">垂直能見角度要求 (Vertical Field)</span>
-                                            <span id="valVertAngle" class="val" style="font-size: 1.15rem;">載入中...</span>
+                                            <span class="lbl" style="font-size: 0.72rem; margin-bottom: 2px;">垂直能見角度要求 (Vertical Field)</span>
+                                            <span id="valVertAngle" class="val" style="font-size: 1.05rem;">載入中...</span>
                                         </div>
                                         <div class="data-cell" style="grid-column: span 2;">
-                                            <span class="lbl">對應標準配光網格</span>
-                                            <span id="valPhotGrid" class="val" style="color: var(--secondary); font-size: 1.1rem;">載入中...</span>
+                                            <span class="lbl" style="font-size: 0.72rem; margin-bottom: 2px;">對應標準配光網格</span>
+                                            <span id="valPhotGrid" class="val" style="color: var(--secondary); font-size: 1.0rem;">載入中...</span>
                                         </div>
                                     </div>
                                 </div>
@@ -208,7 +218,27 @@
 
                         <!-- Row 2: SVG Visualization Cones -->
                         <div class="spec-card card-accent">
-                            <h3>光學可視錐形模擬 (Geometric Visibility Cones)</h3>
+                            <h3 style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 16px;">
+                                <span>光學可視錐形模擬 (Geometric Visibility Cones)</span>
+                                <div class="sync-height-control" style="display: inline-flex; align-items: center; gap: 12px; font-size: 0.82rem; font-weight: normal; color: var(--text-secondary); background: rgba(6, 182, 212, 0.03); border: 1px solid rgba(6, 182, 212, 0.2); padding: 8px 14px 6px 14px; border-radius: var(--border-radius-md); box-shadow: 0 4px 15px rgba(6, 182, 212, 0.05); min-width: 320px; justify-content: flex-end;">
+                                    <span style="font-weight: 600; color: var(--text-primary); flex-shrink: 0; padding-top: 6px;">安裝高度:</span>
+                                    <div class="slider-container" style="display: flex; align-items: center; gap: 8px; flex: 1; position: relative;">
+                                        <span style="font-size:0.65rem; color:var(--text-muted); white-space: nowrap; flex-shrink: 0; padding-top: 12px;">250mm</span>
+                                        
+                                        <!-- Slider Track Wrapper for Tick -->
+                                        <div style="position: relative; flex: 1; display: flex; align-items: center; padding: 14px 0 4px 0;">
+                                            <input type="range" class="heightSliderSync" min="250" max="2500" value="250" step="50" style="width: 100%; min-width: 120px; accent-color: var(--secondary); background: rgba(255,255,255,0.1); border-radius: 4px; height: 6px; cursor: pointer; margin: 0;">
+                                            <!-- Yellow 750mm Tick Line -->
+                                            <div style="position: absolute; left: 22.22%; height: 12px; width: 1.5px; background: #eab308; pointer-events: none; z-index: 1;"></div>
+                                            <!-- Yellow "750mm" Text Label -->
+                                            <span style="position: absolute; left: 22.22%; transform: translateX(-50%); top: -6px; font-size: 0.6rem; color: #eab308; font-weight: 800; pointer-events: none; white-space: nowrap; font-family: 'Outfit';">750mm</span>
+                                        </div>
+                                        
+                                        <span style="font-size:0.65rem; color:var(--text-muted); white-space: nowrap; flex-shrink: 0; padding-top: 12px;">2500mm</span>
+                                    </div>
+                                    <span class="heightValueSync" style="font-size: 0.95rem; width: 80px; flex-shrink: 0; padding-top: 6px;">250 mm</span>
+                                </div>
+                            </h3>
                             <div class="visibility-visualizer-container">
                                 <div class="cone-views-wrapper">
                                     <div class="cone-view-box">
@@ -266,6 +296,32 @@
                         <div class="category-block" id="category-block-other" style="display: none;">
                             <h4 class="category-title"><span class="category-icon">⚙️</span> 其他類 (Others)</h4>
                             <div class="checkbox-grid" id="crossRefCheckboxes-other"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Synced Height Horizontal Bar -->
+                    <div class="cross-ref-height-row" style="margin-top: 20px; background: rgba(6, 182, 212, 0.03); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: var(--border-radius-md); padding: 16px 20px 12px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(6, 182, 212, 0.05);">
+                        <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0; padding-top: 6px;">
+                            <span style="font-size: 1.1rem;">📏</span>
+                            <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-primary);">連動安裝高度 (Sync Height)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px; flex: 1; min-width: 300px; justify-content: flex-end;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary); flex-shrink: 0; padding-top: 6px;">安裝高度:</span>
+                            <div class="slider-container" style="display: flex; align-items: center; gap: 10px; flex: 1; max-width: 450px; position: relative;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted); flex-shrink: 0; padding-top: 12px;">250mm</span>
+                                
+                                <!-- Slider Track Wrapper for Tick -->
+                                <div style="position: relative; flex: 1; display: flex; align-items: center; padding: 14px 0 4px 0;">
+                                    <input type="range" class="heightSliderSync" min="250" max="2500" value="250" step="50" style="width: 100%; accent-color: var(--secondary); background: rgba(255,255,255,0.1); border-radius: 4px; height: 6px; cursor: pointer; margin: 0;">
+                                    <!-- Yellow 750mm Tick Line -->
+                                    <div style="position: absolute; left: 22.22%; height: 12px; width: 1.5px; background: #eab308; pointer-events: none; z-index: 1;"></div>
+                                    <!-- Yellow "750mm" Text Label -->
+                                    <span style="position: absolute; left: 22.22%; transform: translateX(-50%); top: -6px; font-size: 0.62rem; color: #eab308; font-weight: 800; pointer-events: none; white-space: nowrap; font-family: 'Outfit';">750mm</span>
+                                </div>
+                                
+                                <span style="font-size: 0.75rem; color: var(--text-muted); flex-shrink: 0; padding-top: 12px;">2500mm</span>
+                            </div>
+                            <span class="heightValueSync" style="font-size: 1.15rem; width: 90px; flex-shrink: 0; padding-top: 6px;">250 mm</span>
                         </div>
                     </div>
                 </div>

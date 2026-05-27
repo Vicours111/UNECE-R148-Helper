@@ -189,7 +189,7 @@ input[type="range"] {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     outline: none;
-    transition: var(--transition-smooth);
+    transition: background-color 0.2s ease;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -200,7 +200,7 @@ input[type="range"]::-webkit-slider-thumb {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 10px var(--secondary-glow);
-    transition: var(--transition-smooth);
+    transition: transform 0.15s ease, background-color 0.15s ease;
 }
 input[type="range"]::-webkit-slider-thumb:hover {
     transform: scale(1.15);
@@ -506,6 +506,16 @@ input:checked + .slider:before {
 .data-cell .val.highlight-red { color: var(--color-red); text-shadow: 0 0 8px rgba(239, 68, 68, 0.2); }
 .data-cell .val.highlight-white { color: var(--color-white); text-shadow: 0 0 8px rgba(255, 255, 255, 0.2); }
 
+.heightValueSync {
+    font-family: 'Outfit', monospace;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--secondary) !important;
+    text-align: right;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
 /* SVG Visibility Cone Visualizer */
 .visibility-visualizer-container {
     display: flex;
@@ -698,14 +708,12 @@ button.check-btn:hover {
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 10px;
 }
-
 .cross-ref-categories {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-top: 10px;
 }
-
 .category-block {
     background: rgba(255, 255, 255, 0.01);
     border: 1px solid rgba(255, 255, 255, 0.04);

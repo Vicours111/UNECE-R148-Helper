@@ -569,19 +569,49 @@ window.addEventListener("DOMContentLoaded", () => {
     initCrossRefTab();
 });
 
+// Helper to sync all mounting height sliders and displays across tabs
+function syncMountingHeight(val) {
+    const numericVal = parseInt(val);
+    if (isNaN(numericVal)) return;
+    uiState.mountingHeight = numericVal;
+
+    // Update all sliders
+    const mainSlider = document.getElementById("heightSlider");
+    if (mainSlider) mainSlider.value = numericVal;
+    document.querySelectorAll(".heightSliderSync").forEach(slider => {
+        slider.value = numericVal;
+    });
+
+    // Update all value displays
+    const mainValue = document.getElementById("heightValue");
+    if (mainValue) mainValue.innerText = numericVal + " mm";
+    document.querySelectorAll(".heightValueSync").forEach(display => {
+        display.innerText = numericVal + " mm";
+    });
+
+    // Recalculate and update UI
+    updateDashboard();
+    updateCrossRefTable();
+}
+
 // Setup Listeners and DOM Bindings
 function initUI() {
-    // Mounting Height Range Slider
+    // Mounting Height Range Sliders (including synced copies)
     const heightSlider = document.getElementById("heightSlider");
-    const heightValue = document.getElementById("heightValue");
-    if(heightSlider && heightValue) {
+    if(heightSlider) {
         heightSlider.addEventListener("input", (e) => {
-            uiState.mountingHeight = parseInt(e.target.value);
-            heightValue.innerText = uiState.mountingHeight + " mm";
-            updateDashboard();
-            updateCrossRefTable();
+            syncMountingHeight(e.target.value);
         });
     }
+
+    document.querySelectorAll(".heightSliderSync").forEach(slider => {
+        slider.addEventListener("input", (e) => {
+            syncMountingHeight(e.target.value);
+        });
+    });
+
+    // Initialize all controls to starting value
+    syncMountingHeight(uiState.mountingHeight);
 
     // Toggle Toggles
     const dLampToggle = document.getElementById("dLampToggle");
