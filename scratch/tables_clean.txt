@@ -1,0 +1,66 @@
+﻿==========================================
+TABLE INDEX: 6
+==========================================
+Row 0: Daytime running lamp | Minimum luminous intensity in cd (Par. 4.8.3.1. (a)) | Maximum luminous intensity in cd when used as(Par. 4.8.3.1. (b)) | Standard light distribution(Par. 4.8.3.1. (c)) | Angles ofgeometric visibility(Par. 4.8.3.1. (d))
+Row 1: | | A single lamp | A lamp marked "D" (Par. 3.3.2.5.2) | | Definition | Minimum luminous intensity in cd
+Row 2: RL | 4.00?102 | 1.20?103 | 6.00?102 | Figure A3-II | Table A2-1 | 1.0?100
+
+
+==========================================
+TABLE INDEX: 7
+==========================================
+Row 0: Stop lamp of category | Minimum luminous intensity in cd(Par. 4.8.3.1. (a)) | Maximum luminous intensity in cd when used as(Par. 4.8.3.1. (b)) | Standard light distribution(Par. 4.8.3.1. (c)) | Angles ofgeometric visibility(Par. 4.8.3.1. (d))
+Row 1: | | A single lamp | A lamp marked "D" (Par. 3.3.2.5.2) | | Definition | Minimum luminous intensity in cd
+Row 2: S1 (steady) | 6.0?101 | 2.60?102 | 1.30?102 | Figure A3-I | Table A2-1 | 3?10-1
+Row 3: S2 (variable) | 6.0?101 | 7.30?102 | 3.65?102 | Figure A3-I | Table A2-1 | 3?10-1 (day)7?10-2 (night)
+Row 4: S3 (steady) | 2.5?101 | 1.10?102 | 5.5?101 | Figure A3-III | Table A2-1 | 3?10-1
+Row 5: S4 (variable) | 2.5?101 | 1.60?102 | 8.0?101 | Figure A3-III | Table A2-1 | 3?10-1 (day)7?10-2 (night)
+Row 6: MS (steady) | 4.0?101 | 2.60?102 | 1.30?102 | Figure A3-I | Table A2-1 | 3?10-1
+
+
+==========================================
+TABLE INDEX: 8
+==========================================
+Row 0: Direction indicator of categories | Minimum luminous intensity in cd(Par. 4.8.3.1. (a)) | Maximum luminous intensity in cd when used as (Par. 4.8.3.1. (b)) | Standard light distribution(Par. 4.8.3.1. (c)) | Angles ofgeometric visibility(Par. 4.8.3.1. (d))
+Row 1: | | A single lamp | A lamp marked "D" (Par.3.3.2.5.2) | | Definition | Minimum luminous intensity in cd
+Row 2: 1 | 1.75?102 | 1.20?103 | 6.00?102 | Figure A3-I | Table A2-1 | 3?10-1
+Row 3: 1a | 2.50?102 | 1.20?103 | 6.00?102 | Figure A3-I | Table A2-1 | 3?10-1
+Row 4: 1b | 4.00?102 | 1.20?103 | 6.00?102 | Figure A3-I | Table A2-1 | 7?10-1
+Row 5: 2a (steady) | 5.0?101 | 5.00?102 | 2.50?102 | Figure A3-I | Table A2-1 | 3?10-1
+Row 6: 2b (variable) | 5.0?101 | 1.00?103 | 5.00?102 | Figure A3-I | Table A2-1 | 3?10-1 (day)7?10-2 (night)
+Row 7: 5 | 6?10-1 | 2.80?102 | 1.40?102 | Table A2-2 | Table A2-2 | 6?10-1
+Row 8: 6 | 5.0?101 | 2.80?102 | 1.40?102 | Figure A3-IV | N.A. | N.A.
+Row 9: 11 | 9.0?101 | 1.20?103 | 6.00?102 | Figure A3-I | Table A2-1 | 3?10-1
+Row 10: 11a | 1.75?102 | 1.20?102 | 6.00?102 | Figure A3-I | Table A2-1 | 3?10-1
+Row 11: 11b | 2.50?102 | 1.20?102 | 6.00?102 | Figure A3-I | Table A2-1 | 3?10-1
+Row 12: 11c | 4,00?102 | 1.20?102 | 6.00?102 | Figure A3-I | Table A2-1 | 3?10-1
+Row 13: 12 | 5.0?101 | 5.00?102 | 2.50?102 | Figure A3-I | Table A2-1 | 3?10-1
+
+
+==========================================
+TABLE INDEX: 9
+==========================================
+Row 0: Side marker lamp of categories | Minimum luminous intensity in cd in the axis of reference(Par. 4.8.3.1. (a)) | Minimum luminous intensity in cd within the standard light distribution(Par. 4.8.3.1. (c)) | Maximum luminous intensity in cd(Par. 4.8.3.1. (b)) | Standard light distribution(Par. 4.8.3.1. (c)) | Angles ofgeometric visibility(Par. 4.8.3.1. (d))
+Row 1: | | | | | Definition | Minimum luminous intensity in cd
+Row 2: SM1 | 4.0?100 | 6?10-1 | 2.50?101 | Figure A3-VII | Table A2-3 | 6?10-1
+Row 3: SM2 | 6?10-1 | 6?10-1 | 2.50?101 | Figure A3-VIII | Table A2-3 | 6?10-1
+
+
+==========================================
+TABLE INDEX: 10
+==========================================
+Row 0: Reversing lamps of category | Minimum luminous intensity in cd(Par. 4.8.3.1. (a)) | Maximum luminous intensity in cd(Par. 4.8.3.1. (b)) | Standard light distribution(Par. 4.8.3.1. (c)) | Angles ofgeometric visibility(Par. 4.8.3.1. (d))
+Row 1: | | in or above the h-plane | below the h-plane, down to 5°D | below 5°D | | Definition | Minimum luminous intensity in cd
+Row 2: AR | 8.0?101 | 3.00?102 | 6.00?102 | 8.00?103 | Figure A3-V | N.A. | N.A.
+
+
+==========================================
+TABLE INDEX: 11
+==========================================
+Row 0: Rear fog lamps of categories | Minimum luminous intensity in cd(Par. 4.8.3.1. (a)) | Maximum luminous intensity in cd when used as(Par. 4.8.3.1. (b)) | Standard light distribution(Par. 4.8.3.1. (c)) | Angles of geometric visibility(Par. 4.8.3.1. (d))
+Row 1: | | | | Definition | Minimum luminous intensities in cd
+Row 2: F1 (steady) | 1.50?102 | 3.00?102 | Figure A3-VI | N.A. | N.A.
+Row 3: F2 (variable) | 1.50?102 | 8.40?102 | Figure A3-VI | N.A. | N.A.
+
+
+

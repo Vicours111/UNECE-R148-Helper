@@ -456,20 +456,20 @@ function drawTimelineGraph(currentTime) {
     for (let t = 0; t <= 1000; t += 100) {
         const x = (t / 1000) * (width - 40) + 30;
         ctx.beginPath();
-        ctx.moveTo(x, 5);
+        ctx.moveTo(x, 20);
         ctx.lineTo(x, height - 25);
         ctx.stroke();
         
-        // Draw grid labels
+        // Draw grid labels (shifted down to height - 5 = 145px)
         ctx.fillStyle = 'var(--text-muted)';
         ctx.font = '9px Outfit, sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText(`${t}ms`, x, height - 12);
+        ctx.fillText(`${t}ms`, x, height - 5);
     }
 
-    // Draw grid bounding box
+    // Draw grid bounding box (top shifted to 20 to create space for top label)
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-    ctx.strokeRect(30, 5, width - 40, height - 30);
+    ctx.strokeRect(30, 20, width - 40, height - 45);
     
     // Draw 200ms Law Boundary Line (Red Dotted)
     const x200 = (200 / 1000) * (width - 40) + 30;
@@ -477,16 +477,16 @@ function drawTimelineGraph(currentTime) {
     ctx.lineWidth = 1.5;
     ctx.setLineDash([4, 4]);
     ctx.beginPath();
-    ctx.moveTo(x200, 5);
+    ctx.moveTo(x200, 20);
     ctx.lineTo(x200, height - 25);
     ctx.stroke();
     ctx.setLineDash([]); // Reset
     
-    // Draw "200ms" tag above
-    ctx.fillStyle = '#fca5a5';
+    // Draw "200ms Limit" tag at the top empty area (perfectly placed inside top red ellipse)
+    ctx.fillStyle = '#ef4444'; // matched exactly to red line color
     ctx.font = 'bold 9px Outfit, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('200ms Limit', x200, 15);
+    ctx.fillText('200ms Limit', x200, 13);
 
     // Calculate sequence completion time (when the last segment turns ON)
     let completionTime = 0;
@@ -504,27 +504,26 @@ function drawTimelineGraph(currentTime) {
         ctx.strokeStyle = '#eab308'; // beautiful yellow-500
         ctx.lineWidth = 1.5;
         ctx.beginPath();
-        ctx.moveTo(xComplete, 5);
+        ctx.moveTo(xComplete, 20);
         ctx.lineTo(xComplete, height - 25);
         ctx.stroke();
         
-        // Draw Completion time text label below the 200ms limit tag
-        ctx.fillStyle = '#fef08a'; // light yellow-200
+        // Draw Sequence Completion text tag outside the grid bottom boundary (placed at y = 135px, perfectly outside the grid without any intersection)
+        ctx.fillStyle = '#eab308'; // matched exactly to yellow line color
         ctx.font = 'bold 9px Outfit, sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText(`Sequence: ${completionTime}ms`, xComplete, 26);
+        ctx.fillText(`Sequence: ${completionTime}ms`, xComplete, 135);
     }
 
-    // Draw active signal graph blocks for all 12 segments
+    // Draw active signal graph blocks for all 10 segments
     const numRows = numSegments;
-    const rowHeight = (height - 40) / numRows;
+    const rowHeight = 9; // explicitly set to 9px to create gaps at top (5px) and bottom (13px) of the grid
     const activeAmberColor = 'rgba(245, 158, 11, 0.85)';
     const offGrayColor = 'rgba(255, 255, 255, 0.05)';
     
     for (let r = 0; r < numRows; r++) {
-        // Evaluate states across the entire 1000ms timeline to draw the static waves
-        // Row index matches LED segment index (0 to 11)
-        const y = 8 + (numRows - 1 - r) * rowHeight; // Stack row 0 at the bottom or top? Let's stack row 0 at top, 11 at bottom
+        // Stack row 0 at bottom, 9 at top
+        const y = 25 + (numRows - 1 - r) * rowHeight;
         
         ctx.fillStyle = 'rgba(255,255,255,0.15)';
         ctx.font = '8px Outfit, sans-serif';
@@ -536,7 +535,6 @@ function drawTimelineGraph(currentTime) {
         ctx.fillRect(30, y + 2, width - 40, 4);
         
         // Calculate and draw ON state blocks
-        // For drawing, we split the 1000ms timeline into slices and color the slices that are active
         const slices = 120;
         const sliceWidth = (width - 40) / slices;
         
@@ -556,7 +554,7 @@ function drawTimelineGraph(currentTime) {
     ctx.strokeStyle = '#22d3ee';
     ctx.lineWidth = 1.5;
     ctx.beginPath();
-    ctx.moveTo(xCursor, 5);
+    ctx.moveTo(xCursor, 20);
     ctx.lineTo(xCursor, height - 25);
     ctx.stroke();
     

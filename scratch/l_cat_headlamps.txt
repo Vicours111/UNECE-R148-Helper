@@ -1,0 +1,70 @@
+L-Category Headlamps Info (R149)
+=================================
+Passing beam headlamp of Class AS (symmetrical)
+----------------
+Passing beam headlamp of Class BS (symmetrical)
+----------------
+Passing beam headlamp of Class CS (symmetrical)
+----------------
+Passing beam headlamp of Class DS (symmetrical)
+----------------
+Passing beam headlamp of Class ES (GDL symmetrical)
+----------------
+Driving beam headlamp of Class BS
+----------------
+Driving beam headlamp of Class CS
+----------------
+Driving beam headlamp of Class DS
+----------------
+Driving beam headlamp of Class ES (GDL)
+----------------
+Passing beam headlamp of Class AS (symmetrical)
+----------------
+Passing beam headlamp of Class BS (symmetrical)
+----------------
+Passing beam headlamp of Class CS (symmetrical)
+----------------
+Passing beam headlamp of Class DS (symmetrical)
+----------------
+Passing beam headlamp of Class ES (GDL symmetrical)
+----------------
+Driving beam headlamp of Class BS
+----------------
+Driving beam headlamp of Class CS
+----------------
+Driving beam headlamp of Class DS
+----------------
+Driving beam headlamp of Class ES (GDL)
+----------------
+3.3.2.6.6.<w:t xml:space="preserve">In the case of AFS, front fog lamps and headlamps except Class AS, BS, CS, DS and ES meeting the requirements of Annex 7 only when supplied with a voltage of 12V, a marking consisting of the Number 24 crossed out by an oblique cross (X) near the holders of the light source(s);
+----------------
+HeadlampsClass AS
+----------------
+HeadlampsClass BS
+----------------
+HeadlampsClass CS
+----------------
+HeadlampsClass DS
+----------------
+¡§Class ES - Passing beam minimum limit for luminous flux¡¨
+----------------
+Headlamps Class ES
+----------------
+Class DS, ES
+----------------
+5.4.<w:tab/><w:t xml:space="preserve">Technical requirements concerning headlamps to provide a passing-beam of the Class AS, BS, CS, DS and ES (symbols ¡§C-AS¡¨, ¡§C-BS¡¨, ¡§WC-CS¡¨, ¡§WC-DS¡¨ and ¡§WC-ES¡¨
+----------------
+Passing-beam Class AS
+----------------
+Passing-beam Class BS
+----------------
+Passing-beam Class CS, DS or ES
+----------------
+<w:tab w:val="right" w:leader="none" w:pos="8505"/></w:tabs><w:spacing w:after="120" w:line="240" w:lineRule="auto"/><w:ind w:left="1985" w:right="1134" w:hanging="851"/><w:rPr/></w:pPr><w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000"><w:rPr><w:rtl w:val="0"/></w:rPr><w:t xml:space="preserve">9.5.1.<w:t xml:space="preserve">Class as described by the relevant marking:
+----------------
+1.2.1.3.<w:t xml:space="preserve">For class BS, CS, DS and ES headlamps corresponding to paragraph 5.4. of this Regulation for values in zone I, the maximum unfavourable deviation may be respectively:
+----------------
+Passing beam test points and zones for Class AS headlamp(s)
+----------------
+Passing beam test points and zones for Class BS headlamp(s)
+----------------

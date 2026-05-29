@@ -1,0 +1,927 @@
+﻿R148_DATABASE = {
+    // Front Position, End-outline & Motorcycle Position
+    "A": {
+        symbol: "A",
+        nameZh: "前位置燈 (Front Position Lamp)",
+        nameEn: "Front Position Lamp",
+        color: "White",
+        colorZh: "白色 (White)",
+        minIntensity: 4.0,
+        maxIntensitySingle: 140.0,
+        maxIntensityD: 70.0,
+        horizOutboard: 80,
+        horizInboard: 45,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-I",
+        notesZh: "安裝高度小於 750 mm 時，垂直下方角度可收縮至 5°。若安裝於大燈或前霧燈內，最大光度不受 D-lamp 限制。",
+        notesEn: "Vertical below angle reduces to 5° if h < 750 mm. If incorporated in a headlamp or front fog lamp, D-lamp restriction is N.A."
+    },
+    "AM": {
+        symbol: "AM",
+        nameZh: "前輪廓邊界燈 (Front End-outline Marker)",
+        nameEn: "Front End-outline Marker Lamp",
+        color: "White",
+        colorZh: "白色 (White)",
+        minIntensity: 4.0,
+        maxIntensitySingle: 140.0,
+        maxIntensityD: 70.0,
+        horizOutboard: 80,
+        horizInboard: 0,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-I",
+        notesZh: "安裝在車輛最高處。若安裝高度大於 2100 mm，垂直上方角度可收縮至 5°，下方為 15°。",
+        notesEn: "Installed at vehicle's highest point. Vertical above angle reduces to 5° if h > 2100 mm."
+    },
+    "MA": {
+        symbol: "MA",
+        nameZh: "機車前位置燈 (Motorcycle Front Position)",
+        nameEn: "Motorcycle Front Position Lamp (L-cat)",
+        color: "White",
+        colorZh: "白色 (White)",
+        minIntensity: 4.0,
+        maxIntensitySingle: 140.0,
+        maxIntensityD: 140.0, // N.A.
+        horizOutboard: 80,
+        horizInboard: 80, // For singular, if pair it's 20
+        vertAbove: 15,
+        vertBelow: 10,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-I",
+        notesZh: "若為單個安裝，左右可視角均為 80°；若成對安裝，內側可視角可縮至 20°。垂直下方角度標準為 10°，若高度小於 750 mm 則為 5°。",
+        notesEn: "Horizontal inboard 80° for singular, 20° for pair. Vertical below is 10° standard, 5° if h < 750 mm."
+    },
+
+    // Rear Position, End-outline & Motorcycle Position (Steady & Variable)
+    "R1": {
+        symbol: "R1",
+        nameZh: "後位置燈 - 穩態 (Rear Position Steady)",
+        nameEn: "Rear Position Lamp (Steady)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 4.0,
+        maxIntensitySingle: 17.0,
+        maxIntensityD: 8.5,
+        horizOutboard: 80,
+        horizInboard: 45,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-I",
+        notesZh: "穩態紅色定位光源。高度小於 750 mm 時，垂直下方角度可縮至 5°；若安裝於可活動組件上，垂直上方角度可改為 5°。",
+        notesEn: "Steady red source. Vertical below reduces to 5° if h < 750 mm. Vertical above reduces to 5° if on a movable component."
+    },
+    "R2": {
+        symbol: "R2",
+        nameZh: "後位置燈 - 可變亮度 (Rear Position Variable)",
+        nameEn: "Rear Position Lamp (Variable)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 4.0,
+        maxIntensitySingle: 42.0,
+        maxIntensityD: 21.0,
+        horizOutboard: 80,
+        horizInboard: 45,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-I",
+        notesZh: "光度可隨環境亮度自動調節（可變亮度光度）。最大光度上限提高至 42 cd 以適應日間強光，夜間減弱以防眩光。",
+        notesEn: "Luminous intensity adjusts dynamically. Max limit increased to 42 cd to ensure daytime visibility."
+    },
+    "RM1": {
+        symbol: "RM1",
+        nameZh: "後輪廓邊界燈 - 穩態 (Rear End-outline Steady)",
+        nameEn: "Rear End-outline Marker (Steady)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 4.0,
+        maxIntensitySingle: 17.0,
+        maxIntensityD: 8.5,
+        horizOutboard: 80,
+        horizInboard: 0,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-I",
+        notesZh: "安裝於後方車頂處。高度大於 2100 mm 時，垂直上方角度可收縮至 5°，下方為 15°。",
+        notesEn: "Installed on rear roof. Vertical above angle reduces to 5° if h > 2100 mm."
+    },
+    "RM2": {
+        symbol: "RM2",
+        nameZh: "後輪廓邊界燈 - 可變亮度 (Rear End-outline Variable)",
+        nameEn: "Rear End-outline Marker (Variable)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 4.0,
+        maxIntensitySingle: 42.0,
+        maxIntensityD: 21.0,
+        horizOutboard: 80,
+        horizInboard: 0,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-I",
+        notesZh: "後輪廓邊界燈的可變亮度光度版本。最大光度可在 42 cd（日間）與低光（夜間）間自動切換。",
+        notesEn: "Variable intensity version of rear end-outline lamp. Automatically swappable."
+    },
+    "MR": {
+        symbol: "MR",
+        nameZh: "機車後位置燈 (Motorcycle Rear Position)",
+        nameEn: "Motorcycle Rear Position Lamp (L-cat)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 4.0,
+        maxIntensitySingle: 17.0,
+        maxIntensityD: 17.0, // N.A.
+        horizOutboard: 80,
+        horizInboard: 80, // For singular, 20 for pair
+        vertAbove: 15,
+        vertBelow: 10,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-I",
+        notesZh: "機車定位紅色光源。若單個安裝，左右可視角均為 80°；若成對安裝，內側為 20°。垂直下方標準為 10°，高度低於 750 mm 時為 5°。",
+        notesEn: "Motorcycle red positioning. Inboard 80° for singular, 20° for pair. Vertical below is 10° standard, 5° if h < 750 mm."
+    },
+
+    // Stop Lamps (S1, S2, S3, S4, MS)
+    "S1": {
+        symbol: "S1",
+        nameZh: "煞車燈 - 穩態 (Stop Lamp Steady)",
+        nameEn: "Stop Lamp (Steady)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 60.0,
+        maxIntensitySingle: 260.0,
+        maxIntensityD: 130.0,
+        horizOutboard: 45,
+        horizInboard: 45,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 0.2, // Instant-on!
+        photometricGrid: "Figure A3-I",
+        notesZh: "【關鍵】點亮反應時間測試基準為 0.2 秒。高度小於 750 mm 時，垂直下方角度可縮至 5°。",
+        notesEn: "Transient ignition test measured at 0.2s. Vertical below angle reduces to 5° if h < 750 mm."
+    },
+    "S2": {
+        symbol: "S2",
+        nameZh: "煞車燈 - 可變亮度 (Stop Lamp Variable)",
+        nameEn: "Stop Lamp (Variable)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 60.0,
+        maxIntensitySingle: 730.0,
+        maxIntensityD: 365.0,
+        horizOutboard: 45,
+        horizInboard: 45,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 0.2,
+        photometricGrid: "Figure A3-I",
+        notesZh: "【關鍵】點亮時間 0.2 秒。最大光度上限達 730 cd（日間強光環境），夜間可自動降低以防眩光。",
+        notesEn: "Measured at 0.2s. Dynamic max range up to 730 cd in bright daytime conditions."
+    },
+    "S3": {
+        symbol: "S3",
+        nameZh: "第三煞車燈 - 穩態 (CHMSL Steady)",
+        nameEn: "Central High Mounted Stop (Steady)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 25.0,
+        maxIntensitySingle: 110.0,
+        maxIntensityD: 55.0,
+        horizOutboard: 10,
+        horizInboard: 10,
+        vertAbove: 10,
+        vertBelow: 5,
+        testTime: 0.2,
+        photometricGrid: "Figure A3-III",
+        notesZh: "中央高位煞車燈（CHMSL）。幾何可視角度較小（左右各 10°，垂直上方 10° 下方 5°）。點亮測試為 0.2 秒。",
+        notesEn: "Central High Mounted Stop Lamp (CHMSL). Narrower geometric visibility cone."
+    },
+    "S4": {
+        symbol: "S4",
+        nameZh: "第三煞車燈 - 可變亮度 (CHMSL Variable)",
+        nameEn: "Central High Mounted Stop (Variable)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 25.0,
+        maxIntensitySingle: 160.0,
+        maxIntensityD: 80.0,
+        horizOutboard: 10,
+        horizInboard: 10,
+        vertAbove: 10,
+        vertBelow: 5,
+        testTime: 0.2,
+        photometricGrid: "Figure A3-III",
+        notesZh: "中央高位煞車燈的可變亮度光度版本。日間強光最大上限為 160 cd，點亮時間 0.2 秒。",
+        notesEn: "Variable version of CHMSL. Max limit increased to 160 cd in bright day conditions."
+    },
+    "MS": {
+        symbol: "MS",
+        nameZh: "機車煞車燈 (Motorcycle Stop Lamp)",
+        nameEn: "Motorcycle Stop Lamp (L-cat)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 40.0,
+        maxIntensitySingle: 260.0,
+        maxIntensityD: 260.0, // N.A.
+        horizOutboard: 45,
+        horizInboard: 45, // For singular, 0 for pair
+        vertAbove: 15,
+        vertBelow: 10,
+        testTime: 0.2,
+        photometricGrid: "Figure A3-I",
+        notesZh: "點亮時間 0.2 秒。若成對安裝，內側可視角可為 0°。垂直下方標準角度為 10°，高度 < 750 mm 時縮至 5°。",
+        notesEn: "Transient test at 0.2s. Inboard 45° for singular, 0° for pair. Vertical below reduces to 5° if h < 750 mm."
+    },
+
+    // Direction Indicators (Cat 1, 1a, 1b, 2a, 2b, 5, 6, 11s, 12)
+    "1": {
+        symbol: "1",
+        nameZh: "前方向燈 (距離大燈 >= 40 mm)",
+        nameEn: "Front Direction Indicator (dist >= 40mm)",
+        color: "Amber",
+        colorZh: "琥珀色 (Amber)",
+        minIntensity: 175.0,
+        maxIntensitySingle: 1000.0,
+        maxIntensityD: 500.0,
+        horizOutboard: 80,
+        horizInboard: 45,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 0.2,
+        photometricGrid: "Figure A3-I",
+        notesZh: "安裝於車前且離近光大燈/前霧燈距離至少 40 mm。點亮反應測試基準為 0.2 秒。高度低於 750 mm 下可視角改為 5°。",
+        notesEn: "Installed >= 40mm from passing beam or front fog lamp. Ignition tested at 0.2s."
+    },
+    "1a": {
+        symbol: "1a",
+        nameZh: "前方向燈 (距離大燈 >= 20 mm)",
+        nameEn: "Front Direction Indicator (dist >= 20mm)",
+        color: "Amber",
+        colorZh: "琥珀色 (Amber)",
+        minIntensity: 250.0,
+        maxIntensitySingle: 1200.0,
+        maxIntensityD: 600.0,
+        horizOutboard: 80,
+        horizInboard: 45,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 0.2,
+        photometricGrid: "Figure A3-I",
+        notesZh: "【關鍵】由於距離大燈較近 (>= 20 mm且 < 40 mm)，為了防止被大燈光芒掩蓋，最小光度提高至 250 cd，最大光度上限 1200 cd。點亮 0.2 秒。",
+        notesEn: "Closer to headlamp. Minimum intensity increased to 250 cd to overcome headlamp glare."
+    },
+    "1b": {
+        symbol: "1b",
+        nameZh: "前方向燈 (無距離限制 / < 20 mm)",
+        nameEn: "Front Direction Indicator (Any distance / < 20mm)",
+        color: "Amber",
+        colorZh: "琥珀色 (Amber)",
+        minIntensity: 400.0,
+        maxIntensitySingle: 1200.0,
+        maxIntensityD: 600.0,
+        horizOutboard: 80,
+        horizInboard: 45,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 0.2,
+        photometricGrid: "Figure A3-I",
+        notesZh: "【關鍵】與大燈極近或整合在一起 (距離 < 20 mm)。為了確保方向信號辨識度，最小光度大幅提高至 400 cd！點亮測試 0.2 秒。",
+        notesEn: "Integrated or extremely close to headlamp. Min intensity significantly increased to 400 cd."
+    },
+    "2a": {
+        symbol: "2a",
+        nameZh: "後方向燈 - 穩態",
+        nameEn: "Rear Direction Indicator (Steady)",
+        color: "Amber",
+        colorZh: "琥珀色 (Amber)",
+        minIntensity: 50.0,
+        maxIntensitySingle: 500.0,
+        maxIntensityD: 250.0,
+        horizOutboard: 80,
+        horizInboard: 45,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 0.2,
+        photometricGrid: "Figure A3-I",
+        notesZh: "穩態琥珀色後方向信號燈。反應時間測試 0.2 秒。高度低於 750 mm 下可視角改為 5°。",
+        notesEn: "Steady amber rear indicator. Transient tested at 0.2s. Vertical below is 5° if h < 750 mm."
+    },
+    "2b": {
+        symbol: "2b",
+        nameZh: "後方向燈 - 可變亮度",
+        nameEn: "Rear Direction Indicator (Variable)",
+        color: "Amber",
+        colorZh: "琥珀色 (Amber)",
+        minIntensity: 50.0,
+        maxIntensitySingle: 1000.0,
+        maxIntensityD: 500.0,
+        horizOutboard: 80,
+        horizInboard: 45,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 0.2,
+        photometricGrid: "Figure A3-I",
+        notesZh: "可變光度的後方向燈。在日間環境中，最大上限光度增加至 1000 cd，大幅強化烈日下的行車安全，點亮時間 0.2 秒。",
+        notesEn: "Variable rear indicator. Max limit raised to 1000 cd in bright ambient light."
+    },
+    "5": {
+        symbol: "5",
+        nameZh: "側方向燈 (M1/N1與長度 <= 6米車輛)",
+        nameEn: "Side Direction Indicator (Cat 5)",
+        color: "Amber",
+        colorZh: "琥珀色 (Amber)",
+        minIntensity: 0.6,
+        maxIntensitySingle: 280.0,
+        maxIntensityD: 140.0,
+        horizOutboard: 55, // Outboard rearward is 55, forward is 5
+        horizInboard: 5,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 0.2,
+        photometricGrid: "Table A2-2",
+        notesZh: "側邊方向指示燈。水平幾何能見角專為車側盲區設計：後向為 55°，前向為 5°。點亮時間為 0.2 秒。",
+        notesEn: "Side indicator for small vehicles. Horizontal asymmetrical angle: 5° forward to 55° rearward."
+    },
+    "6": {
+        symbol: "6",
+        nameZh: "側方向燈 (N2/N3與長度 > 6米大車)",
+        nameEn: "Side Direction Indicator (Cat 6)",
+        color: "Amber",
+        colorZh: "琥珀色 (Amber)",
+        minIntensity: 50.0,
+        maxIntensitySingle: 280.0,
+        maxIntensityD: 140.0,
+        horizOutboard: 55,
+        horizInboard: 5,
+        vertAbove: 30, // 30 for high vehicles!
+        vertBelow: 5,
+        testTime: 0.2,
+        photometricGrid: "Figure A3-IV",
+        notesZh: "大車與長車專用側方向燈。最小光度要求高達 50 cd。幾何可視角度特殊：垂直上方 30°（適應大卡車高駕駛視線），下方 5°。點亮時間 0.2 秒。",
+        notesEn: "Side indicator for heavy/long vehicles. Min 50 cd. Vertical visibility: 30° above, 5° below."
+    },
+
+    // Side Marker Lamps (SM1, SM2)
+    "SM1": {
+        symbol: "SM1",
+        nameZh: "側方標誌燈 (所有車型)",
+        nameEn: "Side Marker Lamp (SM1 - All Vehicles)",
+        color: "Amber",
+        colorZh: "琥珀色 (後部可為紅色) (Amber/Red)",
+        minIntensity: 4.0, // In reference axis, within field other than axis is 0.6
+        maxIntensitySingle: 25.0,
+        maxIntensityD: 25.0, // N.A.
+        horizOutboard: 45,
+        horizInboard: 45,
+        vertAbove: 10,
+        vertBelow: 10,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-VII",
+        notesZh: "水平可視角為前向/後向各 45°。基準軸上最小光度為 4.0 cd，其餘法規區域為 0.6 cd。最大上限為 25.0 cd。若與後紅光燈具整合，後部側標誌燈可發紅光。",
+        notesEn: "Horizontal visibility 45° forward/rearward. Axis min is 4.0 cd, angular field min is 0.6 cd."
+    },
+    "SM2": {
+        symbol: "SM2",
+        nameZh: "側方標誌燈 (M1乘用車)",
+        nameEn: "Side Marker Lamp (SM2 - M1 Cars)",
+        color: "Amber",
+        colorZh: "琥珀色 (後部可為紅色) (Amber/Red)",
+        minIntensity: 0.6, // Reference axis and within field both 0.6
+        maxIntensitySingle: 25.0,
+        maxIntensityD: 25.0,
+        horizOutboard: 30,
+        horizInboard: 30,
+        vertAbove: 10,
+        vertBelow: 10,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-VIII",
+        notesZh: "M1 類乘用車專用，可視角與光度要求較低。水平可視角為前/後各 30°。基準軸與其餘區域最小光度皆為 0.6 cd，上限為 25.0 cd。",
+        notesEn: "Lower spec side marker for M1 cars. Horizontal visibility 30° forward/rearward."
+    },
+
+    // Daytime Running Lamp (RL)
+    "RL": {
+        symbol: "RL",
+        nameZh: "日間行車燈 (Daytime Running Lamp)",
+        nameEn: "Daytime Running Lamp (DRL)",
+        color: "White",
+        colorZh: "白色 (White)",
+        minIntensity: 400.0,
+        maxIntensitySingle: 1200.0,
+        maxIntensityD: 600.0,
+        horizOutboard: 20,
+        horizInboard: 20,
+        vertAbove: 10,
+        vertBelow: 10,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-II",
+        notesZh: "【關鍵】設計高強度白色發光體，最小光度為 400 cd，上限為 1200 cd。幾何可視角度：左右各 20°，上方 10°，下方 10°。當大燈點亮時，日行燈必須自動熄滅或減光至位置燈級別。",
+        notesEn: "High-intensity white source. Min 400 cd, Max 1200 cd. Must turn off or dim to position level when headlamps turn on."
+    },
+
+    // Reversing Lamp (AR)
+    "AR": {
+        symbol: "AR",
+        nameZh: "倒車燈 (Reversing Lamp)",
+        nameEn: "Reversing Lamp",
+        color: "White",
+        colorZh: "白色 (White)",
+        minIntensity: 80.0,
+        maxIntensitySingle: 600.0, // 300 above H-plane, 600 below H-plane down to 5D, 8000 below 5D
+        maxIntensityD: 600.0,
+        horizOutboard: 45, // 45 for single, if pair: outboard 45, inboard 30
+        horizInboard: 45,
+        vertAbove: 15,
+        vertBelow: 5,
+        testTime: 0.2,
+        photometricGrid: "Figure A3-V",
+        notesZh: "光學上限分區限制：水平線（H線）以上最大為 300 cd；水平線以下至 5°D 區間最大為 600 cd；5°D 以下地面反射方向最大可達 8000 cd！點亮測試為 0.2 秒。",
+        notesEn: "Zoned max limits: 300 cd above H, 600 cd from H to 5D, 8000 cd below 5D to ground. Tested at 0.2s."
+    },
+
+    // Rear Fog Lamps (F1, F2)
+    "F1": {
+        symbol: "F1",
+        nameZh: "後霧燈 - 穩態 (Rear Fog Steady)",
+        nameEn: "Rear Fog Lamp (Steady)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 150.0,
+        maxIntensitySingle: 300.0,
+        maxIntensityD: 300.0, // N.A.
+        horizOutboard: 25,
+        horizInboard: 25,
+        vertAbove: 5,
+        vertBelow: 5,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-VI",
+        notesZh: "高亮紅色濃霧警示光源。最小光度 150 cd，最大上限 300 cd。可視角度窄（左右各 25°，上下各 5°）。與大燈/前霧燈連動開啟。",
+        notesEn: "High-intensity red. Min 150 cd, Max 300 cd. Narrow visibility angles (±25° H, ±5° V)."
+    },
+    "F2": {
+        symbol: "F2",
+        nameZh: "後霧燈 - 可變亮度 (Rear Fog Variable)",
+        nameEn: "Rear Fog Lamp (Variable)",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 150.0,
+        maxIntensitySingle: 840.0,
+        maxIntensityD: 840.0,
+        horizOutboard: 25,
+        horizInboard: 25,
+        vertAbove: 5,
+        vertBelow: 5,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-VI",
+        notesZh: "後霧燈的可變亮度光度版本。日間或強光背景下，光度上限可自動調高至 840 cd 以增強穿透力，夜間自動減弱。",
+        notesEn: "Variable intensity version of rear fog. Max limit extends to 840 cd in daytime."
+    },
+
+    // Parking Lamps (Forward and Rearward)
+    "77R_F": {
+        symbol: "77R",
+        nameZh: "前駐車燈 (Parking Lamp Forward)",
+        nameEn: "Forward facing Parking Lamp",
+        color: "White",
+        colorZh: "白色 (White)",
+        minIntensity: 2.0,
+        maxIntensitySingle: 60.0,
+        maxIntensityD: 60.0,
+        horizOutboard: 45,
+        horizInboard: 0, // 0 for singular, 45 for pair
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-I",
+        notesZh: "車輛靜止駐車時前方白色指示燈。最小光度僅 2 cd，最大為 60 cd。高度低於 750 mm 時垂直下方角度縮至 5°。",
+        notesEn: "Forward white indicator for stationary parking. Min 2 cd, Max 60 cd. Downward vertical decreases to 5° if h < 750 mm."
+    },
+    "77R_R": {
+        symbol: "77R",
+        nameZh: "後駐車燈 (Parking Lamp Rearward)",
+        nameEn: "Rearward facing Parking Lamp",
+        color: "Red",
+        colorZh: "紅色 (Red)",
+        minIntensity: 2.0,
+        maxIntensitySingle: 30.0,
+        maxIntensityD: 30.0,
+        horizOutboard: 45,
+        horizInboard: 0,
+        vertAbove: 15,
+        vertBelow: 15,
+        testTime: 4.0,
+        photometricGrid: "Figure A3-I",
+        notesZh: "車輛靜止駐車時後方紅色指示燈。最小光度僅 2 cd，最大光度上限 30 cd。高度低於 750 mm 下可視角改為 5°。",
+        notesEn: "Rearward red indicator. Min 2 cd, Max 30 cd. Downward vertical decreases to 5° if h < 750 mm."
+    }
+};
+
+// CIE 1931 Chromaticity Coordinates for UN R148
+const CIE_BOUNDARIES = {
+    "Red": [
+        {x: 0.690, y: 0.310},
+        {x: 0.690, y: 0.290}, // y <= 0.335; z <= 0.008 -> x + y >= 0.992
+        {x: 0.665, y: 0.335},
+        {x: 0.665, y: 0.335}
+    ],
+    "Amber": [
+        {x: 0.572, y: 0.428}, // y <= 0.429; y >= 0.398; z <= 0.007
+        {x: 0.645, y: 0.355},
+        {x: 0.612, y: 0.388},
+        {x: 0.564, y: 0.429}
+    ],
+    "White": [
+        {x: 0.310, y: 0.348}, // x >= 0.310; x <= 0.500; y >= 0.150 + 0.640x; y <= 0.440; y >= 0.050 + 0.750x; y <= 0.382
+        {x: 0.440, y: 0.440},
+        {x: 0.500, y: 0.440},
+        {x: 0.500, y: 0.382},
+        {x: 0.440, y: 0.382},
+        {x: 0.310, y: 0.283}
+    ]
+};
+
+// Global UI State
+let uiState = {
+    selectedLamp: "S1",
+    mountingHeight: 250, // in mm
+    dLampEnabled: false,
+    variableIntensityEnabled: false,
+    cieInputX: 0.33,
+    cieInputY: 0.33,
+    activeTab: "single"
+};
+
+// App Initialization
+window.addEventListener("DOMContentLoaded", () => {
+    initUI();
+    loadLampSelector();
+    updateDashboard();
+    initCIEChart();
+    initCrossRefTab();
+});
+
+// Helper to sync all mounting height sliders and displays across tabs
+function syncMountingHeight(val) {
+    const numericVal = parseInt(val);
+    if (isNaN(numericVal)) return;
+    uiState.mountingHeight = numericVal;
+
+    // Update all sliders
+    const mainSlider = document.getElementById("heightSlider");
+    if (mainSlider) mainSlider.value = numericVal;
+    document.querySelectorAll(".heightSliderSync").forEach(slider => {
+        slider.value = numericVal;
+    });
+
+    // Update all value displays
+    const mainValue = document.getElementById("heightValue");
+    if (mainValue) mainValue.innerText = numericVal + " mm";
+    document.querySelectorAll(".heightValueSync").forEach(display => {
+        display.innerText = numericVal + " mm";
+    });
+
+    // Recalculate and update UI
+    updateDashboard();
+    updateCrossRefTable();
+}
+
+// Setup Listeners and DOM Bindings
+function initUI() {
+    // Mounting Height Range Sliders (including synced copies)
+    const heightSlider = document.getElementById("heightSlider");
+    if(heightSlider) {
+        heightSlider.addEventListener("input", (e) => {
+            syncMountingHeight(e.target.value);
+        });
+    }
+
+    document.querySelectorAll(".heightSliderSync").forEach(slider => {
+        slider.addEventListener("input", (e) => {
+            syncMountingHeight(e.target.value);
+        });
+    });
+
+    // Initialize all controls to starting value
+    syncMountingHeight(uiState.mountingHeight);
+
+    // Toggle Toggles
+    const dLampToggle = document.getElementById("dLampToggle");
+    if(dLampToggle) {
+        dLampToggle.addEventListener("change", (e) => {
+            uiState.dLampEnabled = e.target.checked;
+            updateDashboard();
+            updateCrossRefTable();
+        });
+    }
+
+
+
+    // Tab Buttons Selection
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    tabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            tabBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            
+            const tabName = btn.dataset.tab;
+            uiState.activeTab = tabName;
+            
+            document.querySelectorAll(".tab-panel").forEach(panel => {
+                panel.classList.remove("active");
+            });
+            document.getElementById(tabName + "Tab").classList.add("active");
+            
+            if(tabName === "cie") {
+                // Redraw canvas to fit viewport
+                setTimeout(drawCIE, 50);
+            }
+        });
+    });
+
+    // CIE Calculator Bindings
+    const btnCheckCie = document.getElementById("btnCheckCie");
+    if(btnCheckCie) {
+        btnCheckCie.addEventListener("click", performCIECoordinateCheck);
+    }
+    
+    // Search Box in Sidebar
+    const searchBox = document.getElementById("searchBox");
+    if(searchBox) {
+        searchBox.addEventListener("input", (e) => {
+            const query = e.target.value.toLowerCase();
+            
+            // Loop through each category
+            const categories = ["cat-front", "cat-side", "cat-rear", "cat-other"];
+            categories.forEach(catClass => {
+                const header = document.querySelector(`.lamp-category-header.${catClass}`);
+                if (!header) return;
+                
+                let sibling = header.nextElementSibling;
+                let visibleCount = 0;
+                
+                while(sibling && !sibling.classList.contains("lamp-category-header")) {
+                    if (sibling.classList.contains("lamp-list-item")) {
+                        const text = sibling.innerText.toLowerCase();
+                        if (text.includes(query)) {
+                            sibling.style.display = "flex";
+                            visibleCount++;
+                        } else {
+                            sibling.style.display = "none";
+                        }
+                    }
+                    sibling = sibling.nextElementSibling;
+                }
+                
+                if (query.trim() !== "") {
+                    if (visibleCount === 0) {
+                        header.style.display = "none";
+                    } else {
+                        header.style.display = "flex";
+                    }
+                } else {
+                    header.style.display = "flex";
+                }
+            });
+        });
+    }
+}
+
+// Automatically swap selected lamp steady <-> variable versions based on global switch
+function handleIntensityTypeAutoSwap() {
+    const swapMap = {
+        "R1": "R2", "R2": "R1",
+        "RM1": "RM2", "RM2": "RM1",
+        "S1": "S2", "S2": "S1",
+        "S3": "S4", "S4": "S3",
+        "2a": "2b", "2b": "2a",
+        "F1": "F2", "F2": "F1"
+    };
+    
+    const cur = uiState.selectedLamp;
+    if(uiState.variableIntensityEnabled) {
+        // Steady -> Variable
+        if(cur === "R1") uiState.selectedLamp = "R2";
+        else if(cur === "RM1") uiState.selectedLamp = "RM2";
+        else if(cur === "S1") uiState.selectedLamp = "S2";
+        else if(cur === "S3") uiState.selectedLamp = "S4";
+        else if(cur === "2a") uiState.selectedLamp = "2b";
+        else if(cur === "F1") uiState.selectedLamp = "F2";
+    } else {
+        // Variable -> Steady
+        if(cur === "R2") uiState.selectedLamp = "R1";
+        else if(cur === "RM2") uiState.selectedLamp = "RM1";
+        else if(cur === "S2") uiState.selectedLamp = "S1";
+        else if(cur === "S4") uiState.selectedLamp = "S3";
+        else if(cur === "2b") uiState.selectedLamp = "2a";
+        else if(cur === "F2") uiState.selectedLamp = "F1";
+    }
+    
+    // Highlight list item in sidebar
+    document.querySelectorAll(".lamp-list-item").forEach(item => {
+        item.classList.remove("selected");
+        if(item.dataset.id === uiState.selectedLamp) {
+            item.classList.add("selected");
+            // Scroll to view
+            item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    });
+}
+
+// Load List of Lamps in Sidebar
+// Load List of Lamps in Sidebar
+function loadLampSelector() {
+    const listContainer = document.getElementById("lampListContainer");
+    if(!listContainer) return;
+    
+    listContainer.innerHTML = "";
+    
+    const LAMP_CATEGORIES = [
+        {
+            title: "前燈類 (Front Lamps)",
+            class: "cat-front",
+            keys: ["1", "1a", "1b", "A", "AM", "MA", "RL", "77R_F"]
+        },
+        {
+            title: "側燈類 (Side Lamps)",
+            class: "cat-side",
+            keys: ["5", "6", "SM1", "SM2"]
+        },
+        {
+            title: "尾燈類 (Rear Lamps)",
+            class: "cat-rear",
+            keys: ["2a", "2b", "R1", "R2", "RM1", "RM2", "MR", "S1", "S2", "S3", "S4", "MS", "F1", "F2", "AR", "77R_R"]
+        }
+    ];
+    
+    // Find any key in R148_DATABASE not in the above categories
+    const categorizedKeys = new Set();
+    LAMP_CATEGORIES.forEach(cat => cat.keys.forEach(k => categorizedKeys.add(k)));
+    
+    const otherKeys = [];
+    Object.keys(R148_DATABASE).forEach(key => {
+        if(!categorizedKeys.has(key)) {
+            otherKeys.push(key);
+        }
+    });
+    
+    if(otherKeys.length > 0) {
+        LAMP_CATEGORIES.push({
+            title: "其他類別 (Other Lamps)",
+            class: "cat-other",
+            keys: otherKeys
+        });
+    }
+    
+    LAMP_CATEGORIES.forEach(category => {
+        const validKeys = category.keys.filter(k => R148_DATABASE[k]);
+        if(validKeys.length === 0) return;
+        
+        // Add Category Header
+        const header = document.createElement("div");
+        header.className = `lamp-category-header ${category.class}`;
+        header.innerHTML = `
+            <span class="category-indicator"></span>
+            <span>${category.title}</span>
+        `;
+        listContainer.appendChild(header);
+        
+        validKeys.forEach(key => {
+            const lamp = R148_DATABASE[key];
+            
+            const item = document.createElement("button");
+            item.className = "lamp-list-item";
+            if(key === uiState.selectedLamp) {
+                item.classList.add("selected");
+            }
+            item.dataset.id = key;
+            
+            let colorClass = "tag-white";
+            if(lamp.color === "Red") colorClass = "tag-red";
+            else if(lamp.color === "Amber") colorClass = "tag-amber";
+            
+            item.innerHTML = `
+                <span class="lamp-symbol-tag ${colorClass}">${lamp.symbol}</span>
+                <span class="lamp-name-txt">${lamp.nameZh}</span>
+            `;
+            
+            item.addEventListener("click", () => {
+                document.querySelectorAll(".lamp-list-item").forEach(i => i.classList.remove("selected"));
+                item.classList.add("selected");
+                
+                uiState.selectedLamp = key;
+                
+                // Sync variable intensity state
+                const isVariable = ["R2", "RM2", "S2", "S4", "2b", "F2"].includes(key);
+                uiState.variableIntensityEnabled = isVariable;
+                
+                updateDashboard();
+            });
+            
+            listContainer.appendChild(item);
+        });
+    });
+}
+
+// Dynamically Calculate Active Specifications based on Global Modifiers
+function calculateActiveSpec(lampId) {
+    const base = R148_DATABASE[lampId];
+    if(!base) return null;
+    
+    let spec = { ...base };
+    
+    // 1. D-Lamp intensity halving (max intensity only)
+    if(uiState.dLampEnabled && spec.maxIntensityD !== "N.A.") {
+        spec.activeMax = spec.maxIntensityD;
+    } else {
+        spec.activeMax = spec.maxIntensitySingle;
+    }
+    
+    // 2. Mounting height vertical angle reductions
+    // E.g., standard vertical downward (below) is reduced to 5° if h < 750 mm
+    if(uiState.mountingHeight < 750) {
+        // Except for specific lamps that already have smaller angles or unique requirements
+        if(spec.vertBelow > 5) {
+            spec.activeVertBelow = 5;
+            spec.isHeightReduced = true;
+        } else {
+            spec.activeVertBelow = spec.vertBelow;
+            spec.isHeightReduced = false;
+        }
+    } else {
+        spec.activeVertBelow = spec.vertBelow;
+        spec.isHeightReduced = false;
+    }
+    
+    // 3. Mounting height vertical upward reductions for high installed lamps (> 2100mm)
+    if(uiState.mountingHeight > 2100 && ["AM", "RM1", "RM2"].includes(lampId)) {
+        spec.activeVertAbove = 5;
+        spec.isHeightAboveReduced = true;
+    } else {
+        spec.activeVertAbove = spec.vertAbove;
+        spec.isHeightAboveReduced = false;
+    }
+    
+    // Copy active vertical above
+    if(spec.activeVertAbove === undefined) {
+        spec.activeVertAbove = spec.vertAbove;
+    }
+    
+    return spec;
+}
+
+// Get D-Lamp / Y-Lamp compatibility and explanatory text for current selected lamp
+function getDYCompatibilityInfo(lampId, lamp) {
+    let dStatus = "";
+    let yStatus = "";
+
+    // D-Lamp compatibility
+    const dUnsupported = ["MA", "MR", "MS", "5", "6", "SM1", "SM2", "77R_F", "77R_R"];
+    const isDUnsupported = dUnsupported.includes(lampId) || dUnsupported.includes(lamp.symbol);
+
+    if (isDUnsupported) {
+        if (["MA", "MR", "MS"].includes(lampId)) {
+            dStatus = `<span style="color:var(--danger); font-weight:600;">🔴 D類燈 (雙燈組合): 不適用</span> (機車 L 類車輛法規無 D 類雙燈宣告)`;
+        } else if (["5", "6"].includes(lampId)) {
+            dStatus = `<span style="color:var(--danger); font-weight:600;">🔴 D類燈 (雙燈組合): 不適用</span> (側方向指示燈無 D 類雙燈宣告)`;
+        } else if (["SM1", "SM2"].includes(lampId)) {
+            dStatus = `<span style="color:var(--danger); font-weight:600;">🔴 D類燈 (雙燈組合): 不適用</span> (側標誌燈無 D 類雙燈宣告)`;
+        } else if (["77R_F", "77R_R"].includes(lampId)) {
+            dStatus = `<span style="color:var(--danger); font-weight:600;">🔴 D類燈 (雙燈組合): 不適用</span> (駐車燈無 D 類雙燈宣告)`;
+        } else {
+            dStatus = `<span style="color:var(--danger); font-weight:600;">🔴 D類燈 (雙燈組合): 不適用</span>`;
+        }
+    } else {
+        dStatus = `<span style="color:var(--success); font-weight:600;">🟢 D類燈 (雙燈組合): 適用</span> (單個 D 燈具最大光度限制減半為 ${lamp.maxIntensityD} cd，且其中一燈失效時，另一燈仍須能滿足 100% 最小強度)`;
+    }
+
+    // Y-Lamp compatibility
+    const yUnsupported = ["MA", "MR", "MS", "5", "6", "SM1", "SM2", "77R_F", "77R_R", "AM", "RM1", "RM2"];
+    const isYUnsupported = yUnsupported.includes(lampId) || yUnsupported.includes(lamp.symbol);
+
+    if (isYUnsupported) {
+        if (["MA", "MR", "MS"].includes(lampId)) {
+            yStatus = `<span style="color:var(--danger); font-weight:600;">🔴 Y類燈 (相互依賴): 不適用</span> (機車 L 類車輛法規無 Y 類相互依賴定義)`;
+        } else if (["5", "6"].includes(lampId)) {
+            yStatus = `<span style="color:var(--danger); font-weight:600;">🔴 Y類燈 (相互依賴): 不適用</span> (側方向指示燈無 Y 類相互依賴定義)`;
+        } else if (["SM1", "SM2"].includes(lampId)) {
+            yStatus = `<span style="color:var(--danger); font-weight:600;">🔴 Y類燈 (相互依賴): 不適用</span> (側標誌燈無 Y 類相互依賴定義)`;
+        } else if (["77R_F", "77R_R"].includes(lampId)) {
+            yStatus = `<span style="color:var(--danger); font-weight:600;">🔴 Y類燈 (相互依賴): 不適用</span> (駐車燈無 Y 類相互依賴定義)`;
+        } else if (["AM", "RM1", "RM2"].includes(lampId)) {
+            yStatus = `<span style="color:var(--danger); font-weight:600;">🔴 Y類燈 (相互依賴): 不適用</span> (端部輪廓邊界燈須位於車身極外側，不可作分散式 Y 燈)`;
+        } else {
+            yStatus = `<span style="color:var(--danger); font-weight:600;">🔴 Y類燈 (相互依賴): 不適用</span>`;
+        }
+    } else {
+        if (["R1", "R2", "S1", "S2"].includes(lampId)) {
+            yStatus = `<span style="color:var(--success); font-weight:600;">🟢 Y類燈 (相互依賴): 適用</span> (極常見於尾門與車身分立的貫穿式尾燈/煞車燈系統，全系統各單元點亮/熄滅須同步連動)`;
+        } else if (["2a", "2b"].includes(lampId)) {
+            yStatus = `<span style="color:var(--success); font-weight:600;">🟢 Y類燈 (相互依賴): 適用</span> (可用於流水/分段式後方向指示燈，各單元須同步連動且總光強符合上限)`;
+        } else {
+            yStatus = `<span style="color:var(--success); font-weight:600;">🟢 Y類燈 (相互依賴): 適用</span> (全系統各單元點亮/熄滅須
