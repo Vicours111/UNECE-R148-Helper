@@ -250,8 +250,8 @@ const R148_DATABASE = {
         color: "Amber",
         colorZh: "琥珀色 (Amber)",
         minIntensity: 175.0,
-        maxIntensitySingle: 1000.0,
-        maxIntensityD: 500.0,
+        maxIntensitySingle: 1200.0,
+        maxIntensityD: 600.0,
         horizOutboard: 80,
         horizInboard: 45,
         vertAbove: 15,
@@ -1059,7 +1059,6 @@ function updateDashboard() {
         dIndicator.style.color = uiState.dLampEnabled ? "var(--warning)" : "var(--text-secondary)";
     }
     
-    document.getElementById("valTestTime").innerText = lamp.testTime + " 秒";
     document.getElementById("valPhotGrid").innerText = lamp.photometricGrid;
     document.getElementById("valHorizAngle").innerText = `外側 ${lamp.horizOutboard}° / 內側 ${lamp.horizInboard}°`;
     document.getElementById("valVertAngle").innerText = `上方 ${lamp.activeVertAbove}° / 下方 ${lamp.activeVertBelow}°`;
@@ -1758,8 +1757,11 @@ function drawPhotometricWeightGrid(lamp) {
     let cols = ["20L", "10L", "5L", "V", "5R", "10R", "20R"];
     
     if(gridType === "cat6") {
-        rows = ["30U", "15U", "5U", "H", "5D"];
+        rows = ["30U", "20U", "15U", "10U", "5U", "H", "5D"];
         cols = ["V", "5R", "10R", "20R", "30R", "60R"];
+    } else if(gridType === "cat5") {
+        rows = ["15U", "H", "15D"];
+        cols = ["V", "5R", "30R", "60R"];
     } else if(gridType === "sm1") {
         rows = ["10U", "5U", "H", "5D", "10D"];
         cols = ["45L", "40L", "30L", "20L", "10L", "5L", "V", "5R", "10R", "20R", "30R", "40R", "45R"];
@@ -1802,24 +1804,23 @@ function drawPhotometricWeightGrid(lamp) {
             "5D-45L": 15, "5D-30L": 25, "5D-10L": 50, "5D-V": 80, "5D-10R": 50, "5D-30R": 25, "5D-45R": 15
         };
     } else if(gridType === "cat5") {
-        // Side Direction Indicator (Cat 5) - Table A2-2 asymmetric rearward focus
+        // Side Direction Indicator (Cat 5) - Table A2-2 continuous 0.6 cd region
         weights = {
-            "H-V": 100, "H-5R": 100, "H-10R": 100, "H-20R": 100,
-            "5U-5R": 60, "5D-5R": 60, "H-5L": 10
+            "15U-5R": 0.6,
+            "15U-60R": 0.6,
+            "15D-5R": 0.6,
+            "15D-60R": 0.6
         };
     } else if(gridType === "cat6") {
         // Side Direction Indicator (Cat 6) - Figure A3-IV heavy vehicles
         weights = {
-            // H Row: V (20%), 5R (100%), 10R (80%), 20R (60%), 30R (40%), 60R (40%)
-            "H-V": 20, "H-5R": 100, "H-10R": 80, "H-20R": 60, "H-30R": 40, "H-60R": 40,
-            // 5U Row: V (20%), 5R (60%), 10R (60%), 20R (40%), 30R (30%), 60R (30%)
-            "5U-V": 20, "5U-5R": 60, "5U-10R": 60, "5U-20R": 40, "5U-30R": 30, "5U-60R": 30,
-            // 5D Row: V (20%), 5R (60%), 10R (60%), 20R (40%), 30R (30%), 60R (30%)
-            "5D-V": 20, "5D-5R": 60, "5D-10R": 60, "5D-20R": 40, "5D-30R": 30, "5D-60R": 30,
-            // 15U Row: V (20%), 5R (20%), 10R (20%), 20R (20%), 30R (20%), 60R (20%)
-            "15U-V": 20, "15U-5R": 20, "15U-10R": 20, "15U-20R": 20, "15U-30R": 20, "15U-60R": 20,
-            // 30U Row: V (20%), 5R (20%), 10R (20%), 20R (20%), 30R (20%), 60R (20%)
-            "30U-V": 20, "30U-5R": 20, "30U-10R": 20, "30U-20R": 20, "30U-30R": 20, "30U-60R": 20
+            "30U-5R": 20, "30U-60R": 20,
+            "20U-30R": 30,
+            "15U-20R": 30,
+            "10U-5R": 40, "10U-10R": 40,
+            "5U-5R": 60, "5U-10R": 60,
+            "H-5R": 100, "H-10R": 80, "H-20R": 40,
+            "5D-5R": 60, "5D-10R": 60, "5D-20R": 40, "5D-30R": 20, "5D-60R": 20
         };
     } else if(gridType === "sm1") {
         // Side Marker Lamp SM1 (Figure A3-VII) - Corner points 0.6 cd, HV 4.0 cd
@@ -1883,8 +1884,8 @@ function drawPhotometricWeightGrid(lamp) {
         </svg>
         `;
     } else if (gridType === "sm1" || gridType === "sm2") {
-        const xStart = gridType === "sm1" ? 3.85 : 5.56;
-        const xEnd = gridType === "sm1" ? 96.15 : 94.44;
+        const xStart = gridType === "sm1" ? 5.38 : 5.56;
+        const xEnd = gridType === "sm1" ? 94.62 : 94.44;
         const yStart = 10;
         const yEnd = 90;
         svgOverlay = `
@@ -1896,10 +1897,22 @@ function drawPhotometricWeightGrid(lamp) {
             </defs>
             <!-- Glowing Shaded Rectangle Area (0.6 cd Continuous Zone) -->
             <rect x="${xStart}" y="${yStart}" width="${xEnd - xStart}" height="${yEnd - yStart}" fill="url(#amberHatch)" stroke="rgba(245, 158, 11, 0.55)" stroke-dasharray="3,3" stroke-width="1.2" style="filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.3));" />
-            
-            <!-- Green Dashed Axes passing through center (50, 50) as requested in sketch -->
-            <line x1="${xStart}" y1="50" x2="${xEnd}" y2="50" stroke="rgba(16, 185, 129, 0.55)" stroke-dasharray="3,3" stroke-width="1" />
-            <line x1="50" y1="${yStart}" x2="50" y2="${yEnd}" stroke="rgba(16, 185, 129, 0.55)" stroke-dasharray="3,3" stroke-width="1" />
+        </svg>
+        `;
+    } else if (gridType === "cat5") {
+        const xStart = ((1 + 0.5) / 4) * 100; // 37.5%
+        const xEnd = ((3 + 0.5) / 4) * 100;   // 87.5%
+        const yStart = ((0 + 0.5) / 3) * 100; // 16.67%
+        const yEnd = ((2 + 0.5) / 3) * 100;   // 83.33%
+        svgOverlay = `
+        <svg style="position:absolute; top:24px; left:24px; width:calc(100% - 48px); height:calc(100% - 48px); pointer-events:none; z-index:1;" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+                <pattern id="amberHatchCat5" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                    <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(245, 158, 11, 0.22)" stroke-width="1.2" />
+                </pattern>
+            </defs>
+            <!-- Glowing Shaded Rectangle Area (0.6 cd Continuous Zone) -->
+            <rect x="${xStart}" y="${yStart}" width="${xEnd - xStart}" height="${yEnd - yStart}" fill="url(#amberHatchCat5)" stroke="rgba(245, 158, 11, 0.55)" stroke-dasharray="3,3" stroke-width="1.2" style="filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.3));" />
         </svg>
         `;
     }
@@ -1907,9 +1920,22 @@ function drawPhotometricWeightGrid(lamp) {
     // Set dynamic template rows on container
     gridMap.setAttribute("style", `grid-template-rows: repeat(${rows.length}, 1fr);`);
     
+    const hIndex = rows.indexOf("H");
+    const vIndex = cols.indexOf("V");
+    
+    let hTop = "50%";
+    if(hIndex !== -1) {
+        hTop = `${((hIndex + 0.5) / rows.length * 100).toFixed(2)}%`;
+    }
+    
+    let vLeft = "50%";
+    if(vIndex !== -1) {
+        vLeft = `${((vIndex + 0.5) / cols.length * 100).toFixed(2)}%`;
+    }
+    
     let html = svgOverlay + `
-        <div class="grid-h-axis"></div>
-        <div class="grid-v-axis"></div>
+        <div class="grid-h-axis" style="top: ${hTop};"></div>
+        <div class="grid-v-axis" style="left: ${vLeft};"></div>
     `;
     
     rows.forEach(r => {
@@ -1935,10 +1961,10 @@ function drawPhotometricWeightGrid(lamp) {
                 textScaleClass = `style="font-size: 0.65rem;"`;
             }
             
-            // Dynamic Label swap / visual enlargement for SM1/SM2 central HV point
-            if(nodeKey === "H-V" && (gridType === "sm1" || gridType === "sm2")) {
-                pointStyle = `style="width: 52px; height: 52px; min-width: 52px; margin: 1px; z-index: 10; border-width: 2px; filter: drop-shadow(0 0 6px var(--accent-glow, rgba(255, 170, 0, 0.45))); border-color: rgba(255, 255, 255, 0.65);"`;
-                textScaleClass = `style="font-size: 0.85rem; font-weight: 800;"`;
+            // For SM1/SM2 active points, let's enlarge them to make them stand out, matching default 68px style of Cat 5
+            if(pct > 0 && (gridType === "sm1" || gridType === "sm2")) {
+                pointStyle = `style="width: 68px; height: 68px; min-width: 68px; z-index: 10;"`;
+                textScaleClass = "";
             }
             
             let displayNodeKey = nodeKey;
@@ -1948,14 +1974,14 @@ function drawPhotometricWeightGrid(lamp) {
             if(pct > 0) {
                 // Calculate absolute CD
                 let absCd = 0;
-                if(gridType === "reversing" || gridType === "sm1" || gridType === "sm2") {
+                if(gridType === "reversing" || gridType === "sm1" || gridType === "sm2" || gridType === "cat5") {
                     absCd = pct.toFixed(1);
                 } else {
                     absCd = ((pct / 100) * lamp.minIntensity).toFixed(1);
                 }
                 const maxCd = lamp.activeMax;
                 
-                if(gridType === "reversing" || gridType === "sm1" || gridType === "sm2") {
+                if(gridType === "reversing" || gridType === "sm1" || gridType === "sm2" || gridType === "cat5") {
                     displayVal = `${pct} cd`;
                 } else {
                     displayVal = `${pct}%`;
@@ -1963,25 +1989,28 @@ function drawPhotometricWeightGrid(lamp) {
                 activeClass = `active-point active-${lamp.color.toLowerCase()}`;
                 
                 let hoverTitle = `配光測試點 ${displayNodeKey} | 最小光度比重: ${pct}% | 法定最小光度: ${absCd} cd | 法定最大光度: ${maxCd} cd`;
-                if(gridType === "reversing" || gridType === "sm1" || gridType === "sm2") {
+                if(gridType === "reversing" || gridType === "sm1" || gridType === "sm2" || gridType === "cat5") {
                     hoverTitle = `配光測試點 ${displayNodeKey} | 法定最小光度: ${absCd} cd | 法定最大光度: ${maxCd} cd`;
                 }
                 
-                // Show CD on hover or inside the small node - only display Coord, DisplayVal (white) and Max cd, removing min cd from node UI
+                // Show Coord, DisplayVal (white), Min cd (yellow style) and Max cd inside the grid point UI as requested
                 html += `
                     <div class="grid-point ${activeClass}" ${pointStyle} title="${hoverTitle}">
                         <span class="coord" ${textScaleClass}>${displayNodeKey}</span>
-                        <span class="val-pct" ${textScaleClass}>${displayVal}</span>
-                        <span class="val-max" ${textScaleClass}>Max: ${maxCd}cd</span>
+                        ${(gridType === "cat5" || gridType === "sm1" || gridType === "sm2") ? "" : `<span class="val-pct" ${textScaleClass}>${displayVal}</span>`}
+                        <span class="val-min" ${textScaleClass} style="color: var(--warning); opacity: 0.9; margin-top: 1px; font-weight: 500;">Min: ${absCd}cd</span>
+                        <span class="val-max" ${textScaleClass} style="margin-top: 1px;">Max: ${maxCd}cd</span>
                     </div>
                 `;
             } else {
-                if (gridType === "sm1" || gridType === "sm2") {
-                    html += `<div class="grid-point" ${pointStyle} style="background: none; border-color: transparent; box-shadow: none; cursor: default; opacity: 0.25;">
+                const inlineStyle = pointStyle ? pointStyle.substring(7, pointStyle.length - 1) : "";
+                if (gridType === "sm1" || gridType === "sm2" || gridType === "cat5") {
+                    // Display faint coordinates without circles, matching Category 5 style perfectly and resolving duplicate style attribute bug
+                    html += `<div class="grid-point" style="${inlineStyle} background: none; border-color: transparent; box-shadow: none; cursor: default; opacity: 0.25;">
                         <span class="coord" style="font-size:0.45rem; color: rgba(255, 255, 255, 0.3); font-weight: normal;">${displayNodeKey}</span>
                     </div>`;
                 } else {
-                    html += `<div class="grid-point" ${pointStyle} style="opacity: 0.15;">
+                    html += `<div class="grid-point" style="${inlineStyle} opacity: 0.15;">
                         <span class="coord" style="font-size:0.5rem;">${displayNodeKey}</span>
                     </div>`;
                 }
@@ -2001,22 +2030,73 @@ function drawPhotometricWeightGrid(lamp) {
         } else if(cols.length > 7) {
             fontSizeStyle = "0.7rem";
         }
-        axisLabelsContainer.setAttribute("style", `display: grid; grid-template-columns: repeat(${cols.length}, 1fr); justify-items: center; text-align: center; font-size: ${fontSizeStyle};`);
-        let labelHtml = "";
-        cols.forEach((c, idx) => {
-            let text = c;
-            let spanStyle = "";
-            if(c === "V") {
-                text = "垂直 HV";
-                spanStyle = ` style="color: var(--text-primary); font-weight: 700;"`;
+        
+        const isAsymmetricV = (gridType === "cat5" || gridType === "cat6");
+        
+        if (isAsymmetricV) {
+            // Asymmetric layout (V leftmost)
+            // margin-left: 60px to perfectly align labels under the grid-visualization-map
+            // Overriding padding-left and padding-right to 0 to eliminate any offset and perfectly align labels under vertical grid axes
+            axisLabelsContainer.setAttribute("style", `display: grid; grid-template-columns: repeat(${cols.length}, 1fr); justify-items: center; text-align: center; font-size: ${fontSizeStyle}; margin-left: 60px; width: calc(100% - 60px); border-top: 1px dashed rgba(255, 255, 255, 0.05); padding-left: 0; padding-right: 0;`);
+            
+            let labelHtml = "";
+            cols.forEach((c, idx) => {
+                if(c === "V") {
+                    // Place "左側" to the left of V (blue box) and "右側" to the right of V (yellow box)
+                    // Keep "V" absolutely centered using CSS relative/absolute positioning
+                    labelHtml += `
+                        <div style="display: flex; align-items: center; justify-content: center; width: 100%; position: relative;">
+                            <span style="color: var(--text-muted); font-size: 0.7rem; font-weight: 600; white-space: nowrap; position: absolute; right: calc(50% + 14px);">左側</span>
+                            <span style="color: var(--text-primary); font-weight: 700;">V</span>
+                            <span style="color: var(--text-muted); font-size: 0.7rem; font-weight: 600; white-space: nowrap; position: absolute; left: calc(50% + 14px);">右側</span>
+                        </div>
+                    `;
+                } else {
+                    let text = c.replace("L", "°L").replace("R", "°R");
+                    labelHtml += `<span>${text}</span>`;
+                }
+            });
+            axisLabelsContainer.innerHTML = labelHtml;
+        } else {
+            // Standard symmetric layout
+            axisLabelsContainer.setAttribute("style", `display: grid; grid-template-columns: repeat(${cols.length}, 1fr); justify-items: center; text-align: center; font-size: ${fontSizeStyle}; margin-left: 60px; width: calc(100% - 60px); border-top: 1px dashed rgba(255, 255, 255, 0.05);`);
+            let labelHtml = "";
+            cols.forEach((c, idx) => {
+                let text = c;
+                let spanStyle = "";
+                if(c === "V") {
+                    if (gridType === "sm1" || gridType === "sm2") {
+                        text = "V";
+                    } else {
+                        text = "垂直 HV";
+                    }
+                    spanStyle = ` style="color: var(--text-primary); font-weight: 700;"`;
+                } else {
+                    text = c.replace("L", "°L").replace("R", "°R");
+                }
+                if(idx === 0) text = "左側 " + text;
+                else if(idx === cols.length - 1) text = "右側 " + text;
+                labelHtml += `<span${spanStyle}>${text}</span>`;
+            });
+            axisLabelsContainer.innerHTML = labelHtml;
+        }
+    }
+    
+    // Dynamic Y-Axis Labels to perfectly align side angles with grid rows
+    const yAxisLabelsContainer = document.querySelector(".grid-y-axis-labels");
+    if(yAxisLabelsContainer) {
+        yAxisLabelsContainer.style.gridTemplateRows = `repeat(${rows.length}, 1fr)`;
+        let yLabelHtml = "";
+        rows.forEach(r => {
+            let text = r;
+            if(r === "H") {
+                text = "H (0°)";
             } else {
-                text = c.replace("L", "°L").replace("R", "°R");
+                text = r.replace("U", "°U").replace("D", "°D");
             }
-            if(idx === 0) text = "左側 " + text;
-            else if(idx === cols.length - 1) text = "右側 " + text;
-            labelHtml += `<span${spanStyle}>${text}</span>`;
+            yLabelHtml += `<span>${text}</span>`;
         });
-        axisLabelsContainer.innerHTML = labelHtml;
+        yAxisLabelsContainer.innerHTML = yLabelHtml;
     }
 }
 
