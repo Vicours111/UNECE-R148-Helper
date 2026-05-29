@@ -480,7 +480,7 @@ canvas#canvasTimeline {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    align-items: center;
+    align-items: start; /* align items to start to prevent right-side SVG from bouncing up and down when left column changes height */
 }
 
 @media (max-width: 768px) {

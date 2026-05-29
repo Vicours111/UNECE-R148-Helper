@@ -380,7 +380,7 @@
     display: grid;
     grid-template-columns: 320px 1fr;
     gap: 24px;
-    align-items: center;
+    align-items: start;
 }
 
 @media (max-width: 800px) {
@@ -416,8 +416,6 @@
 .dimension-line {
     stroke: var(--secondary);
     stroke-width: 1.5;
-    marker-start: url(#arrow-start);
-    marker-end: url(#arrow-end);
 }
 
 .dimension-text {

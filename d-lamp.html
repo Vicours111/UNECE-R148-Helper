@@ -283,7 +283,7 @@
                         </div>
                         
                         <!-- Status indicator card -->
-                        <div class="judge-result-box" id="gapJudgeResultCard" style="background:rgba(255,255,255,0.01); min-height:80px; padding:12px; margin-top:10px;">
+                        <div class="judge-result-box" id="gapJudgeResultCard" style="background:rgba(255,255,255,0.01); min-height:120px; padding:12px; margin-top:10px; justify-content: flex-start;">
                             <div class="judge-status status-compliant" id="lblGapJudgeStatus">COMPLIANT / 視為單一燈具</div>
                             <p style="font-size:0.76rem; color:var(--text-muted); margin-top:4px;" id="lblGapJudgeExplain">
                                 間距 ≦ 75mm，兩發光表面非常貼近，在視覺光學上可被法規宣告為「一個單一車燈」進行型式認證。
@@ -321,6 +321,8 @@
                                 <!-- Lens Body -->
                                 <rect x="50" y="35" width="100" height="90" rx="8" class="surface-lens" />
                                 <text x="100" y="85" font-family="'Outfit', sans-serif" font-size="11" font-weight="600" fill="#fca5a5" text-anchor="middle">Surface 1</text>
+                                <!-- Outward Arrowhead (Static, points Left) -->
+                                <polygon points="150,160 156,156 156,164" fill="#06b6d4" />
                             </g>
                             
                             <!-- Right Apparent Surface (Lens 2) - DYNAMICALLY TRANSLATED -->
@@ -330,6 +332,8 @@
                                 <!-- Lens Body -->
                                 <rect x="150" y="35" width="100" height="90" rx="8" class="surface-lens" />
                                 <text x="200" y="85" font-family="'Outfit', sans-serif" font-size="11" font-weight="600" fill="#fca5a5" text-anchor="middle">Surface 2</text>
+                                <!-- Outward Arrowhead (Dynamic, moves with Lens 2, points Right) -->
+                                <polygon points="150,160 144,156 144,164" fill="#06b6d4" />
                             </g>
                             
                             <!-- DYNAMIC Dimension lines overlay -->
