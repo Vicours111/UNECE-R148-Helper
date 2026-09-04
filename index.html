@@ -123,6 +123,9 @@
                                         <span id="valDYCompatibility" class="val" style="font-size: 0.95rem; line-height: 1.5;">載入中...</span>
                                     </div>
                                 </div>
+                                
+                                <!-- Dynamic Topic Shortcut Links -->
+                                <div id="lampTopicLinkContainer" style="margin-top: 14px; display: flex; flex-direction: column; gap: 8px;"></div>
                             </div>
                             
                             <div style="display:flex; flex-direction:column; gap:20px;">
@@ -208,6 +211,39 @@
                                         <span>5°R</span>
                                         <span>10°R</span>
                                         <span>右側 20°R</span>
+                                    </div>
+                                </div>
+
+                                <!-- Photometric Point Inspection HUD Bar -->
+                                <div id="photometricHudBar" class="photometric-hud-bar">
+                                    <div class="hud-header">
+                                        <div class="hud-badge-group">
+                                            <span class="hud-status-indicator"></span>
+                                            <span class="hud-title">測點即時法規解析 HUD (Live Photometric Inspector)</span>
+                                        </div>
+                                        <span class="hud-hint">💡 滑鼠移動至任一測點或點擊測點鎖定解析</span>
+                                    </div>
+                                    <div class="hud-content-grid" id="hudContentGrid">
+                                        <div class="hud-cell">
+                                            <span class="hud-lbl">選定測點座標 (Angle)</span>
+                                            <span class="hud-val" id="hudPointCoord" style="color: var(--secondary);">H-V (基準中心)</span>
+                                        </div>
+                                        <div class="hud-cell">
+                                            <span class="hud-lbl">光度權重佔比 (Weight)</span>
+                                            <span class="hud-val" id="hudPointWeight">100%</span>
+                                        </div>
+                                        <div class="hud-cell">
+                                            <span class="hud-lbl">法定最小門檻 (Min cd)</span>
+                                            <span class="hud-val" id="hudPointMin" style="color: var(--warning);">-- cd</span>
+                                        </div>
+                                        <div class="hud-cell">
+                                            <span class="hud-lbl">法定上限限制 (Max cd)</span>
+                                            <span class="hud-val" id="hudPointMax" style="color: var(--text-secondary);">-- cd</span>
+                                        </div>
+                                        <div class="hud-cell hud-cell-wide">
+                                            <span class="hud-lbl">R148 分區公差與邊界場域條款 (Boundary & Field Tolerance)</span>
+                                            <span class="hud-val hud-desc" id="hudPointRule">載入中...</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -1091,9 +1091,44 @@ function updateDashboard() {
         compEl.innerHTML = getDYCompatibilityInfo(uiState.selectedLamp, lamp);
     }
     
+    // Render dynamic topic shortcuts
+    renderTopicShortcuts(lamp);
+    
     // Render SVGs
     drawSVGConeVisuals(lamp);
     drawPhotometricWeightGrid(lamp);
+}
+
+// Render dynamic topic shortcuts based on active lamp
+function renderTopicShortcuts(lamp) {
+    const container = document.getElementById("lampTopicLinkContainer");
+    if(!container) return;
+    
+    const symbol = lamp.symbol || "";
+    let shortcuts = [];
+    
+    // 1. Dynamic Indicator Shortcut (All direction indicators)
+    if(["1", "1a", "1b", "2a", "2b", "5", "6"].includes(symbol)) {
+        shortcuts.push(`
+            <a href="dynamic-indicator.html" class="topic-shortcut-btn" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.35); color: #fbbf24;">
+                <span>⚡ <strong>法規專題連動：</strong>動態流水方向燈掃描時序合規模擬器</span>
+                <span style="font-size: 0.9rem;">➔</span>
+            </a>
+        `);
+    }
+    
+    // 2. D/Y Lamp Shortcut (Supported D/Y lamps)
+    const dSupported = ["A", "AM", "R1", "R2", "S1", "S2", "S3", "S4", "1", "1a", "1b", "2a", "2b", "F1", "F2", "RL"];
+    if(dSupported.includes(symbol)) {
+        shortcuts.push(`
+            <a href="d-lamp.html" class="topic-shortcut-btn" style="background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.35); color: #a5b4fc;">
+                <span>✨ <strong>法規專題連動：</strong>D-Lamp / Y-Lamp 雙燈組合光學間距與相互依賴判定</span>
+                <span style="font-size: 0.9rem;">➔</span>
+            </a>
+        `);
+    }
+    
+    container.innerHTML = shortcuts.join("");
 }
 
 // Helpers to generate beautifully stylized vector cars for the visibility visualizer
@@ -1995,7 +2030,13 @@ function drawPhotometricWeightGrid(lamp) {
                 
                 // Show Coord, DisplayVal (white), Min cd (yellow style) and Max cd inside the grid point UI as requested
                 html += `
-                    <div class="grid-point ${activeClass}" ${pointStyle} title="${hoverTitle}">
+                    <div class="grid-point ${activeClass}" ${pointStyle} title="${hoverTitle}"
+                         data-coord="${displayNodeKey}"
+                         data-pct="${pct}"
+                         data-min="${absCd}"
+                         data-max="${maxCd}"
+                         data-gridtype="${gridType}"
+                         data-lamp="${lamp.symbol || ''}">
                         <span class="coord" ${textScaleClass}>${displayNodeKey}</span>
                         ${(gridType === "cat5" || gridType === "sm1" || gridType === "sm2") ? "" : `<span class="val-pct" ${textScaleClass}>${displayVal}</span>`}
                         <span class="val-min" ${textScaleClass} style="color: var(--warning); opacity: 0.9; margin-top: 1px; font-weight: 500;">Min: ${absCd}cd</span>
@@ -2006,11 +2047,13 @@ function drawPhotometricWeightGrid(lamp) {
                 const inlineStyle = pointStyle ? pointStyle.substring(7, pointStyle.length - 1) : "";
                 if (gridType === "sm1" || gridType === "sm2" || gridType === "cat5") {
                     // Display faint coordinates without circles, matching Category 5 style perfectly and resolving duplicate style attribute bug
-                    html += `<div class="grid-point" style="${inlineStyle} background: none; border-color: transparent; box-shadow: none; cursor: default; opacity: 0.25;">
+                    html += `<div class="grid-point" style="${inlineStyle} background: none; border-color: transparent; box-shadow: none; cursor: default; opacity: 0.25;"
+                                 data-coord="${displayNodeKey}" data-inactive="true" data-gridtype="${gridType}" data-lamp="${lamp.symbol || ''}">
                         <span class="coord" style="font-size:0.45rem; color: rgba(255, 255, 255, 0.3); font-weight: normal;">${displayNodeKey}</span>
                     </div>`;
                 } else {
-                    html += `<div class="grid-point" style="${inlineStyle} opacity: 0.15;">
+                    html += `<div class="grid-point" style="${inlineStyle} opacity: 0.15;"
+                                 data-coord="${displayNodeKey}" data-inactive="true" data-gridtype="${gridType}" data-lamp="${lamp.symbol || ''}">
                         <span class="coord" style="font-size:0.5rem;">${displayNodeKey}</span>
                     </div>`;
                 }
@@ -2098,6 +2141,100 @@ function drawPhotometricWeightGrid(lamp) {
         });
         yAxisLabelsContainer.innerHTML = yLabelHtml;
     }
+    
+    // Bind interactive HUD Inspector event listeners to grid points
+    attachPhotometricHudListeners(lamp, gridType);
+}
+
+// Attach interactive HUD Inspector event listeners
+function attachPhotometricHudListeners(lamp, gridType) {
+    const points = document.querySelectorAll("#gridMapContainer .grid-point");
+    const coordEl = document.getElementById("hudPointCoord");
+    const weightEl = document.getElementById("hudPointWeight");
+    const minEl = document.getElementById("hudPointMin");
+    const maxEl = document.getElementById("hudPointMax");
+    const ruleEl = document.getElementById("hudPointRule");
+    
+    if(!coordEl || !weightEl || !minEl || !maxEl || !ruleEl) return;
+    
+    // Set initial default HUD to central H-V point
+    const hvPoint = document.querySelector("#gridMapContainer .grid-point[data-coord='H-V']");
+    if(hvPoint && hvPoint.dataset.pct) {
+        updateHudDisplay(hvPoint, lamp, gridType);
+    } else {
+        // Fallback for grids without standard H-V
+        const firstActive = document.querySelector("#gridMapContainer .grid-point[data-pct]");
+        if(firstActive) {
+            updateHudDisplay(firstActive, lamp, gridType);
+        }
+    }
+    
+    points.forEach(pt => {
+        pt.addEventListener("mouseenter", () => {
+            updateHudDisplay(pt, lamp, gridType);
+        });
+        pt.addEventListener("click", () => {
+            updateHudDisplay(pt, lamp, gridType);
+            // Highlight clicked point
+            points.forEach(p => p.style.outline = "none");
+            pt.style.outline = "2px solid var(--secondary)";
+            pt.style.outlineOffset = "2px";
+        });
+    });
+}
+
+// Generate intelligent R148 rule explanation based on node and lamp
+function getPointRuleExplanation(coord, pct, absCd, maxCd, lamp, gridType, isInactive) {
+    const symbol = lamp.symbol || "";
+    
+    if(isInactive) {
+        return `⚪ <strong>【非標準測試點位】：</strong>本坐標（${coord}）非 R148 標準網格之特定測量點。但依 UN R148 一般規定，在全可視角場域內任一方向，光度均不得低於 <strong>0.05 cd</strong>（側標誌燈/側方向燈特定區域需維持 <strong>0.6 cd</strong>），不得存在突發性光度盲區或遮光斷層。`;
+    }
+    
+    if(coord === "H-V") {
+        let rule = `🎯 <strong>【基準軸心 H-V 關鍵點】：</strong>光學軸心法定最小要求為 <strong>${absCd} cd</strong>（佔比 100%）。`;
+        if(symbol === "RL") {
+            rule += ` 日間行車燈（DRL）光束極高度集中於 H-V 軸心（≥ 400 cd），上限為 1200 cd。`;
+        } else if(symbol === "AR") {
+            rule += ` 倒車燈 H-V 軸心光度為 80 cd，最大光度上限 600 cd。`;
+        } else if(symbol === "SM1") {
+            rule += ` SM1 側標誌燈基準軸最小光度為 4.0 cd，四周法規連續區域為 0.6 cd。`;
+        } else {
+            rule += ` 依法規要求，各方向光度以 H-V 為最高基準逐級向外遞減，且任兩相鄰測試點間光度不得有非連續性突降。`;
+        }
+        return rule;
+    }
+    
+    // Border points tolerance rule
+    const isBoundary = coord.includes("20L") || coord.includes("20R") || coord.includes("10U") || coord.includes("10D") || coord.includes("45L") || coord.includes("45R") || coord.includes("60R") || coord.includes("30R");
+    if(isBoundary) {
+        return `📐 <strong>【外圍邊界與分區公差】：</strong>邊界測點最小光度要求為 <strong>${absCd} cd</strong>。UN R148 規定此邊界處光度應平緩過渡，在邊界外的能見度場域延伸區內，光度殘餘值至少須維持 <strong>≥ 0.05 cd</strong>，避免駕駛人或周遭用路人在能見極限角出現閃爍或瞬間斷光。`;
+    }
+    
+    return `⚡ <strong>【核心配光分區】：</strong>本測點權重為 <strong>${pct}%</strong>（法定下限 <strong>${absCd} cd</strong>，上限 <strong>${maxCd} cd</strong>）。相鄰測試點之間需保持均勻遞減斜率，各象限內之光度比值應符合 R148 局部均勻度規範。`;
+}
+
+// Update HUD bar view
+function updateHudDisplay(pt, lamp, gridType) {
+    const coordEl = document.getElementById("hudPointCoord");
+    const weightEl = document.getElementById("hudPointWeight");
+    const minEl = document.getElementById("hudPointMin");
+    const maxEl = document.getElementById("hudPointMax");
+    const ruleEl = document.getElementById("hudPointRule");
+    if(!coordEl || !weightEl || !minEl || !maxEl || !ruleEl) return;
+    
+    const coord = pt.dataset.coord || "--";
+    const isInactive = pt.dataset.inactive === "true";
+    const pct = pt.dataset.pct || "0";
+    const absCd = pt.dataset.min || "--";
+    const maxCd = pt.dataset.max || (lamp.activeMax + "");
+    
+    coordEl.innerText = coord + (coord === "H-V" ? " (基準軸心)" : "");
+    weightEl.innerText = isInactive ? "非特定權重點" : (gridType === "reversing" || gridType === "sm1" || gridType === "sm2" || gridType === "cat5" ? `${pct} cd` : `${pct}%`);
+    minEl.innerText = isInactive ? "≥ 0.05 cd (全域下限)" : `${absCd} cd`;
+    maxEl.innerText = `${maxCd} cd`;
+    
+    ruleEl.innerHTML = getPointRuleExplanation(coord, pct, absCd, maxCd, lamp, gridType, isInactive);
 }
 
 // CIE 1931 Canvas Rendering and Calculation

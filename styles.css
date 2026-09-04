@@ -1021,6 +1021,120 @@ table.comparison-table tbody tr:hover {
     border-top: 1px dashed rgba(255, 255, 255, 0.05);
 }
 
+/* Photometric HUD Inspector Bar */
+.photometric-hud-bar {
+    margin-top: 24px;
+    background: rgba(10, 15, 29, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: var(--border-radius-md);
+    padding: 16px 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition: var(--transition-smooth);
+}
+.photometric-hud-bar:hover {
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 10px 35px rgba(6, 182, 212, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.hud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.hud-badge-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.hud-status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--secondary);
+    box-shadow: 0 0 8px var(--secondary);
+    animation: pulse 2s infinite ease-in-out;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.15); }
+}
+.hud-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.04em;
+    font-family: 'Outfit', sans-serif;
+}
+.hud-hint {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+.hud-content-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.hud-cell {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hud-cell-wide {
+    grid-column: span 4;
+    background: rgba(56, 189, 248, 0.03);
+    border-color: rgba(56, 189, 248, 0.15);
+}
+.hud-lbl {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.hud-val {
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+}
+.hud-desc {
+    font-size: 0.82rem;
+    font-weight: normal;
+    color: var(--text-secondary);
+    line-height: 1.45;
+}
+.topic-shortcut-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+.topic-shortcut-btn:hover {
+    transform: translateX(3px);
+}
+@media (max-width: 768px) {
+    .hud-content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hud-cell-wide {
+        grid-column: span 2;
+    }
+}
+
 /* Tab 5 Engineering Checklist */
 .checklist-container {
     display: flex;
